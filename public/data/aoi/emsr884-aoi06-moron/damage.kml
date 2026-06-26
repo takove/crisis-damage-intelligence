@@ -1,0 +1,906 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"><Document><name>EMS Damage Assessment</name>
+
+    <Placemark>
+      <name>ems_00001</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.469884516,-68.242143162'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.242143162,10.469884516,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00002</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Damaged<br/><b>Damage %:</b> 70<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.473201804999999,-68.21159007700001'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff1a12c4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.21159007700001,10.473201804999999,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00003</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Damaged<br/><b>Damage %:</b> 70<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.4733741440625,-68.209492080625'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff1a12c4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.209492080625,10.4733741440625,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00004</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.473705795625,-68.234726115625'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.234726115625,10.473705795625,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00005</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Damaged<br/><b>Damage %:</b> 70<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.473703423063062,-68.20226592396396'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff1a12c4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.20226592396396,10.473703423063062,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00006</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.473801088666667,-68.23159837733333'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.23159837733333,10.473801088666667,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00007</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.47382099375,-68.230211555'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.230211555,10.47382099375,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00008</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.473882551666668,-68.22948544277777'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.22948544277777,10.473882551666668,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00009</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.474264878431374,-68.23075992941176'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.23075992941176,10.474264878431374,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00010</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.47418197984252,-68.20354024692912'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.20354024692912,10.47418197984252,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00011</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Damaged<br/><b>Damage %:</b> 70<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.474521034444443,-68.21126669777779'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff1a12c4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.21126669777779,10.474521034444443,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00012</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Damaged<br/><b>Damage %:</b> 70<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.474278510789473,-68.20803736578948'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff1a12c4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.20803736578948,10.474278510789473,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00013</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.474491741538461,-68.23004430076922'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.23004430076922,10.474491741538461,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00014</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Damaged<br/><b>Damage %:</b> 70<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.47511327,-68.22555805142858'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff1a12c4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.22555805142858,10.47511327,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00015</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.47540098375,-68.20703131375'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.20703131375,10.47540098375,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00016</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Destroyed<br/><b>Damage %:</b> 100<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.47542832,-68.21234170833334'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff00005b</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.21234170833334,10.47542832,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00017</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.475536883357142,-68.23528540521428'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.23528540521428,10.475536883357142,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00018</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.475151633535353,-68.2071034980808'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.2071034980808,10.475151633535353,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00019</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.475963932500001,-68.20341450250001'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.20341450250001,10.475963932500001,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00020</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.47660444925926,-68.23034512968255'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.23034512968255,10.47660444925926,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00021</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Damaged<br/><b>Damage %:</b> 70<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.477332000357142,-68.20115120035715'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff1a12c4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.20115120035715,10.477332000357142,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00022</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.478597338636364,-68.19998577045455'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.19998577045455,10.478597338636364,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00023</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.480166584,-68.20137626200001'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.20137626200001,10.480166584,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00024</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.482677185454547,-68.20096174636363'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.20096174636363,10.482677185454547,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00025</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.483409680714287,-68.20110064857143'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.20110064857143,10.483409680714287,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00026</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Damaged<br/><b>Damage %:</b> 70<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.486764392,-68.18985268200001'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff1a12c4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.18985268200001,10.486764392,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00027</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.487148470000001,-68.19011323333334'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.19011323333334,10.487148470000001,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00028</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.48778137225,-68.1901758935'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.1901758935,10.48778137225,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00029</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Damaged<br/><b>Damage %:</b> 70<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.487695903235293,-68.19791536911764'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff1a12c4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.19791536911764,10.487695903235293,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00030</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.487986594385966,-68.19472735192983'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.19472735192983,10.487986594385966,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00031</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.476974943703704,-68.2133318371605'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.2133318371605,10.476974943703704,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00032</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.47691034,-68.202476373'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.202476373,10.47691034,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00033</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.477246234552846,-68.22136736154471'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.22136736154471,10.477246234552846,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00034</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.48055823142857,-68.20324925285715'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.20324925285715,10.48055823142857,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00035</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Damaged<br/><b>Damage %:</b> 70<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.480655935666666,-68.20225957733334'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff1a12c4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.20225957733334,10.480655935666666,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00036</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Damaged<br/><b>Damage %:</b> 70<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.486678382,-68.21065619999999'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff1a12c4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.21065619999999,10.486678382,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00037</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.487052835648855,-68.20522460091604'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.20522460091604,10.487052835648855,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00038</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.48761005375,-68.20607361796876'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.20607361796876,10.48761005375,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00039</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Damaged<br/><b>Damage %:</b> 70<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.487622857297296,-68.20654155027027'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff1a12c4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.20654155027027,10.487622857297296,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00040</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.487852586615384,-68.20301354584615'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.20301354584615,10.487852586615384,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00041</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Damaged<br/><b>Damage %:</b> 70<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.4885518825,-68.206189575'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff1a12c4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.206189575,10.4885518825,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00042</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.489428506368421,-68.20575250694736'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.20575250694736,10.489428506368421,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00043</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.490836332758622,-68.20297172931035'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.20297172931035,10.490836332758622,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00044</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.488590325172414,-68.19744948551724'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.19744948551724,10.488590325172414,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00045</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.489758839375,-68.19019855'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.19019855,10.489758839375,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00046</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.489645115084747,-68.19484171610169'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.19484171610169,10.489645115084747,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00047</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.48996069047619,-68.19783458190476'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.19783458190476,10.48996069047619,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00048</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.490544233809524,-68.1971570095238'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.1971570095238,10.490544233809524,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00049</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.49080887711111,-68.193067588'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.193067588,10.49080887711111,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00050</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Damaged<br/><b>Damage %:</b> 70<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.490869564,-68.1951515308'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff1a12c4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.1951515308,10.490869564,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00051</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.491160394249999,-68.19291115749999'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.19291115749999,10.491160394249999,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00052</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.491542442465754,-68.19319830780822'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.19319830780822,10.491542442465754,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00053</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.491630885000001,-68.19005795071429'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.19005795071429,10.491630885000001,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00054</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.492792283146066,-68.19181805022473'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.19181805022473,10.492792283146066,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00055</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Damaged<br/><b>Damage %:</b> 70<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.4924885275,-68.19583575769231'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff1a12c4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.19583575769231,10.4924885275,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00056</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.495793310465116,-68.19638353186046'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.19638353186046,10.495793310465116,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00057</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.496146473,-68.19762075075'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.19762075075,10.496146473,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00058</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.4967816225,-68.19129227916666'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.19129227916666,10.4967816225,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00059</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Destroyed<br/><b>Damage %:</b> 100<br/><b>Object:</b> 12-Non-residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.497754544285714,-68.19367143571428'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff00005b</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.19367143571428,10.497754544285714,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00060</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Damaged<br/><b>Damage %:</b> 70<br/><b>Object:</b> 12-Non-residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.498028148666666,-68.19203561733333'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff1a12c4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.19203561733333,10.498028148666666,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00061</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 12-Non-residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.4986753835,-68.1932605615'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.1932605615,10.4986753835,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00062</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 12-Non-residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.500573266382979,-68.19483802787234'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.19483802787234,10.500573266382979,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00063</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Damaged<br/><b>Damage %:</b> 70<br/><b>Object:</b> 12-Non-residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.514804002380952,-68.19092589904761'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff1a12c4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.19092589904761,10.514804002380952,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00064</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Damaged<br/><b>Damage %:</b> 70<br/><b>Object:</b> 12-Non-residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.515081885454546,-68.19051181272727'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff1a12c4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.19051181272727,10.515081885454546,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00065</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Damaged<br/><b>Damage %:</b> 70<br/><b>Object:</b> 12-Non-residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.515611846,-68.19095357'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff1a12c4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.19095357,10.515611846,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00066</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Damaged<br/><b>Damage %:</b> 70<br/><b>Object:</b> 12-Non-residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.515554698947367,-68.1897028131579'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff1a12c4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.1897028131579,10.515554698947367,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00067</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 12-Non-residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.48344159,-68.16809599'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.16809599,10.48344159,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00068</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.490985396212121,-68.175806345'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.175806345,10.490985396212121,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00069</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Damaged<br/><b>Damage %:</b> 70<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.492202242941177,-68.17368719470588'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff1a12c4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.17368719470588,10.492202242941177,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00070</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.49255338652174,-68.17733688782609'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.17733688782609,10.49255338652174,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00071</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.493328478,-68.176391685'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.176391685,10.493328478,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00072</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.493575884285715,-68.17549873571429'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.17549873571429,10.493575884285715,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00073</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.496196937,-68.17889625699999'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.17889625699999,10.496196937,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00074</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.49694115875,-68.17805627375'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.17805627375,10.49694115875,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00075</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.497877916153847,-68.17630604538462'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.17630604538462,10.497877916153847,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00076</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.498769068095239,-68.17737736857143'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.17737736857143,10.498769068095239,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00077</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.487071220625,-68.188939274375'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.188939274375,10.487071220625,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00078</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.487173036875,-68.18909846375'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.18909846375,10.487173036875,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00079</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.487252945263158,-68.18931907'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.18931907,10.487252945263158,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00080</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.487759043,-68.18844132699999'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.18844132699999,10.487759043,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00081</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Damaged<br/><b>Damage %:</b> 70<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.490137507777778,-68.18530875444445'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff1a12c4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.18530875444445,10.490137507777778,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00082</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.491377188235294,-68.18634608294118'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.18634608294118,10.491377188235294,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00083</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.493038993999999,-68.180182024'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.180182024,10.493038993999999,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00084</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.4947753325,-68.18909268145833'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.18909268145833,10.4947753325,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00085</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Damaged<br/><b>Damage %:</b> 70<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.49525655025,-68.178881475'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff1a12c4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.178881475,10.49525655025,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00086</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Damaged<br/><b>Damage %:</b> 70<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.495745287692309,-68.18277354153847'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff1a12c4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.18277354153847,10.495745287692309,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00087</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.498271463333333,-68.18156839166667'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.18156839166667,10.498271463333333,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00088</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.498175757999999,-68.18494679775'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.18494679775,10.498175757999999,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00089</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.498592875128205,-68.18624826333334'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.18624826333334,10.498592875128205,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00090</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.498727986,-68.18667960924999'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.18667960924999,10.498727986,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00091</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.498714184210527,-68.17937722526317'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.17937722526317,10.498714184210527,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00092</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Damaged<br/><b>Damage %:</b> 70<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.498829778947368,-68.17917188315789'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff1a12c4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.17917188315789,10.498829778947368,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00093</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.499306440714287,-68.18312345285715'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.18312345285715,10.499306440714287,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00094</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.499712361111111,-68.18541656555556'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.18541656555556,10.499712361111111,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00095</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Damaged<br/><b>Damage %:</b> 70<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.50012674111111,-68.1823390888889'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff1a12c4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.1823390888889,10.50012674111111,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00096</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.500466959999999,-68.18196301166667'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.18196301166667,10.500466959999999,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00097</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.499414216976744,-68.17191397372093'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.17191397372093,10.499414216976744,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00098</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.500136461764706,-68.17833062647058'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.17833062647058,10.500136461764706,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00099</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.499927058292684,-68.17491238341464'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.17491238341464,10.499927058292684,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00100</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.501320602972973,-68.17415826486487'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.17415826486487,10.501320602972973,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00101</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Damaged<br/><b>Damage %:</b> 70<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.501609566976745,-68.17606268860465'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff1a12c4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.17606268860465,10.501609566976745,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00102</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.501303173913044,-68.17299259391304'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.17299259391304,10.501303173913044,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00103</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Damaged<br/><b>Damage %:</b> 70<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.502033324285716,-68.1782196657143'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff1a12c4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.1782196657143,10.502033324285716,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00104</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.502110050714284,-68.1764621025'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.1764621025,10.502110050714284,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00105</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.502585003333333,-68.17503994142857'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.17503994142857,10.502585003333333,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00106</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.5027701975,-68.178634305'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.178634305,10.5027701975,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00107</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.500470816818181,-68.18624010363637'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.18624010363637,10.500470816818181,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00108</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.500925337083332,-68.18546422749999'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.18546422749999,10.500925337083332,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00109</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Damaged<br/><b>Damage %:</b> 70<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.5021050325,-68.18040045250001'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff1a12c4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.18040045250001,10.5021050325,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00110</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.50197000923077,-68.18218942230769'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.18218942230769,10.50197000923077,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00111</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Damaged<br/><b>Damage %:</b> 70<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.503261606875,-68.18195490875'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff1a12c4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.18195490875,10.503261606875,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00112</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.503956253928573,-68.18398550857142'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.18398550857142,10.503956253928573,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00113</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.505112017666667,-68.17998915733332'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.17998915733332,10.505112017666667,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00114</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.50462433,-68.18097395999999'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.18097395999999,10.50462433,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00115</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.50483211,-68.18436217666667'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.18436217666667,10.50483211,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00116</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Damaged<br/><b>Damage %:</b> 70<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.505201090238094,-68.1815486397619'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff1a12c4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.1815486397619,10.505201090238094,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00117</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.503126327126436,-68.17185171229885'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.17185171229885,10.503126327126436,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00118</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.502929313125,-68.17490404'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.17490404,10.502929313125,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00119</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.5042273675,-68.17651947625001'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.17651947625001,10.5042273675,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00120</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.504555281666667,-68.17887606333333'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.17887606333333,10.504555281666667,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00121</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.504659701666666,-68.17533000833333'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.17533000833333,10.504659701666666,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00122</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.505870626250001,-68.17606660625'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.17606660625,10.505870626250001,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00123</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Damaged<br/><b>Damage %:</b> 70<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.507780651666666,-68.176860175'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff1a12c4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.176860175,10.507780651666666,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00124</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Damaged<br/><b>Damage %:</b> 70<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.508494415555555,-68.17733521111111'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff1a12c4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.17733521111111,10.508494415555555,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00125</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.508890172258065,-68.17798018387097'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.17798018387097,10.508890172258065,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00126</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.509610958536586,-68.17699040414635'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.17699040414635,10.509610958536586,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00127</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.505600396875,-68.179251621875'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.179251621875,10.505600396875,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00128</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Damaged<br/><b>Damage %:</b> 70<br/><b>Object:</b> 12-Non-residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.511108653783783,-68.1875775945946'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff1a12c4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.1875775945946,10.511108653783783,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00129</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI06_GRA_v1<br/><b>EMS damage:</b> Possibly damaged<br/><b>Damage %:</b> 35<br/><b>Object:</b> 12-Non-residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.51481253,-68.188458052'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff229be4</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-68.188458052,10.51481253,0</coordinates></Point>
+    </Placemark>
+</Document></kml>

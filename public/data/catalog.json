@@ -1,0 +1,108 @@
+{
+  "updatedAt": "2026-06-26T14:00:00Z",
+  "platform": "Crisis Damage Intelligence",
+  "aois": [
+    {
+      "id": "emsr884-aoi02-caracas",
+      "country": "Venezuela",
+      "event": "EMSR884 Venezuela earthquake",
+      "name": {
+        "en": "AOI02 Caracas - Official EMSR884 Vector",
+        "es": "AOI02 Caracas - Vector oficial EMSR884"
+      },
+      "status": "official-vector",
+      "source": "Copernicus EMSR884 GRA ZIP -> EMSR884_AOI02_GRA_PRODUCT_v1.gpkg / builtUpA_v1",
+      "bounds": [
+        [
+          10.40945942,
+          -66.93664418
+        ],
+        [
+          10.49124344,
+          -66.86767315
+        ]
+      ],
+      "center": [
+        10.45035143,
+        -66.902158665
+      ],
+      "downloads": {
+        "csv": "/data/aoi/emsr884-aoi02-caracas/damage.csv",
+        "geojson": "/data/aoi/emsr884-aoi02-caracas/damage.geojson",
+        "kml": "/data/aoi/emsr884-aoi02-caracas/damage.kml"
+      },
+      "layers": {
+        "damage": "/data/aoi/emsr884-aoi02-caracas/damage.geojson"
+      },
+      "metrics": {
+        "features": 17,
+        "destroyed": 0,
+        "damagedConfirmed": 0,
+        "possibleDamage": 17,
+        "vlmReviewed": 0
+      }
+    },
+    {
+      "id": "emsr884-aoi06-moron",
+      "country": "Venezuela",
+      "event": "EMSR884 Venezuela earthquake",
+      "name": {
+        "en": "AOI06 Moron - Official EMSR884 Vector",
+        "es": "AOI06 Moron - Vector oficial EMSR884"
+      },
+      "status": "official-vector",
+      "source": "Copernicus EMSR884 GRA ZIP -> EMSR884_AOI06_GRA_PRODUCT_v1.gpkg / builtUpA_v1",
+      "bounds": [
+        [
+          10.46890959,
+          -68.24309134
+        ],
+        [
+          10.51649113,
+          -68.16704427
+        ]
+      ],
+      "center": [
+        10.49270036,
+        -68.205067805
+      ],
+      "downloads": {
+        "csv": "/data/aoi/emsr884-aoi06-moron/damage.csv",
+        "geojson": "/data/aoi/emsr884-aoi06-moron/damage.geojson",
+        "kml": "/data/aoi/emsr884-aoi06-moron/damage.kml"
+      },
+      "layers": {
+        "damage": "/data/aoi/emsr884-aoi06-moron/damage.geojson"
+      },
+      "metrics": {
+        "features": 129,
+        "destroyed": 2,
+        "damagedConfirmed": 36,
+        "possibleDamage": 93,
+        "vlmReviewed": 0
+      }
+    }
+  ],
+  "watchlist": [
+    {
+      "id": "ems-aoi12-caraballeda",
+      "name": {
+        "en": "AOI12 Caraballeda / La Guaira",
+        "es": "AOI12 Caraballeda / La Guaira"
+      },
+      "status": "waiting",
+      "expectedUtc": "2026-06-27T01:00:00Z",
+      "priority": "critical"
+    },
+    {
+      "id": "ems-aoi07-puerto-cabello",
+      "name": {
+        "en": "AOI07 Puerto Cabello",
+        "es": "AOI07 Puerto Cabello"
+      },
+      "status": "waiting",
+      "expectedUtc": "2026-06-27T12:30:00Z",
+      "priority": "high"
+    }
+  ]
+}

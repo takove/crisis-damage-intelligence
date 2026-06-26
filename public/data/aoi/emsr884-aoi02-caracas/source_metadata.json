@@ -1,0 +1,10 @@
+{
+  "features": 17,
+  "destroyed": 0,
+  "damaged": 0,
+  "possibly_damaged": 17,
+  "source_product": "outputs/AOI02_Caracas_GRA_v1.zip",
+  "source_root": "EMSR884_AOI02_GRA_v1",
+  "source_file": "EMSR884_AOI02_GRA_PRODUCT_v1.gpkg",
+  "source_layer": "builtUpA_v1"
+}

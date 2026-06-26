@@ -1,0 +1,10 @@
+{
+  "features": 129,
+  "destroyed": 2,
+  "damaged": 34,
+  "possibly_damaged": 93,
+  "source_product": "outputs/AOI06_Moron_GRA_v1.zip",
+  "source_root": "EMSR884_AOI06_GRA_v1",
+  "source_file": "EMSR884_AOI06_GRA_PRODUCT_v1.gpkg",
+  "source_layer": "builtUpA_v1"
+}
