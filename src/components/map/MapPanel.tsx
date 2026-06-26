@@ -48,9 +48,8 @@ type Props = {
 
 type OlDamageFeature = Feature & { original?: DamageFeature };
 
-function damageClass(properties: DamageFeature["properties"], vlm?: VlmRecord) {
-  const vlmClass = vlm?.vlm?.damage_class;
-  const raw = String(vlmClass ?? properties.damage_class ?? properties.damage_gra ?? properties.confirmed_damage_class ?? "").toLowerCase();
+function damageClass(properties: DamageFeature["properties"]) {
+  const raw = String(properties.damage_class ?? properties.damage_gra ?? properties.confirmed_damage_class ?? "").toLowerCase();
   if (raw.includes("possibly")) return "possible";
   if (raw.includes("destroy") || raw.includes("major") || raw === "damaged" || raw === "major_damage") return "severe";
   if (raw.includes("minor") || raw.includes("possible")) return "possible";
@@ -68,7 +67,7 @@ function colorFor(kind: string) {
 function passesFilter(feature: DamageFeature, filter: Props["filter"], vlm: Record<string, VlmRecord>) {
   const id = feature.properties.id;
   if (filter === "vlm") return Boolean(vlm[id]);
-  if (filter === "severe") return damageClass(feature.properties, vlm[id]) === "severe";
+  if (filter === "severe") return damageClass(feature.properties) === "severe";
   return true;
 }
 
@@ -116,13 +115,13 @@ export default function MapPanel({ aoi, mode, opacity, filter, basemap, vlm, sel
   const styleFor = useCallback((feature: OlDamageFeature) => {
     const original = feature.original;
     if (!original) return undefined;
-    const kind = damageClass(original.properties, vlm[original.properties.id]);
+    const kind = damageClass(original.properties);
     const color = colorFor(kind);
     return new Style({
       stroke: new Stroke({ color, width: kind === "low" ? 1 : 2 }),
       fill: new Fill({ color: hexToRgba(color, opacity) }),
     });
-  }, [opacity, vlm]);
+  }, [opacity]);
 
   const focusFeature = useCallback((id?: string) => {
     const map = mapRef.current;

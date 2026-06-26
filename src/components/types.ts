@@ -60,13 +60,20 @@ export type DamageFeature = {
 export type VlmRecord = {
   id: string;
   triplet_chip?: string;
+  post_event_chip?: string;
+  review_type?: string;
+  official_ems_damage_gra?: string;
+  official_ems_damage_percent?: number;
   truth_damage_class?: string;
   vlm?: {
     damage_class?: string;
     damage_percent?: number;
-    confidence?: number;
+    confidence?: number | string;
     evidence?: string;
+    visible_evidence?: string;
     image_quality?: string;
     action_priority?: string;
+    review_type?: string;
+    uncertainty_reason?: string;
   };
 };
