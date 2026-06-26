@@ -87,6 +87,7 @@ export default function MapPanel({ aoi, mode, opacity, filter, basemap, vlm, sel
   const olFeatureByIdRef = useRef<Map<string, OlDamageFeature>>(new Map());
   const modeRef = useRef(mode);
   const selectedIdRef = useRef(selectedId);
+  const renderVectorsRef = useRef<() => void>(() => {});
 
   useEffect(() => {
     modeRef.current = mode;
@@ -204,6 +205,10 @@ export default function MapPanel({ aoi, mode, opacity, filter, basemap, vlm, sel
   }, [filter, focusFeature, setDebug, styleFor, vlm]);
 
   useEffect(() => {
+    renderVectorsRef.current = renderVectors;
+  }, [renderVectors]);
+
+  useEffect(() => {
     if (!nodeRef.current || mapRef.current) return;
     const base = new TileLayer({ source: new OSM(), visible: true });
     const aerialBase = new TileLayer({
@@ -290,7 +295,7 @@ export default function MapPanel({ aoi, mode, opacity, filter, basemap, vlm, sel
       .then((response) => response.json())
       .then((data: GeoJSON.FeatureCollection) => {
         featuresRef.current = (data.features as DamageFeature[]) ?? [];
-        renderVectors();
+        renderVectorsRef.current();
       });
 
     const bounds3857 = boundingExtent([
@@ -298,7 +303,7 @@ export default function MapPanel({ aoi, mode, opacity, filter, basemap, vlm, sel
       fromLonLat([aoi.bounds[1][1], aoi.bounds[1][0]]),
     ]);
     map.getView().fit(bounds3857, { padding: [60, 60, 60, 60], duration: 0, maxZoom: 15 });
-  }, [aoi, renderVectors]);
+  }, [aoi]);
 
   useEffect(() => {
     renderVectors();
