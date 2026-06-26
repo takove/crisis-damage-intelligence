@@ -10,6 +10,7 @@ import TileLayer from "ol/layer/Tile.js";
 import VectorLayer from "ol/layer/Vector.js";
 import WebGLTileLayer from "ol/layer/WebGLTile.js";
 import OSM from "ol/source/OSM.js";
+import XYZ from "ol/source/XYZ.js";
 import GeoTIFF from "ol/source/GeoTIFF.js";
 import VectorSource from "ol/source/Vector.js";
 import { Fill, Stroke, Style } from "ol/style.js";
@@ -28,6 +29,7 @@ declare global {
       zoom?: number;
       filter: Props["filter"];
       mode: Props["mode"];
+      basemap: Props["basemap"];
       raster?: "before" | "after" | "none";
     };
   }
@@ -38,6 +40,7 @@ type Props = {
   mode: "before" | "after";
   opacity: number;
   filter: "all" | "severe" | "vlm";
+  basemap: "map" | "aerial";
   vlm: Record<string, VlmRecord>;
   selectedId?: string;
   onSelect: (feature: DamageFeature) => void;
@@ -69,11 +72,12 @@ function passesFilter(feature: DamageFeature, filter: Props["filter"], vlm: Reco
   return true;
 }
 
-export default function MapPanel({ aoi, mode, opacity, filter, vlm, selectedId, onSelect }: Props) {
+export default function MapPanel({ aoi, mode, opacity, filter, basemap, vlm, selectedId, onSelect }: Props) {
   const nodeRef = useRef<HTMLDivElement | null>(null);
   const popupRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<OlMap | null>(null);
   const baseRef = useRef<TileLayer<OSM> | null>(null);
+  const aerialBaseRef = useRef<TileLayer<XYZ> | null>(null);
   const beforeRef = useRef<WebGLTileLayer | null>(null);
   const afterRef = useRef<WebGLTileLayer | null>(null);
   const vectorRef = useRef<VectorLayer<VectorSource> | null>(null);
@@ -104,9 +108,10 @@ export default function MapPanel({ aoi, mode, opacity, filter, vlm, selectedId, 
       zoom: map.getView().getZoom(),
       filter,
       mode: modeRef.current,
+      basemap,
       raster: afterRef.current?.getVisible() ? "after" : beforeRef.current?.getVisible() ? "before" : "none",
     };
-  }, [filter]);
+  }, [basemap, filter]);
 
   const styleFor = useCallback((feature: OlDamageFeature) => {
     const original = feature.original;
@@ -202,18 +207,29 @@ export default function MapPanel({ aoi, mode, opacity, filter, vlm, selectedId, 
   useEffect(() => {
     if (!nodeRef.current || mapRef.current) return;
     const base = new TileLayer({ source: new OSM(), visible: true });
+    const aerialBase = new TileLayer({
+      source: new XYZ({
+        attributions: "Tiles © Esri, Maxar, Earthstar Geographics, and the GIS User Community",
+        url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+        crossOrigin: "anonymous",
+        maxZoom: 19,
+      }),
+      visible: false,
+      zIndex: 1,
+    });
     const vector = new VectorLayer({ source: new VectorSource(), zIndex: 30 });
     const highlight = new VectorLayer({ source: new VectorSource(), zIndex: 40 });
     const marker = new VectorLayer({ source: new VectorSource(), zIndex: 50 });
     const popup = new Overlay({ element: popupRef.current ?? undefined, autoPan: { animation: { duration: 0 } }, offset: [0, -12] });
     const map = new OlMap({
       target: nodeRef.current,
-      layers: [base, vector, highlight, marker],
+      layers: [base, aerialBase, vector, highlight, marker],
       overlays: [popup],
       view: new View({ center: fromLonLat([aoi.center[1], aoi.center[0]]), zoom: 12 }),
       controls: [],
     });
     baseRef.current = base;
+    aerialBaseRef.current = aerialBase;
     vectorRef.current = vector;
     highlightRef.current = highlight;
     markerRef.current = marker;
@@ -232,6 +248,12 @@ export default function MapPanel({ aoi, mode, opacity, filter, vlm, selectedId, 
       mapRef.current = null;
     };
   }, [aoi.center, onSelect]);
+
+  useEffect(() => {
+    baseRef.current?.setVisible(basemap === "map");
+    aerialBaseRef.current?.setVisible(basemap === "aerial");
+    setDebug(featuresRef.current.filter((feature) => passesFilter(feature, filter, vlm)));
+  }, [basemap, filter, setDebug, vlm]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -296,7 +318,7 @@ export default function MapPanel({ aoi, mode, opacity, filter, vlm, selectedId, 
 
   return (
     <>
-      <div ref={nodeRef} className="map-node" data-filter={filter} data-mode={mode} data-opacity={opacity} data-selected-id={selectedId ?? ""} />
+      <div ref={nodeRef} className="map-node" data-filter={filter} data-mode={mode} data-basemap={basemap} data-opacity={opacity} data-selected-id={selectedId ?? ""} />
       <div ref={popupRef} className="ol-popup" />
     </>
   );

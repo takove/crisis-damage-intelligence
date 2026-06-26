@@ -19,6 +19,10 @@ const copy = {
     possible: "official possible",
     vlm: "VLM reviewed",
     mode: "Image",
+    basemap: "Base",
+    mapBase: "Map",
+    aerialBase: "Aerial",
+    aerialBaseNote: "Reference imagery only. Damage evidence comes from EMS vectors and post-event AOI imagery.",
     before: "Before",
     after: "After",
     noImagery: "No imagery exposed for this AOI yet",
@@ -67,6 +71,10 @@ const copy = {
     possible: "posibles oficiales",
     vlm: "revisados VLM",
     mode: "Imagen",
+    basemap: "Base",
+    mapBase: "Mapa",
+    aerialBase: "Aerea",
+    aerialBaseNote: "Imagen de referencia solamente. La evidencia de daño viene de vectores EMS e imagen posterior por AOI.",
     before: "Antes",
     after: "Despues",
     noImagery: "Sin imagen expuesta para este AOI todavia",
@@ -105,6 +113,7 @@ const copy = {
 
 type Filter = "all" | "severe" | "vlm";
 type Mode = "before" | "after";
+type Basemap = "map" | "aerial";
 
 export default function OperationsConsole() {
   const [catalog, setCatalog] = useState<AoiCatalog | null>(null);
@@ -112,6 +121,7 @@ export default function OperationsConsole() {
   const [language, setLanguage] = useState<Language>("es");
   const [filter, setFilter] = useState<Filter>("all");
   const [mode, setMode] = useState<Mode>("after");
+  const [basemap, setBasemap] = useState<Basemap>("aerial");
   const [opacity, setOpacity] = useState(52);
   const [selected, setSelected] = useState<DamageFeature | null>(null);
   const [vlm, setVlm] = useState<Record<string, VlmRecord>>({});
@@ -228,12 +238,21 @@ export default function OperationsConsole() {
             mode={mode}
             opacity={opacity / 100}
             filter={filter}
+            basemap={basemap}
             vlm={vlm}
             selectedId={selected?.properties.id}
             onSelect={setSelected}
           />
         )}
         <div className="map-toolbar">
+          <div className="control-group">
+            <span>{t.basemap}</span>
+            <div className="button-row">
+              <button data-testid="basemap-map" className={basemap === "map" ? "active" : ""} onClick={() => setBasemap("map")}>{t.mapBase}</button>
+              <button data-testid="basemap-aerial" className={basemap === "aerial" ? "active" : ""} onClick={() => setBasemap("aerial")}>{t.aerialBase}</button>
+            </div>
+            <em className="control-note">{t.aerialBaseNote}</em>
+          </div>
           <div className="control-group">
             <span>{t.mode}</span>
             <div className="button-row">
