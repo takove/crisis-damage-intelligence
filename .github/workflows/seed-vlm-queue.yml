@@ -25,8 +25,12 @@ jobs:
         with:
           python-version: "3.12"
       - name: Build queue
+        env:
+          AOI_ID: ${{ inputs.aoi_id }}
+          DAMAGE_GEOJSON: ${{ inputs.damage_geojson }}
+          OUTPUT_JSONL: ${{ inputs.output_jsonl }}
         run: |
-          python3 scripts/queue_vlm_candidates.py "${{ inputs.aoi_id }}" "${{ inputs.damage_geojson }}" "${{ inputs.output_jsonl }}"
+          python3 scripts/queue_vlm_candidates.py "${AOI_ID}" "${DAMAGE_GEOJSON}" "${OUTPUT_JSONL}"
       - name: Create pull request
         uses: peter-evans/create-pull-request@v7
         with:
