@@ -1,0 +1,2621 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="emsr884_aoi06_moron_monitor01" id="emsr884_aoi06_moron_monitor01">
+	<SimpleField name="obj_type" type="string"></SimpleField>
+	<SimpleField name="info" type="string"></SimpleField>
+	<SimpleField name="simplified" type="string"></SimpleField>
+	<SimpleField name="damage_gra" type="string"></SimpleField>
+	<SimpleField name="det_method" type="string"></SimpleField>
+	<SimpleField name="notation" type="string"></SimpleField>
+	<SimpleField name="or_src_id" type="int"></SimpleField>
+	<SimpleField name="dmg_src_id" type="int"></SimpleField>
+	<SimpleField name="cd_value" type="string"></SimpleField>
+	<SimpleField name="id" type="string"></SimpleField>
+	<SimpleField name="aoi" type="string"></SimpleField>
+	<SimpleField name="source_product" type="string"></SimpleField>
+	<SimpleField name="source_layer" type="string"></SimpleField>
+	<SimpleField name="source_geometry" type="string"></SimpleField>
+	<SimpleField name="damage_class" type="string"></SimpleField>
+	<SimpleField name="damage_percent" type="int"></SimpleField>
+	<SimpleField name="centroid_lat" type="float"></SimpleField>
+	<SimpleField name="centroid_lon" type="float"></SimpleField>
+	<SimpleField name="google_maps_url" type="string"></SimpleField>
+	<SimpleField name="monitor_version" type="string"></SimpleField>
+	<SimpleField name="not_builtup_area" type="int"></SimpleField>
+</Schema>
+<Folder><name>emsr884_aoi06_moron_monitor01</name>
+  <Placemark id="emsr884_aoi06_moron_monitor01.1">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00001</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.46752933</SimpleData>
+		<SimpleData name="centroid_lon">-68.24952672</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.46752933,-68.24952672</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.24952672,10.46752933</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.2">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00002</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.46761165</SimpleData>
+		<SimpleData name="centroid_lon">-68.25010793</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.46761165,-68.25010793</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.25010793,10.46761165</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.3">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00003</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.46765525</SimpleData>
+		<SimpleData name="centroid_lon">-68.24976416</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.46765525,-68.24976416</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.24976416,10.46765525</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.4">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00004</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.4677152</SimpleData>
+		<SimpleData name="centroid_lon">-68.24948187</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.4677152,-68.24948187</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.24948187,10.4677152</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.5">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00005</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.46776494</SimpleData>
+		<SimpleData name="centroid_lon">-68.24979425</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.46776494,-68.24979425</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.24979425,10.46776494</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.6">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00006</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.46792109</SimpleData>
+		<SimpleData name="centroid_lon">-68.2494694</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.46792109,-68.2494694</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.2494694,10.46792109</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.7">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00007</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.46824808</SimpleData>
+		<SimpleData name="centroid_lon">-68.24995264</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.46824808,-68.24995264</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.24995264,10.46824808</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.8">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00008</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.46998272</SimpleData>
+		<SimpleData name="centroid_lon">-68.242342</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.46998272,-68.242342</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.242342,10.46998272</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.9">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00009</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.47293615</SimpleData>
+		<SimpleData name="centroid_lon">-68.2119996</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.47293615,-68.2119996</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.2119996,10.47293615</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.10">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00010</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.47295348</SimpleData>
+		<SimpleData name="centroid_lon">-68.21209985</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.47295348,-68.21209985</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.21209985,10.47295348</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.11">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00011</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.47284375</SimpleData>
+		<SimpleData name="centroid_lon">-68.2119223</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.47284375,-68.2119223</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.2119223,10.47284375</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.12">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00012</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.47288978</SimpleData>
+		<SimpleData name="centroid_lon">-68.21197469</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.47288978,-68.21197469</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.21197469,10.47288978</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.13">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00013</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.4730193</SimpleData>
+		<SimpleData name="centroid_lon">-68.2117018</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.4730193,-68.2117018</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.2117018,10.4730193</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.14">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00014</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.47318422</SimpleData>
+		<SimpleData name="centroid_lon">-68.21190159</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.47318422,-68.21190159</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.21190159,10.47318422</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.15">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00015</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.47330539</SimpleData>
+		<SimpleData name="centroid_lon">-68.21199627</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.47330539,-68.21199627</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.21199627,10.47330539</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.16">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00016</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.47344295</SimpleData>
+		<SimpleData name="centroid_lon">-68.21194835</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.47344295,-68.21194835</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.21194835,10.47344295</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.17">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00017</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.47363425</SimpleData>
+		<SimpleData name="centroid_lon">-68.20947623</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.47363425,-68.20947623</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.20947623,10.47363425</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.18">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00018</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.47445197</SimpleData>
+		<SimpleData name="centroid_lon">-68.20811715</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.47445197,-68.20811715</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.20811715,10.47445197</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.19">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00019</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.47450239</SimpleData>
+		<SimpleData name="centroid_lon">-68.20184875</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.47450239,-68.20184875</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.20184875,10.47450239</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.20">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00020</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.47452427</SimpleData>
+		<SimpleData name="centroid_lon">-68.21145731</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.47452427,-68.21145731</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.21145731,10.47452427</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.21">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00021</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.47300486</SimpleData>
+		<SimpleData name="centroid_lon">-68.21200153</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.47300486,-68.21200153</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.21200153,10.47300486</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.22">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00022</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.4730698</SimpleData>
+		<SimpleData name="centroid_lon">-68.2120771</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.4730698,-68.2120771</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.2120771,10.4730698</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.23">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00023</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.4732176</SimpleData>
+		<SimpleData name="centroid_lon">-68.2120482</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.4732176,-68.2120482</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.2120482,10.4732176</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.24">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00024</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.47330015</SimpleData>
+		<SimpleData name="centroid_lon">-68.21207965</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.47330015,-68.21207965</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.21207965,10.47330015</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.25">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00025</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.47339366</SimpleData>
+		<SimpleData name="centroid_lon">-68.21204492</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.47339366,-68.21204492</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.21204492,10.47339366</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.26">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00026</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.47365898</SimpleData>
+		<SimpleData name="centroid_lon">-68.23464376</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.47365898,-68.23464376</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.23464376,10.47365898</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.27">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00027</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.47376133</SimpleData>
+		<SimpleData name="centroid_lon">-68.23464305</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.47376133,-68.23464305</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.23464305,10.47376133</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.28">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00028</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.47376631</SimpleData>
+		<SimpleData name="centroid_lon">-68.23452642</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.47376631,-68.23452642</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.23452642,10.47376631</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.29">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00029</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.47490133</SimpleData>
+		<SimpleData name="centroid_lon">-68.22559604</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.47490133,-68.22559604</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.22559604,10.47490133</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.30">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00030</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.47498386</SimpleData>
+		<SimpleData name="centroid_lon">-68.22585073</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.47498386,-68.22585073</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.22585073,10.47498386</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.31">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00031</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.47501801</SimpleData>
+		<SimpleData name="centroid_lon">-68.22562633</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.47501801,-68.22562633</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.22562633,10.47501801</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.32">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00032</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.47504898</SimpleData>
+		<SimpleData name="centroid_lon">-68.22553311</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.47504898,-68.22553311</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.22553311,10.47504898</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.33">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00033</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.4750743</SimpleData>
+		<SimpleData name="centroid_lon">-68.22560305</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.4750743,-68.22560305</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.22560305,10.4750743</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.34">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Destroyed</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00034</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">destroyed</SimpleData>
+		<SimpleData name="damage_percent">100</SimpleData>
+		<SimpleData name="centroid_lat">10.4755026</SimpleData>
+		<SimpleData name="centroid_lon">-68.21248711</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.4755026,-68.21248711</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.21248711,10.4755026</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.35">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00035</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.47452545</SimpleData>
+		<SimpleData name="centroid_lon">-68.20841435</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.47452545,-68.20841435</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.20841435,10.47452545</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.36">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00036</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.4745558</SimpleData>
+		<SimpleData name="centroid_lon">-68.21132485</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.4745558,-68.21132485</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.21132485,10.4745558</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.37">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00037</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.47461811</SimpleData>
+		<SimpleData name="centroid_lon">-68.20855227</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.47461811,-68.20855227</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.20855227,10.47461811</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.38">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00038</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.47472785</SimpleData>
+		<SimpleData name="centroid_lon">-68.20843593</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.47472785,-68.20843593</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.20843593,10.47472785</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.39">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00039</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.47979892</SimpleData>
+		<SimpleData name="centroid_lon">-68.20223262</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.47979892,-68.20223262</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.20223262,10.47979892</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.40">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00040</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.47985844</SimpleData>
+		<SimpleData name="centroid_lon">-68.20218367</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.47985844,-68.20218367</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.20218367,10.47985844</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.41">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00041</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.47995108</SimpleData>
+		<SimpleData name="centroid_lon">-68.20218358</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.47995108,-68.20218358</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.20218358,10.47995108</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.42">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00042</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.48647095</SimpleData>
+		<SimpleData name="centroid_lon">-68.2053783</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.48647095,-68.2053783</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.2053783,10.48647095</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.43">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">2</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00043</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.48664809</SimpleData>
+		<SimpleData name="centroid_lon">-68.21083677</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.48664809,-68.21083677</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.21083677,10.48664809</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.44">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00044</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.48754058</SimpleData>
+		<SimpleData name="centroid_lon">-68.20522865</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.48754058,-68.20522865</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.20522865,10.48754058</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.45">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Destroyed</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00045</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">destroyed</SimpleData>
+		<SimpleData name="damage_percent">100</SimpleData>
+		<SimpleData name="centroid_lat">10.48846282</SimpleData>
+		<SimpleData name="centroid_lon">-68.20635089</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.48846282,-68.20635089</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.20635089,10.48846282</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.46">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Destroyed</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00046</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">destroyed</SimpleData>
+		<SimpleData name="damage_percent">100</SimpleData>
+		<SimpleData name="centroid_lat">10.48848858</SimpleData>
+		<SimpleData name="centroid_lon">-68.20649475</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.48848858,-68.20649475</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.20649475,10.48848858</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.47">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00047</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.48861765</SimpleData>
+		<SimpleData name="centroid_lon">-68.20282891</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.48861765,-68.20282891</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.20282891,10.48861765</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.48">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00048</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.4886298</SimpleData>
+		<SimpleData name="centroid_lon">-68.2072251</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.4886298,-68.2072251</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.2072251,10.4886298</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.49">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00049</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.4742268</SimpleData>
+		<SimpleData name="centroid_lon">-68.20171195</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.4742268,-68.20171195</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.20171195,10.4742268</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.50">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00050</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.47886875</SimpleData>
+		<SimpleData name="centroid_lon">-68.20128287</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.47886875,-68.20128287</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.20128287,10.47886875</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.51">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00051</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.4868716</SimpleData>
+		<SimpleData name="centroid_lon">-68.1974658</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.4868716,-68.1974658</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.1974658,10.4868716</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.52">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00052</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.4868909</SimpleData>
+		<SimpleData name="centroid_lon">-68.19721185</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.4868909,-68.19721185</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.19721185,10.4868909</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.53">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00053</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.48694299</SimpleData>
+		<SimpleData name="centroid_lon">-68.19737497</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.48694299,-68.19737497</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.19737497,10.48694299</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.54">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00054</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.48697817</SimpleData>
+		<SimpleData name="centroid_lon">-68.19723692</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.48697817,-68.19723692</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.19723692,10.48697817</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.55">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00055</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.48725754</SimpleData>
+		<SimpleData name="centroid_lon">-68.19731422</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.48725754,-68.19731422</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.19731422,10.48725754</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.56">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00056</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.48728197</SimpleData>
+		<SimpleData name="centroid_lon">-68.19724975</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.48728197,-68.19724975</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.19724975,10.48728197</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.57">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00057</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.48736006</SimpleData>
+		<SimpleData name="centroid_lon">-68.19733223</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.48736006,-68.19733223</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.19733223,10.48736006</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.58">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00058</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.48798386</SimpleData>
+		<SimpleData name="centroid_lon">-68.19506807</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.48798386,-68.19506807</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.19506807,10.48798386</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.59">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00059</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.48628698</SimpleData>
+		<SimpleData name="centroid_lon">-68.18887075</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.48628698,-68.18887075</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.18887075,10.48628698</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.60">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00060</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.48735484</SimpleData>
+		<SimpleData name="centroid_lon">-68.19028942</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.48735484,-68.19028942</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.19028942,10.48735484</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.61">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00061</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.48780556</SimpleData>
+		<SimpleData name="centroid_lon">-68.19015322</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.48780556,-68.19015322</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.19015322,10.48780556</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.62">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00062</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.48866598</SimpleData>
+		<SimpleData name="centroid_lon">-68.18249844</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.48866598,-68.18249844</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.18249844,10.48866598</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.63">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00063</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.48959377</SimpleData>
+		<SimpleData name="centroid_lon">-68.1875968</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.48959377,-68.1875968</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.1875968,10.48959377</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.64">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00064</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.48964526</SimpleData>
+		<SimpleData name="centroid_lon">-68.18732463</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.48964526,-68.18732463</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.18732463,10.48964526</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.65">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00065</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.48966567</SimpleData>
+		<SimpleData name="centroid_lon">-68.18767308</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.48966567,-68.18767308</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.18767308,10.48966567</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.66">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00066</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.489706</SimpleData>
+		<SimpleData name="centroid_lon">-68.18760155</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.489706,-68.18760155</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.18760155,10.489706</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.67">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00067</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.48974563</SimpleData>
+		<SimpleData name="centroid_lon">-68.18730893</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.48974563,-68.18730893</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.18730893,10.48974563</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.68">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00068</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.48980837</SimpleData>
+		<SimpleData name="centroid_lon">-68.1899946</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.48980837,-68.1899946</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.1899946,10.48980837</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.69">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00069</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.48959111</SimpleData>
+		<SimpleData name="centroid_lon">-68.19674727</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.48959111,-68.19674727</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.19674727,10.48959111</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.70">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00070</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.48979342</SimpleData>
+		<SimpleData name="centroid_lon">-68.19841281</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.48979342,-68.19841281</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.19841281,10.48979342</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.71">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00071</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.48985985</SimpleData>
+		<SimpleData name="centroid_lon">-68.19560905</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.48985985,-68.19560905</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.19560905,10.48985985</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.72">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00072</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.48991871</SimpleData>
+		<SimpleData name="centroid_lon">-68.19841591</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.48991871,-68.19841591</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.19841591,10.48991871</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.73">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00073</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.48999614</SimpleData>
+		<SimpleData name="centroid_lon">-68.19824384</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.48999614,-68.19824384</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.19824384,10.48999614</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.74">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00074</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.49003517</SimpleData>
+		<SimpleData name="centroid_lon">-68.19550075</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.49003517,-68.19550075</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.19550075,10.49003517</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.75">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00075</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.49011705</SimpleData>
+		<SimpleData name="centroid_lon">-68.19541075</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.49011705,-68.19541075</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.19541075,10.49011705</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.76">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00076</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.49015097</SimpleData>
+		<SimpleData name="centroid_lon">-68.19790199</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.49015097,-68.19790199</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.19790199,10.49015097</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.77">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00077</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.49020201</SimpleData>
+		<SimpleData name="centroid_lon">-68.19539262</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.49020201,-68.19539262</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.19539262,10.49020201</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.78">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00078</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.4902421</SimpleData>
+		<SimpleData name="centroid_lon">-68.1951491</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.4902421,-68.1951491</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.1951491,10.4902421</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.79">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00079</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.49030439</SimpleData>
+		<SimpleData name="centroid_lon">-68.19681705</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.49030439,-68.19681705</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.19681705,10.49030439</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.80">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00080</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.49281992</SimpleData>
+		<SimpleData name="centroid_lon">-68.19579054</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.49281992,-68.19579054</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.19579054,10.49281992</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.81">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00081</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.49474248</SimpleData>
+		<SimpleData name="centroid_lon">-68.19621851</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.49474248,-68.19621851</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.19621851,10.49474248</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.82">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00082</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.50086933</SimpleData>
+		<SimpleData name="centroid_lon">-68.19423487</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.50086933,-68.19423487</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.19423487,10.50086933</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.83">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00083</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.4898129</SimpleData>
+		<SimpleData name="centroid_lon">-68.18987885</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.4898129,-68.18987885</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.18987885,10.4898129</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.84">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00084</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.4907791</SimpleData>
+		<SimpleData name="centroid_lon">-68.1939078</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.4907791,-68.1939078</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.1939078,10.4907791</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.85">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00085</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.49109963</SimpleData>
+		<SimpleData name="centroid_lon">-68.18892309</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.49109963,-68.18892309</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.18892309,10.49109963</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.86">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00086</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.49112328</SimpleData>
+		<SimpleData name="centroid_lon">-68.18868459</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.49112328,-68.18868459</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.18868459,10.49112328</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.87">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00087</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.49557802</SimpleData>
+		<SimpleData name="centroid_lon">-68.18247949</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.49557802,-68.18247949</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.18247949,10.49557802</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.88">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00088</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.49595695</SimpleData>
+		<SimpleData name="centroid_lon">-68.1833702</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.49595695,-68.1833702</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.1833702,10.49595695</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.89">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Destroyed</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00089</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">destroyed</SimpleData>
+		<SimpleData name="damage_percent">100</SimpleData>
+		<SimpleData name="centroid_lat">10.4972802</SimpleData>
+		<SimpleData name="centroid_lon">-68.19370048</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.4972802,-68.19370048</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.19370048,10.4972802</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.90">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00090</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.4974539</SimpleData>
+		<SimpleData name="centroid_lon">-68.19162127</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.4974539,-68.19162127</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.19162127,10.4974539</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.91">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00091</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.49851485</SimpleData>
+		<SimpleData name="centroid_lon">-68.1869715</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.49851485,-68.1869715</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.1869715,10.49851485</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.92">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00092</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">damaged</SimpleData>
+		<SimpleData name="damage_percent">70</SimpleData>
+		<SimpleData name="centroid_lat">10.51156895</SimpleData>
+		<SimpleData name="centroid_lon">-68.18755806</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.51156895,-68.18755806</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.18755806,10.51156895</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.93">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Destroyed</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00093</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">destroyed</SimpleData>
+		<SimpleData name="damage_percent">100</SimpleData>
+		<SimpleData name="centroid_lat">10.51489721</SimpleData>
+		<SimpleData name="centroid_lon">-68.19126529</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.51489721,-68.19126529</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.19126529,10.51489721</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.94">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Destroyed</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00094</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">destroyed</SimpleData>
+		<SimpleData name="damage_percent">100</SimpleData>
+		<SimpleData name="centroid_lat">10.51553841</SimpleData>
+		<SimpleData name="centroid_lon">-68.18969061</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.51553841,-68.18969061</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.18969061,10.51553841</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.95">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Destroyed</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00095</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">destroyed</SimpleData>
+		<SimpleData name="damage_percent">100</SimpleData>
+		<SimpleData name="centroid_lat">10.51569352</SimpleData>
+		<SimpleData name="centroid_lon">-68.1895903</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.51569352,-68.1895903</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.1895903,10.51569352</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi06_moron_monitor01.96">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi06_moron_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Destroyed</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">New</SimpleData>
+		<SimpleData name="id">monit01_00096</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi06-moron-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI06_Moron_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">destroyed</SimpleData>
+		<SimpleData name="damage_percent">100</SimpleData>
+		<SimpleData name="centroid_lat">10.51597797</SimpleData>
+		<SimpleData name="centroid_lon">-68.1898809</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.51597797,-68.1898809</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-68.1898809,10.51597797</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

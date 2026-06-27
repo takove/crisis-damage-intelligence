@@ -10,7 +10,7 @@ const copy = {
     subtitle: "Static-first geospatial triage for earthquake response",
     live: "Public read-only",
     language: "Language",
-    aoi: "Area of interest",
+    aoi: "Go to city / AOI",
     source: "Source",
     status: "Status",
     features: "features",
@@ -54,6 +54,7 @@ const copy = {
     statuses: {
       "test-fixture": "Readiness test",
       "official-vector": "Official EMS vector",
+      "official-monitor-points": "Official EMS monitor points",
       "external-prediction": "External prediction",
       "imagery-only": "Imagery only",
       waiting: "Waiting",
@@ -65,7 +66,7 @@ const copy = {
     subtitle: "Triage geoespacial static-first para respuesta a terremotos",
     live: "Publico solo lectura",
     language: "Idioma",
-    aoi: "Area de interes",
+    aoi: "Ir a ciudad / AOI",
     source: "Fuente",
     status: "Estado",
     features: "estructuras",
@@ -109,6 +110,7 @@ const copy = {
     statuses: {
       "test-fixture": "Prueba de preparación",
       "official-vector": "Vector oficial EMS",
+      "official-monitor-points": "Puntos oficiales EMS monitor",
       "external-prediction": "Predicción externa",
       "imagery-only": "Solo imagen",
       waiting: "En espera",
@@ -131,6 +133,7 @@ export default function OperationsConsole() {
   const [opacity, setOpacity] = useState(52);
   const [selected, setSelected] = useState<DamageFeature | null>(null);
   const [focusToken, setFocusToken] = useState(0);
+  const [aoiFocusToken, setAoiFocusToken] = useState(0);
   const [vlm, setVlm] = useState<Record<string, VlmRecord>>({});
   const [features, setFeatures] = useState<DamageFeature[]>([]);
   const rightRailRef = useRef<HTMLElement | null>(null);
@@ -143,21 +146,49 @@ export default function OperationsConsole() {
   const active = useMemo<AoiRecord | undefined>(() => catalog?.aois.find((a) => a.id === activeId), [catalog, activeId]);
 
   useEffect(() => {
-    if (!active?.layers.vlm) return;
-    fetch(active.layers.vlm)
-      .then((r) => r.text())
-      .then((text) => {
-        const entries = text.split("\n").filter(Boolean).map((line) => JSON.parse(line) as VlmRecord);
-        setVlm(Object.fromEntries(entries.map((entry) => [entry.id, entry])));
-      });
-  }, [active]);
+    if (!catalog) return;
+    let cancelled = false;
+    Promise.all(
+      catalog.aois.map(async (aoi) => {
+        if (!aoi.layers.vlm) return [];
+        const text = await fetch(aoi.layers.vlm).then((r) => r.text());
+        return text.split("\n").filter(Boolean).map((line) => {
+          const entry = JSON.parse(line) as VlmRecord;
+          return [`${aoi.id}__${entry.id}`, entry] as const;
+        });
+      }),
+    ).then((groups) => {
+      if (!cancelled) setVlm(Object.fromEntries(groups.flat()));
+    });
+    return () => { cancelled = true; };
+  }, [catalog]);
 
   useEffect(() => {
-    if (!active?.layers.damage) return;
-    fetch(active.layers.damage)
-      .then((r) => r.json())
-      .then((data: { features: DamageFeature[] }) => setFeatures(data.features ?? []));
-  }, [active]);
+    if (!catalog) return;
+    let cancelled = false;
+    Promise.all(
+      catalog.aois.map(async (aoi) => {
+        const data = await fetch(aoi.layers.damage).then((r) => r.json()) as { features: DamageFeature[] };
+        return (data.features ?? []).map((feature) => {
+          const sourceId = String(feature.properties.id);
+          return {
+            ...feature,
+            properties: {
+              ...feature.properties,
+              id: `${aoi.id}__${sourceId}`,
+              source_feature_id: sourceId,
+              aoi_id: aoi.id,
+              aoi_label_en: aoi.name.en,
+              aoi_label_es: aoi.name.es,
+            },
+          } as DamageFeature;
+        });
+      }),
+    ).then((groups) => {
+      if (!cancelled) setFeatures(groups.flat());
+    });
+    return () => { cancelled = true; };
+  }, [catalog]);
 
   const t = copy[language];
   const metrics = active?.metrics;
@@ -171,8 +202,7 @@ export default function OperationsConsole() {
     setActiveId(id);
     setSelected(null);
     setFocusToken((value) => value + 1);
-    setVlm({});
-    setFeatures([]);
+    setAoiFocusToken((value) => value + 1);
   };
   const selectPriorityFeature = (feature: DamageFeature) => {
     setSelected(feature);
@@ -195,8 +225,8 @@ export default function OperationsConsole() {
       if (cls.includes("possible") || cls.includes("minor")) return 200 + numeric;
       return numeric;
     };
-    return [...features].sort((a, b) => score(b) - score(a)).slice(0, 12);
-  }, [features, vlm]);
+    return features.filter((feature) => feature.properties.aoi_id === activeId).sort((a, b) => score(b) - score(a)).slice(0, 12);
+  }, [activeId, features, vlm]);
 
   return (
     <main className="ops-shell">
@@ -218,7 +248,7 @@ export default function OperationsConsole() {
           {catalog?.aois.map((aoi) => (
             <button key={aoi.id} data-testid={`aoi-${aoi.id}`} className={aoi.id === activeId ? "aoi-card active" : "aoi-card"} onClick={() => selectAoi(aoi.id)}>
               <span>{aoi.name[language]}</span>
-              <small>{statusLabel(aoi.status)}</small>
+              <small>{statusLabel(aoi.status)} · {aoi.metrics.features || aoi.metrics.candidates || 0}</small>
             </button>
           ))}
         </div>
@@ -255,6 +285,7 @@ export default function OperationsConsole() {
         {active && (
           <MapPanel
             aoi={active}
+            features={features}
             mode={mode}
             opacity={opacity / 100}
             filter={filter}
@@ -262,6 +293,7 @@ export default function OperationsConsole() {
             vlm={vlm}
             selectedId={selected?.properties.id}
             focusToken={focusToken}
+            aoiFocusToken={aoiFocusToken}
             onSelect={setSelected}
           />
         )}
@@ -336,8 +368,8 @@ export default function OperationsConsole() {
               const p = feature.properties;
               const label = String(vlm[p.id]?.vlm?.damage_class ?? p.damage_class ?? p.damage_gra ?? "candidate");
               return (
-                <button key={p.id} data-testid={`priority-${p.id}`} className={selected?.properties.id === p.id ? "priority-row active" : "priority-row"} onClick={() => selectPriorityFeature(feature)}>
-                  <b>{p.id}</b>
+                <button key={p.id} data-testid={`priority-${p.source_feature_id ?? p.id}`} className={selected?.properties.id === p.id ? "priority-row active" : "priority-row"} onClick={() => selectPriorityFeature(feature)}>
+                  <b>{p.source_feature_id ?? p.id}</b>
                   <span>{label} · {String(p.damage_score ?? p.damage_percent ?? "-")}</span>
                 </button>
               );
@@ -375,8 +407,9 @@ function Evidence({ feature, vlm, language, onBackToPriority }: { feature: Damag
   const mapsUrl = typeof p.google_maps_url === "string" ? p.google_maps_url : "";
   return (
     <div className="evidence-body">
-      <h3>{p.id}</h3>
+      <h3>{p.source_feature_id ?? p.id}</h3>
       <dl>
+        <div><dt>AOI</dt><dd>{language === "es" ? p.aoi_label_es : p.aoi_label_en}</dd></div>
         <div><dt>Pixel</dt><dd>{p.damage_class ?? p.damage_gra ?? p.confirmed_damage_class ?? "unknown"}</dd></div>
         <div><dt>Score</dt><dd>{p.damage_score ?? p.damage_percent ?? p.confirmed_damage_percent ?? "-"}</dd></div>
         <div><dt>VLM</dt><dd>{vlm?.vlm?.damage_class ?? "not reviewed"}</dd></div>

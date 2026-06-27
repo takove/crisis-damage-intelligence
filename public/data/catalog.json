@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-27T20:45:00Z",
+  "updatedAt": "2026-06-27T17:30:00Z",
   "platform": "Crisis Damage Intelligence",
   "aois": [
     {
@@ -65,6 +65,55 @@
         "before": null,
         "note": "Post-event COG only. No EMSR884 before imagery pair is exposed for this AOI yet."
       }
+    },
+    {
+      "id": "emsr884-aoi02-caracas-monitor01",
+      "country": "Venezuela",
+      "event": "EMSR884 Venezuela earthquake",
+      "name": {
+        "en": "AOI02 Caracas - EMSR884 MONIT01 Points",
+        "es": "AOI02 Caracas - Puntos EMSR884 MONIT01"
+      },
+      "status": "official-monitor-points",
+      "source": "Copernicus EMSR884 GRA_MONIT01 ZIP -> builtUpP_v1 point layer. Monitoring points, not builtUpA polygons; keep counts separate from PRODUCT polygon features.",
+      "bounds": [
+        [
+          10.51341242,
+          -66.92484585
+        ],
+        [
+          10.51547362,
+          -66.89819293
+        ]
+      ],
+      "center": [
+        10.5146536325,
+        -66.900633421
+      ],
+      "downloads": {
+        "csv": "/data/aoi/emsr884-aoi02-caracas-monitor01/damage.csv",
+        "geojson": "/data/aoi/emsr884-aoi02-caracas-monitor01/damage.geojson",
+        "kml": "/data/aoi/emsr884-aoi02-caracas-monitor01/damage.kml",
+        "metadata": "/data/aoi/emsr884-aoi02-caracas-monitor01/source_metadata.json",
+        "zip": "https://rapidmapping.emergency.copernicus.eu/backend/EMSR884/AOI02/GRA_MONIT01/EMSR884_AOI02_GRA_MONIT01_v1.zip"
+      },
+      "layers": {
+        "damage": "/data/aoi/emsr884-aoi02-caracas-monitor01/damage.geojson"
+      },
+      "metrics": {
+        "features": 20,
+        "destroyed": 3,
+        "damagedConfirmed": 3,
+        "possibleDamage": 17,
+        "vlmReviewed": 0
+      },
+      "imagery": {
+        "before": null,
+        "after": null,
+        "note": "MONIT01 point layer only. Use parent AOI imagery for visual context."
+      },
+      "parentAoi": "emsr884-aoi02-caracas",
+      "geometryType": "Point"
     },
     {
       "id": "emsr884-aoi03-antimano",
@@ -183,6 +232,55 @@
         "before": null,
         "note": "Post-event COG only. No EMSR884 before imagery pair is exposed for this AOI yet."
       }
+    },
+    {
+      "id": "emsr884-aoi06-moron-monitor01",
+      "country": "Venezuela",
+      "event": "EMSR884 Venezuela earthquake",
+      "name": {
+        "en": "AOI06 Moron - EMSR884 MONIT01 Points",
+        "es": "AOI06 Moron - Puntos EMSR884 MONIT01"
+      },
+      "status": "official-monitor-points",
+      "source": "Copernicus EMSR884 GRA_MONIT01 ZIP -> builtUpP_v1 point layer. Monitoring points, not builtUpA polygons; keep counts separate from PRODUCT polygon features.",
+      "bounds": [
+        [
+          10.46752933,
+          -68.25010793
+        ],
+        [
+          10.51597797,
+          -68.18247949
+        ]
+      ],
+      "center": [
+        10.483912190520833,
+        -68.20588793791667
+      ],
+      "downloads": {
+        "csv": "/data/aoi/emsr884-aoi06-moron-monitor01/damage.csv",
+        "geojson": "/data/aoi/emsr884-aoi06-moron-monitor01/damage.geojson",
+        "kml": "/data/aoi/emsr884-aoi06-moron-monitor01/damage.kml",
+        "metadata": "/data/aoi/emsr884-aoi06-moron-monitor01/source_metadata.json",
+        "zip": "https://rapidmapping.emergency.copernicus.eu/backend/EMSR884/AOI06/GRA_MONIT01/EMSR884_AOI06_GRA_MONIT01_v1.zip"
+      },
+      "layers": {
+        "damage": "/data/aoi/emsr884-aoi06-moron-monitor01/damage.geojson"
+      },
+      "metrics": {
+        "features": 96,
+        "destroyed": 8,
+        "damagedConfirmed": 47,
+        "possibleDamage": 49,
+        "vlmReviewed": 0
+      },
+      "imagery": {
+        "before": null,
+        "after": null,
+        "note": "MONIT01 point layer only. Use parent AOI imagery for visual context."
+      },
+      "parentAoi": "emsr884-aoi06-moron",
+      "geometryType": "Point"
     },
     {
       "id": "emsr884-aoi08-san-felipe",

@@ -36,6 +36,11 @@ yarn-error.log*
 # vercel
 .vercel
 
+# operational monitor artifacts
+ops/emsr884_downloads/
+ops/emsr884_monitor_log.csv
+ops/emsr884_monitor_state.json
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

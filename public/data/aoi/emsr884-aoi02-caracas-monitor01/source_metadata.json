@@ -1,0 +1,25 @@
+{
+  "source": "Copernicus EMSR884 GRA_MONIT01 builtUpP_v1 point layer. Monitoring points, not builtUpA polygons.",
+  "source_product": "https://rapidmapping.emergency.copernicus.eu/backend/EMSR884/AOI02/GRA_MONIT01/EMSR884_AOI02_GRA_MONIT01_v1.zip",
+  "source_layer": "builtUpP_v1",
+  "source_geometry": "Point",
+  "features": 20,
+  "destroyed": 3,
+  "damaged": 0,
+  "possibly_damaged": 17,
+  "bounds": [
+    [
+      10.51341242,
+      -66.92484585
+    ],
+    [
+      10.51547362,
+      -66.89819293
+    ]
+  ],
+  "center": [
+    10.5146536325,
+    -66.900633421
+  ],
+  "warning": "Do not merge counts directly with builtUpA polygon counts. This is a MONIT01 point layer."
+}

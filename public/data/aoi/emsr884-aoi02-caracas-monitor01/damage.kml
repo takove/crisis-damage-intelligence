@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="emsr884_aoi02_caracas_monitor01" id="emsr884_aoi02_caracas_monitor01">
+	<SimpleField name="obj_type" type="string"></SimpleField>
+	<SimpleField name="info" type="string"></SimpleField>
+	<SimpleField name="simplified" type="string"></SimpleField>
+	<SimpleField name="damage_gra" type="string"></SimpleField>
+	<SimpleField name="det_method" type="string"></SimpleField>
+	<SimpleField name="notation" type="string"></SimpleField>
+	<SimpleField name="or_src_id" type="int"></SimpleField>
+	<SimpleField name="dmg_src_id" type="int"></SimpleField>
+	<SimpleField name="cd_value" type="string"></SimpleField>
+	<SimpleField name="id" type="string"></SimpleField>
+	<SimpleField name="aoi" type="string"></SimpleField>
+	<SimpleField name="source_product" type="string"></SimpleField>
+	<SimpleField name="source_layer" type="string"></SimpleField>
+	<SimpleField name="source_geometry" type="string"></SimpleField>
+	<SimpleField name="damage_class" type="string"></SimpleField>
+	<SimpleField name="damage_percent" type="int"></SimpleField>
+	<SimpleField name="centroid_lat" type="float"></SimpleField>
+	<SimpleField name="centroid_lon" type="float"></SimpleField>
+	<SimpleField name="google_maps_url" type="string"></SimpleField>
+	<SimpleField name="monitor_version" type="string"></SimpleField>
+	<SimpleField name="not_builtup_area" type="int"></SimpleField>
+</Schema>
+<Folder><name>emsr884_aoi02_caracas_monitor01</name>
+  <Placemark id="emsr884_aoi02_caracas_monitor01.1">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi02_caracas_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">Not Applicable</SimpleData>
+		<SimpleData name="id">monit01_00001</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi02-caracas-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI02_Caracas_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.51341242</SimpleData>
+		<SimpleData name="centroid_lon">-66.90314816</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.51341242,-66.90314816</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-66.90314816,10.51341242</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi02_caracas_monitor01.2">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi02_caracas_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Destroyed</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">Not Applicable</SimpleData>
+		<SimpleData name="id">monit01_00002</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi02-caracas-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI02_Caracas_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">destroyed</SimpleData>
+		<SimpleData name="damage_percent">100</SimpleData>
+		<SimpleData name="centroid_lat">10.5134743</SimpleData>
+		<SimpleData name="centroid_lon">-66.9033068</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.5134743,-66.9033068</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-66.9033068,10.5134743</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi02_caracas_monitor01.3">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi02_caracas_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">Not Applicable</SimpleData>
+		<SimpleData name="id">monit01_00003</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi02-caracas-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI02_Caracas_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.51354168</SimpleData>
+		<SimpleData name="centroid_lon">-66.90342053</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.51354168,-66.90342053</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-66.90342053,10.51354168</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi02_caracas_monitor01.4">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi02_caracas_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">Not Applicable</SimpleData>
+		<SimpleData name="id">monit01_00004</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi02-caracas-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI02_Caracas_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.51430997</SimpleData>
+		<SimpleData name="centroid_lon">-66.92484585</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.51430997,-66.92484585</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-66.92484585,10.51430997</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi02_caracas_monitor01.5">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi02_caracas_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">Not Applicable</SimpleData>
+		<SimpleData name="id">monit01_00005</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi02-caracas-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI02_Caracas_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.51465842</SimpleData>
+		<SimpleData name="centroid_lon">-66.89870901</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.51465842,-66.89870901</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-66.89870901,10.51465842</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi02_caracas_monitor01.6">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi02_caracas_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">Not Applicable</SimpleData>
+		<SimpleData name="id">monit01_00006</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi02-caracas-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI02_Caracas_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.51471405</SimpleData>
+		<SimpleData name="centroid_lon">-66.8989624</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.51471405,-66.8989624</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-66.8989624,10.51471405</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi02_caracas_monitor01.7">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi02_caracas_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">Not Applicable</SimpleData>
+		<SimpleData name="id">monit01_00007</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi02-caracas-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI02_Caracas_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.51495815</SimpleData>
+		<SimpleData name="centroid_lon">-66.89890069</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.51495815,-66.89890069</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-66.89890069,10.51495815</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi02_caracas_monitor01.8">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi02_caracas_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">Not Applicable</SimpleData>
+		<SimpleData name="id">monit01_00008</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi02-caracas-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI02_Caracas_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.51503577</SimpleData>
+		<SimpleData name="centroid_lon">-66.8989829</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.51503577,-66.8989829</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-66.8989829,10.51503577</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi02_caracas_monitor01.9">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi02_caracas_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">Not Applicable</SimpleData>
+		<SimpleData name="id">monit01_00009</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi02-caracas-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI02_Caracas_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.51510357</SimpleData>
+		<SimpleData name="centroid_lon">-66.8988807</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.51510357,-66.8988807</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-66.8988807,10.51510357</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi02_caracas_monitor01.10">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi02_caracas_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Destroyed</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">Not Applicable</SimpleData>
+		<SimpleData name="id">monit01_00010</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi02-caracas-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI02_Caracas_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">destroyed</SimpleData>
+		<SimpleData name="damage_percent">100</SimpleData>
+		<SimpleData name="centroid_lat">10.51512077</SimpleData>
+		<SimpleData name="centroid_lon">-66.89876952</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.51512077,-66.89876952</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-66.89876952,10.51512077</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi02_caracas_monitor01.11">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi02_caracas_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">Not Applicable</SimpleData>
+		<SimpleData name="id">monit01_00011</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi02-caracas-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI02_Caracas_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.51456294</SimpleData>
+		<SimpleData name="centroid_lon">-66.89845332</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.51456294,-66.89845332</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-66.89845332,10.51456294</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi02_caracas_monitor01.12">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi02_caracas_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">Not Applicable</SimpleData>
+		<SimpleData name="id">monit01_00012</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi02-caracas-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI02_Caracas_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.51460125</SimpleData>
+		<SimpleData name="centroid_lon">-66.8985742</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.51460125,-66.8985742</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-66.8985742,10.51460125</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi02_caracas_monitor01.13">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi02_caracas_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">Not Applicable</SimpleData>
+		<SimpleData name="id">monit01_00013</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi02-caracas-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI02_Caracas_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.51463805</SimpleData>
+		<SimpleData name="centroid_lon">-66.89850885</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.51463805,-66.89850885</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-66.89850885,10.51463805</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi02_caracas_monitor01.14">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi02_caracas_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">Not Applicable</SimpleData>
+		<SimpleData name="id">monit01_00014</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi02-caracas-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI02_Caracas_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.51466962</SimpleData>
+		<SimpleData name="centroid_lon">-66.89845869</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.51466962,-66.89845869</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-66.89845869,10.51466962</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi02_caracas_monitor01.15">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi02_caracas_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">Not Applicable</SimpleData>
+		<SimpleData name="id">monit01_00015</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi02-caracas-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI02_Caracas_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.51470321</SimpleData>
+		<SimpleData name="centroid_lon">-66.89864507</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.51470321,-66.89864507</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-66.89864507,10.51470321</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi02_caracas_monitor01.16">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi02_caracas_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">Not Applicable</SimpleData>
+		<SimpleData name="id">monit01_00016</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi02-caracas-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI02_Caracas_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.51471283</SimpleData>
+		<SimpleData name="centroid_lon">-66.89824781</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.51471283,-66.89824781</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-66.89824781,10.51471283</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi02_caracas_monitor01.17">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi02_caracas_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">Not Applicable</SimpleData>
+		<SimpleData name="id">monit01_00017</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi02-caracas-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI02_Caracas_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.51489543</SimpleData>
+		<SimpleData name="centroid_lon">-66.89819293</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.51489543,-66.89819293</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-66.89819293,10.51489543</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi02_caracas_monitor01.18">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi02_caracas_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Destroyed</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">Not Applicable</SimpleData>
+		<SimpleData name="id">monit01_00018</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi02-caracas-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI02_Caracas_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">destroyed</SimpleData>
+		<SimpleData name="damage_percent">100</SimpleData>
+		<SimpleData name="centroid_lat">10.51502453</SimpleData>
+		<SimpleData name="centroid_lon">-66.89858536</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.51502453,-66.89858536</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-66.89858536,10.51502453</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi02_caracas_monitor01.19">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi02_caracas_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">Not Applicable</SimpleData>
+		<SimpleData name="id">monit01_00019</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi02-caracas-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI02_Caracas_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.51546207</SimpleData>
+		<SimpleData name="centroid_lon">-66.8986546</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.51546207,-66.8986546</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-66.8986546,10.51546207</coordinates></Point>
+  </Placemark>
+  <Placemark id="emsr884_aoi02_caracas_monitor01.20">
+	<name>Unknown</name>
+	<ExtendedData><SchemaData schemaUrl="#emsr884_aoi02_caracas_monitor01">
+		<SimpleData name="obj_type">995-Unclassified</SimpleData>
+		<SimpleData name="info">997-Not Applicable</SimpleData>
+		<SimpleData name="simplified">Unclassified</SimpleData>
+		<SimpleData name="damage_gra">Possibly damaged</SimpleData>
+		<SimpleData name="det_method">Photo-interpretation</SimpleData>
+		<SimpleData name="notation">Building point</SimpleData>
+		<SimpleData name="or_src_id">978</SimpleData>
+		<SimpleData name="dmg_src_id">3</SimpleData>
+		<SimpleData name="cd_value">Not Applicable</SimpleData>
+		<SimpleData name="id">monit01_00020</SimpleData>
+		<SimpleData name="aoi">emsr884-aoi02-caracas-monitor01</SimpleData>
+		<SimpleData name="source_product">AOI02_Caracas_GRA_latest.zip</SimpleData>
+		<SimpleData name="source_layer">builtUpP_v1</SimpleData>
+		<SimpleData name="source_geometry">Point</SimpleData>
+		<SimpleData name="damage_class">possibly-damaged</SimpleData>
+		<SimpleData name="damage_percent">35</SimpleData>
+		<SimpleData name="centroid_lat">10.51547362</SimpleData>
+		<SimpleData name="centroid_lon">-66.89842103</SimpleData>
+		<SimpleData name="google_maps_url">https://www.google.com/maps/search/?api=1&amp;query=10.51547362,-66.89842103</SimpleData>
+		<SimpleData name="monitor_version">GRA_MONIT01</SimpleData>
+		<SimpleData name="not_builtup_area">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-66.89842103,10.51547362</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

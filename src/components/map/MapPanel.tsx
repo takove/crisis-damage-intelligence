@@ -37,6 +37,7 @@ declare global {
 
 type Props = {
   aoi: AoiRecord;
+  features: DamageFeature[];
   mode: "before" | "after";
   opacity: number;
   filter: "all" | "severe" | "vlm";
@@ -44,6 +45,7 @@ type Props = {
   vlm: Record<string, VlmRecord>;
   selectedId?: string;
   focusToken: number;
+  aoiFocusToken: number;
   onSelect: (feature: DamageFeature) => void;
 };
 
@@ -73,7 +75,7 @@ function passesFilter(feature: DamageFeature, filter: Props["filter"], vlm: Reco
   return true;
 }
 
-export default function MapPanel({ aoi, mode, opacity, filter, basemap, vlm, selectedId, focusToken, onSelect }: Props) {
+export default function MapPanel({ aoi, features, mode, opacity, filter, basemap, vlm, selectedId, focusToken, aoiFocusToken, onSelect }: Props) {
   const nodeRef = useRef<HTMLDivElement | null>(null);
   const popupRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<OlMap | null>(null);
@@ -99,6 +101,11 @@ export default function MapPanel({ aoi, mode, opacity, filter, basemap, vlm, sel
     selectedIdRef.current = selectedId;
   }, [selectedId]);
 
+  useEffect(() => {
+    featuresRef.current = features;
+    renderVectorsRef.current();
+  }, [features]);
+
   const setDebug = useCallback((visibleFeatures: DamageFeature[]) => {
     const map = mapRef.current;
     if (!map) return;
@@ -120,6 +127,15 @@ export default function MapPanel({ aoi, mode, opacity, filter, basemap, vlm, sel
     if (!original) return undefined;
     const kind = damageClass(original.properties);
     const color = colorFor(kind);
+    if (feature.getGeometry()?.getType() === "Point") {
+      return new Style({
+        image: new CircleStyle({
+          radius: kind === "severe" ? 7 : 5,
+          stroke: new Stroke({ color, width: 2 }),
+          fill: new Fill({ color: hexToRgba(color, Math.max(0.45, opacity)) }),
+        }),
+      });
+    }
     return new Style({
       stroke: new Stroke({ color, width: kind === "low" ? 1 : 2 }),
       fill: new Fill({ color: hexToRgba(color, opacity) }),
@@ -268,8 +284,6 @@ export default function MapPanel({ aoi, mode, opacity, filter, basemap, vlm, sel
     if (afterRef.current) map.removeLayer(afterRef.current);
     beforeRef.current = null;
     afterRef.current = null;
-    featuresRef.current = [];
-    vectorRef.current?.getSource()?.clear();
     highlightRef.current?.getSource()?.clear();
     markerRef.current?.getSource()?.clear();
     popupOverlayRef.current?.setPosition(undefined);
@@ -307,19 +321,23 @@ export default function MapPanel({ aoi, mode, opacity, filter, basemap, vlm, sel
       map.addLayer(afterRef.current);
     }
 
-    fetch(aoi.layers.damage)
-      .then((response) => response.json())
-      .then((data: GeoJSON.FeatureCollection) => {
-        featuresRef.current = (data.features as DamageFeature[]) ?? [];
-        renderVectorsRef.current();
-      });
-
     const bounds3857 = boundingExtent([
       fromLonLat([aoi.bounds[0][1], aoi.bounds[0][0]]),
       fromLonLat([aoi.bounds[1][1], aoi.bounds[1][0]]),
     ]);
     map.getView().fit(bounds3857, { padding: [60, 60, 60, 60], duration: 0, maxZoom: 15 });
+    renderVectorsRef.current();
   }, [aoi]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return;
+    const bounds3857 = boundingExtent([
+      fromLonLat([aoi.bounds[0][1], aoi.bounds[0][0]]),
+      fromLonLat([aoi.bounds[1][1], aoi.bounds[1][0]]),
+    ]);
+    map.getView().fit(bounds3857, { padding: [60, 60, 60, 60], duration: 0, maxZoom: 15 });
+  }, [aoi.bounds, aoiFocusToken]);
 
   useEffect(() => {
     renderVectors();
@@ -365,10 +383,11 @@ function escapeHtml(value: string) {
 function popupHtml(p: DamageFeature["properties"]) {
   const mapsUrl = typeof p.google_maps_url === "string" ? p.google_maps_url : "";
   const label = p.not_official_ems ? "External" : "EMS";
+  const id = String(p.source_feature_id ?? p.id);
   const damage = String(p.damage_gra ?? p.damage_class ?? "unknown");
   const percent = String(p.damage_percent ?? p.damage_score ?? "-");
   return (
-    `<strong>${escapeHtml(p.id)}</strong>` +
+    `<strong>${escapeHtml(id)}</strong>` +
     `<span>${label}: ${escapeHtml(damage)} · ${escapeHtml(percent)}%</span>` +
     (mapsUrl ? `<a href="${escapeHtml(mapsUrl)}" target="_blank" rel="noreferrer">Google Maps</a>` : "")
   );
