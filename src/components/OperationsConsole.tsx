@@ -10,7 +10,7 @@ const copy = {
     subtitle: "Static-first geospatial triage for earthquake response",
     live: "Public read-only",
     language: "Language",
-    aoi: "Go to city / AOI",
+    aoi: "Go to affected area",
     source: "Source",
     status: "Status",
     features: "features",
@@ -66,7 +66,7 @@ const copy = {
     subtitle: "Triage geoespacial static-first para respuesta a terremotos",
     live: "Publico solo lectura",
     language: "Idioma",
-    aoi: "Ir a ciudad / AOI",
+    aoi: "Ir a zona afectada",
     source: "Fuente",
     status: "Estado",
     features: "estructuras",
@@ -122,6 +122,65 @@ const copy = {
 type Filter = "all" | "severe" | "vlm";
 type Mode = "before" | "after";
 type Basemap = "map" | "aerial";
+type CityNavItem = {
+  id: string;
+  primaryAoiId: string;
+  sourceIds: string[];
+  name: Record<Language, string>;
+  official: number;
+  monitor: number;
+  external: number;
+  imageryOnly: boolean;
+  score: number;
+};
+
+const cityGroups: Array<Omit<CityNavItem, "official" | "monitor" | "external" | "imageryOnly" | "score">> = [
+  {
+    id: "la-guaira",
+    primaryAoiId: "emsr884-aoi12-caraballeda",
+    sourceIds: ["emsr884-aoi12-caraballeda", "external-msft-catia-la-mar-predicted-damage"],
+    name: { en: "La Guaira / Caraballeda / Catia La Mar", es: "La Guaira / Caraballeda / Catia La Mar" },
+  },
+  {
+    id: "san-felipe",
+    primaryAoiId: "emsr884-aoi08-san-felipe",
+    sourceIds: ["emsr884-aoi08-san-felipe", "emsr884-aoi08-san-felipe-monitor01"],
+    name: { en: "San Felipe", es: "San Felipe" },
+  },
+  {
+    id: "moron",
+    primaryAoiId: "emsr884-aoi06-moron",
+    sourceIds: ["emsr884-aoi06-moron", "emsr884-aoi06-moron-monitor01"],
+    name: { en: "Moron", es: "Morón" },
+  },
+  {
+    id: "caracas",
+    primaryAoiId: "emsr884-aoi02-caracas",
+    sourceIds: ["emsr884-aoi02-caracas", "emsr884-aoi02-caracas-monitor01"],
+    name: { en: "Caracas", es: "Caracas" },
+  },
+  {
+    id: "antimano",
+    primaryAoiId: "emsr884-aoi03-antimano",
+    sourceIds: ["emsr884-aoi03-antimano"],
+    name: { en: "Antimano", es: "Antímano" },
+  },
+  {
+    id: "guacara",
+    primaryAoiId: "emsr884-aoi10-guacara",
+    sourceIds: ["emsr884-aoi10-guacara"],
+    name: { en: "Guacara", es: "Guacara" },
+  },
+];
+
+function cityImpactLabel(item: CityNavItem, language: Language) {
+  if (item.imageryOnly) return language === "es" ? "Imagen disponible · 0 daños oficiales" : "Imagery available · 0 official damage";
+  const parts: string[] = [];
+  if (item.official) parts.push(language === "es" ? `${item.official} oficiales` : `${item.official} official`);
+  if (item.monitor) parts.push(language === "es" ? `${item.monitor} monitor` : `${item.monitor} monitor`);
+  if (item.external) parts.push(language === "es" ? `${item.external} predicción externa` : `${item.external} external prediction`);
+  return parts.join(" · ") || (language === "es" ? "0 daños oficiales" : "0 official damage");
+}
 
 export default function OperationsConsole() {
   const [catalog, setCatalog] = useState<AoiCatalog | null>(null);
@@ -198,6 +257,31 @@ export default function OperationsConsole() {
   const isDemo = active?.status === "test-fixture";
   const isExternalPrediction = active?.status === "external-prediction";
   const statusLabel = (status: string) => t.statuses[status as keyof typeof t.statuses] ?? status;
+  const cityNavItems = useMemo<CityNavItem[]>(() => {
+    if (!catalog) return [];
+    const byId = new Map(catalog.aois.map((aoi) => [aoi.id, aoi]));
+    return cityGroups.map((group) => {
+      const records = group.sourceIds.map((id) => byId.get(id)).filter(Boolean) as AoiRecord[];
+      const official = records
+        .filter((aoi) => aoi.status === "official-vector")
+        .reduce((sum, aoi) => sum + (aoi.metrics.features ?? 0), 0);
+      const monitor = records
+        .filter((aoi) => aoi.status === "official-monitor-points")
+        .reduce((sum, aoi) => sum + (aoi.metrics.features ?? 0), 0);
+      const external = records
+        .filter((aoi) => aoi.status === "external-prediction")
+        .reduce((sum, aoi) => sum + (aoi.metrics.candidates ?? aoi.metrics.features ?? 0), 0);
+      const imageryOnly = records.length > 0 && records.every((aoi) => aoi.status === "imagery-only");
+      return {
+        ...group,
+        official,
+        monitor,
+        external,
+        imageryOnly,
+        score: official + monitor + external,
+      };
+    }).sort((a, b) => b.score - a.score || a.name[language].localeCompare(b.name[language]));
+  }, [catalog, language]);
   const selectAoi = (id: string) => {
     setActiveId(id);
     setSelected(null);
@@ -245,10 +329,10 @@ export default function OperationsConsole() {
 
         <label className="field-label">{t.aoi}</label>
         <div className="aoi-list">
-          {catalog?.aois.map((aoi) => (
-            <button key={aoi.id} data-testid={`aoi-${aoi.id}`} className={aoi.id === activeId ? "aoi-card active" : "aoi-card"} onClick={() => selectAoi(aoi.id)}>
-              <span>{aoi.name[language]}</span>
-              <small>{statusLabel(aoi.status)} · {aoi.metrics.features || aoi.metrics.candidates || 0}</small>
+          {cityNavItems.map((item) => (
+            <button key={item.id} data-testid={`city-${item.id}`} className={item.sourceIds.includes(activeId) ? "aoi-card active" : "aoi-card"} onClick={() => selectAoi(item.primaryAoiId)}>
+              <span>{item.name[language]}</span>
+              <small>{cityImpactLabel(item, language)}</small>
             </button>
           ))}
         </div>
