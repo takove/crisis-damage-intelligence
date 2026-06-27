@@ -1,0 +1,17 @@
+{
+  "aoi_id": "emsr884-aoi02-caracas",
+  "review_type": "dated_pre_event_comparison",
+  "reviewed": 17,
+  "damage_classes": {
+    "uncertain_comparison_problem": 15,
+    "no_change_visible": 1,
+    "minor_visible_damage": 1
+  },
+  "action_priorities": {
+    "review": 13,
+    "deprioritize": 1,
+    "urgent_review": 3
+  },
+  "before_source": "Vantor Open Data pre-event reference scene B160001100FD1910, 2026-03-20T14:46:55Z, LG06, 1% cloud cover, not official EMS before imagery",
+  "warning": "VLM before/after outputs are triage aids only; official EMS labels remain source of record."
+}

@@ -30,12 +30,15 @@
         "csv": "/data/aoi/emsr884-aoi02-caracas/damage.csv",
         "geojson": "/data/aoi/emsr884-aoi02-caracas/damage.geojson",
         "kml": "/data/aoi/emsr884-aoi02-caracas/damage.kml",
-        "cog": "https://rapidmapping-viewer.s3.eu-west-1.amazonaws.com/EMSR884/AOI02/GRA_PRODUCT/EMSR884_AOI02_GRA_PRODUCT_PNEO_20260625_1459_ORTHO_cog.tif"
+        "cog": "https://rapidmapping-viewer.s3.eu-west-1.amazonaws.com/EMSR884/AOI02/GRA_PRODUCT/EMSR884_AOI02_GRA_PRODUCT_PNEO_20260625_1459_ORTHO_cog.tif",
+        "vlm_before_after_jsonl": "/data/aoi/emsr884-aoi02-caracas/vlm_before_after_review.jsonl",
+        "vlm_before_after_csv": "/data/aoi/emsr884-aoi02-caracas/vlm_before_after_summary.csv",
+        "vlm_before_after_summary": "/data/aoi/emsr884-aoi02-caracas/vlm_before_after_summary.json"
       },
       "layers": {
         "damage": "/data/aoi/emsr884-aoi02-caracas/damage.geojson",
         "afterImage": "https://rapidmapping-viewer.s3.eu-west-1.amazonaws.com/EMSR884/AOI02/GRA_PRODUCT/EMSR884_AOI02_GRA_PRODUCT_PNEO_20260625_1459_ORTHO_cog.tif",
-        "vlm": "/data/aoi/emsr884-aoi02-caracas/vlm_review.jsonl",
+        "vlm": "/data/aoi/emsr884-aoi02-caracas/vlm_before_after_review.jsonl",
         "afterTiles": "/data/tiles/emsr884-aoi02-caracas/after/{z}/{x}/{y}.webp"
       },
       "metrics": {
@@ -43,7 +46,10 @@
         "destroyed": 0,
         "damagedConfirmed": 0,
         "possibleDamage": 17,
-        "vlmReviewed": 17
+        "vlmReviewed": 17,
+        "vlmBeforeAfterReviewed": 17,
+        "vlmBeforeAfterSkippedNoBefore": 0,
+        "vlmBeforeAfterUncertain": 15
       },
       "imagery": {
         "after": {
@@ -62,8 +68,27 @@
             "bytesApprox": 42000000
           }
         },
-        "before": null,
-        "note": "Post-event COG only. No EMSR884 before imagery pair is exposed for this AOI yet."
+        "before": {
+          "url": "https://vantor-opendata.s3.amazonaws.com/events/Venezuela-Earthquake-Jun-2026/B160001100FD1910.tif",
+          "sensor": "Vantor LG06",
+          "acquisitionUtc": "2026-03-20T14:46:55Z",
+          "bytes": null,
+          "sha256": null,
+          "r2Key": null,
+          "source": "Vantor Open Data pre-event reference scene, not Copernicus EMS official before imagery",
+          "coverage": "Covers all 17 AOI02 EMS features, but no before tile pyramid is published in the app yet. Used for evidence chips only.",
+          "license": "CC-BY-NC-4.0",
+          "sourceScenes": [
+            {
+              "id": "B160001100FD1910",
+              "sensor": "LG06",
+              "acquisitionUtc": "2026-03-20T14:46:55.249591Z",
+              "cloudCover": 1,
+              "url": "https://vantor-opendata.s3.amazonaws.com/events/Venezuela-Earthquake-Jun-2026/B160001100FD1910.tif"
+            }
+          ]
+        },
+        "note": "After imagery is official Copernicus EMS post-event COG/tiles. Before imagery is a Vantor Open Data pre-event reference scene, not official EMS before imagery. AOI02 VLM uses before/after chips, but most results are uncertain because post-event chips are dark/hazy or affected by shadows."
       }
     },
     {

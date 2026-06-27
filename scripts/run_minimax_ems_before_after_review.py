@@ -27,14 +27,17 @@ ROOT = Path(__file__).resolve().parents[1]
 OUTPUTS = ROOT.parent
 
 LOCAL_AFTER_COGS = {
+    "emsr884-aoi02-caracas": OUTPUTS / "emsr884_imagery" / "EMSR884_AOI02_GRA_PRODUCT_PNEO_20260625_1459_ORTHO_cog.tif",
     "emsr884-aoi12-caraballeda": OUTPUTS / "emsr884_imagery" / "EMSR884_AOI12_GRA_PRODUCT_LEGION_20260626_1510_ORTHO_cog.tif",
 }
 
 LOCAL_BEFORE_COGS = {
+    "emsr884-aoi02-caracas": "/vsicurl/https://vantor-opendata.s3.amazonaws.com/events/Venezuela-Earthquake-Jun-2026/B160001100FD1910.tif",
     "emsr884-aoi12-caraballeda": OUTPUTS / "vantor_before_aoi12" / "aoi12_vantor_before_reference_2025-11_2026-04_cog.tif",
 }
 
 BEFORE_SOURCE_LABEL = {
+    "emsr884-aoi02-caracas": "Vantor Open Data pre-event reference scene B160001100FD1910, 2026-03-20T14:46:55Z, LG06, 1% cloud cover, not official EMS before imagery",
     "emsr884-aoi12-caraballeda": "Vantor Open Data pre-event reference mosaic, 2025-11-03 / 2026-03-21 / 2026-04-07, not official EMS before imagery",
 }
 
@@ -70,6 +73,12 @@ def lonlat_to_webmercator(lon: float, lat: float) -> tuple[float, float]:
     return x, y
 
 
+def degree_window(lon: float, lat: float, size_m: int) -> tuple[float, float, float, float]:
+    half_lat = (size_m / 2) / 111_320
+    half_lon = (size_m / 2) / (111_320 * max(0.1, math.cos(math.radians(lat))))
+    return lon - half_lon, lat + half_lat, lon + half_lon, lat - half_lat
+
+
 def encode_image(path: Path) -> str:
     return "data:image/png;base64," + base64.b64encode(path.read_bytes()).decode("ascii")
 
@@ -78,12 +87,15 @@ def chip_path(aoi_id: str, feature_id: str, kind: str) -> Path:
     return ROOT / "public" / "data" / "chips" / aoi_id / f"{feature_id}_{kind}.png"
 
 
-def make_chip(cog: Path, feature: dict, out: Path, size_m: int = 96) -> bool:
+def cog_exists(cog: str | Path) -> bool:
+    return isinstance(cog, str) and cog.startswith("/vsicurl/") or Path(cog).exists()
+
+
+def make_chip(cog: str | Path, feature: dict, out: Path, size_m: int = 96) -> bool:
     props = feature["properties"]
     lat = float(props["centroid_lat"])
     lon = float(props["centroid_lon"])
-    x, y = lonlat_to_webmercator(lon, lat)
-    half = size_m / 2
+    min_lon, max_lat, max_lon, min_lat = degree_window(lon, lat, size_m)
     out.parent.mkdir(parents=True, exist_ok=True)
     tmp = out.with_suffix(".raw.png")
     cmd = [
@@ -91,15 +103,17 @@ def make_chip(cog: Path, feature: dict, out: Path, size_m: int = 96) -> bool:
         "--quiet",
         "-of",
         "PNG",
+        "-projwin_srs",
+        "EPSG:4326",
         "-projwin",
-        str(x - half),
-        str(y + half),
-        str(x + half),
-        str(y - half),
+        str(min_lon),
+        str(max_lat),
+        str(max_lon),
+        str(min_lat),
         "-outsize",
         "512",
         "512",
-        str(cog),
+        os.fspath(cog),
         str(tmp),
     ]
     try:
@@ -215,7 +229,7 @@ def public_chip(path: Path) -> str:
     return "/data/chips/" + path.relative_to(ROOT / "public" / "data" / "chips").as_posix()
 
 
-def make_record(aoi_id: str, before_cog: Path, after_cog: Path, feature: dict) -> dict | None:
+def make_record(aoi_id: str, before_cog: str | Path, after_cog: str | Path, feature: dict) -> dict | None:
     props = feature["properties"]
     fid = props["id"]
     before_chip = chip_path(aoi_id, fid, "before_event")
@@ -288,9 +302,9 @@ def write_summary(aoi_id: str, records: list[dict]) -> None:
 def run_aoi(aoi_id: str, limit: int, workers: int) -> int:
     before_cog = LOCAL_BEFORE_COGS[aoi_id]
     after_cog = LOCAL_AFTER_COGS[aoi_id]
-    if not before_cog.exists():
+    if not cog_exists(before_cog):
         raise SystemExit(f"Before COG missing: {before_cog}")
-    if not after_cog.exists():
+    if not cog_exists(after_cog):
         raise SystemExit(f"After COG missing: {after_cog}")
     geojson_path = ROOT / "public" / "data" / "aoi" / aoi_id / "damage.geojson"
     out_path = ROOT / "public" / "data" / "aoi" / aoi_id / "vlm_before_after_review.jsonl"

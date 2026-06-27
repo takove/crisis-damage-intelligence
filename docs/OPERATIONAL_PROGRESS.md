@@ -21,6 +21,8 @@ Update this after every work loop. Keep entries factual: what changed, how it wa
   - Official EMSR884 vector: 17 features.
   - MONIT01 points: 20.
   - Post-event imagery available.
+  - Vantor pre-event reference scene identified: B160001100FD1910, 2026-03-20, LG06, 1% cloud cover.
+  - VLM before/after comparisons: 17 reviewed, 0 skipped, but 15 are uncertain comparison problems because many post-event chips are dark/hazy, shadowed, or centered on canopy rather than clear rooftops.
 - AOI06 Moron:
   - Official EMSR884 vector: 129 features.
   - MONIT01 points: 96.
@@ -99,12 +101,59 @@ QA evidence:
 - `qa/local-opacity-slider-no-refocus.png`
 - `qa/vercel-opacity-slider-no-refocus.png`
 
+### AOI02 Caracas Before/After VLM Pilot
+
+- Objective: expand credible before/after VLM beyond AOI12.
+- Inventory result:
+  - AOI02 has usable Vantor pre-event scene coverage for all 17 official EMS features.
+  - Scene selected: `B160001100FD1910`, Vantor LG06, `2026-03-20T14:46:55Z`, 1% cloud cover.
+  - AOI06 Moron, AOI08 San Felipe, and AOI10 Guacara have no Vantor Open Data pre-event scene intersection in the current Venezuela Earthquake Jun 2026 STAC collection.
+  - AOI03 Antimano has Vantor pre-event scene intersections, but no official EMS damage vector yet.
+- Implementation:
+  - Generalized `scripts/run_minimax_ems_before_after_review.py` to support remote `/vsicurl/` Vantor COGs and CRS-safe chip extraction via `-projwin_srs EPSG:4326`.
+  - Ran VLM before/after for all 17 AOI02 official EMS features.
+  - Updated `public/data/catalog.json` so AOI02 VLM layer uses `vlm_before_after_review.jsonl`.
+- Results:
+  - reviewed: 17
+  - skipped no-before/black-before: 0
+  - uncertain_comparison_problem: 15
+  - no_change_visible: 1
+  - minor_visible_damage: 1
+  - action priorities: 13 review, 3 urgent_review, 1 deprioritize
+- QA performed:
+  - `npm run lint && npm run build`
+  - Local browser QA: navigated to Caracas, opened `ems_00001`, verified compare chip loads and evidence shows `dated_pre_event_comparison`.
+- Evidence:
+  - `qa/aoi02-before-after-vlm-pilot-contact-sheet.png`
+  - `qa/aoi02-before-after-vlm-full-contact-sheet.png`
+  - `qa/local-aoi02-before-after-vlm.png`
+- Result:
+  - AOI02 now has complete before/after VLM coverage, but outputs are mostly uncertainty flags. This should be treated as a successful evidence-quality finding, not as a strong damage classifier.
+- Next recommended action:
+  - Search for better non-Vantor pre-event imagery for AOI02 or use AOI03 as an imagery-only comparison pilot only if there are credible damage candidates. Do not scale AOI02 further without improving post-event chip quality or candidate centering.
+
+### AOI02 Coordinate Verification
+
+- Objective: verify that AOI02 map navigation, Google Maps links, and before/after chips are using the intended coordinates.
+- Checks performed:
+  - Compared `centroid_lat` / `centroid_lon` against each feature's `google_maps_url` query for AOI02, AOI12, and AOI06 samples.
+  - Confirmed all 17 AOI02 feature centroids fall inside their source geometry bounding boxes.
+  - Browser QA selected Caracas `ems_00001` and confirmed map center is `10.4101149,-66.8746227` at zoom 18, matching the feature centroid `10.41011488724138,-66.87462265793104`.
+  - Checked chip extraction window for AOI02 `ems_00001`; before and after raster pixel coordinates both fall inside their respective rasters, with the same EPSG:4326 source window.
+- Result:
+  - No lat/lon swap or wrong-coordinate navigation was found.
+  - The visual issue in AOI02 appears to come from EMS feature centroids and imagery quality: some `builtUpA` features/centroids fall on canopy, shadows, or broad mapped areas rather than a clearly visible roof center.
+- Evidence:
+  - `qa/local-aoi02-coordinate-centering-check.png`
+- Next recommended action:
+  - For VLM chips, consider using a better representative point derived from polygon interior/building footprint or a small multi-chip context around the feature, instead of relying only on the EMS centroid.
+
 ## Known Gaps
 
 1. Imagery is still active-area based. The map loads all vector features, but not all AOI imagery at once.
 2. Vercel deployment package is too large because chips/tiles are still bundled.
 3. Area ranking currently includes external prediction counts in the visible order; this is labeled, but needs better source-weighted ranking.
-4. VLM before/after exists for AOI12 only.
+4. VLM before/after exists for AOI12 and AOI02 only. AOI02 is mostly uncertainty due to imagery quality/centering.
 5. Mobile end-to-end QA is incomplete.
 6. Operator docs may be stale after the recent area-navigation and VLM before/after changes.
 7. Human validation workflow is not implemented.
@@ -112,7 +161,7 @@ QA evidence:
 
 ## Blockers
 
-- More before imagery coverage is needed before running credible before/after VLM outside AOI12.
+- More before imagery coverage is needed before running credible before/after VLM for AOI06, AOI08, and AOI10. AOI02 has coverage but poor comparison quality in many chips.
 - Moving assets to R2/CDN requires confirming public object URLs and updating catalog paths safely.
 - Any social media/bookmark evidence requires source verification before it can be shown as operational data.
 
@@ -124,12 +173,10 @@ Improve the crisis damage intelligence app, prioritizing more before/after VLM a
 
 Run the next before/after VLM expansion loop:
 
-1. Inventory post-event imagery and possible pre-event baselines for AOI02, AOI06, AOI08, AOI03, and AOI10.
-2. Select one non-AOI12 pilot area with credible pre/post coverage.
-3. Generate aligned before/after chips for a small candidate set.
-4. Run VLM on that pilot.
-5. Compare output quality manually and record skipped/no-before cases.
-6. If useful, batch the remaining high-value candidates and wire results into catalog/app.
+1. Validate AOI02 on Vercel after deployment.
+2. Search for better before imagery or alternative baselines for AOI06, AOI08, and AOI10 outside the current Vantor STAC collection.
+3. For AOI03 Antimano, only run VLM if credible candidate features are available; imagery alone is not enough.
+4. Add UI copy/metrics that surface AOI02's high uncertainty rate so users do not overread the VLM layer.
 
 Do not run post-event-only VLM as if it were before/after comparison.
 
