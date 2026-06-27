@@ -1,0 +1,71 @@
+name: Sync Vantor Open Data to R2
+
+on:
+  workflow_dispatch:
+    inputs:
+      strategy:
+        description: 'Upload strategy'
+        required: true
+        default: 'best'
+        type: choice
+        options:
+          - best    # Top 6 quality images (~23GB)
+          - all     # All images (~60GB)
+          - thumbs  # Only thumbnails + metadata
+      dry_run:
+        description: 'Dry run (show what would upload)'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360  # 6 hours for large transfers
+    
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      
+      - name: Install dependencies
+        run: |
+          pip install boto3 requests tqdm
+          npm install -g wrangler
+      
+      - name: Configure R2 credentials
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          S3_ENDPOINT_URL: ${{ secrets.S3_ENDPOINT_URL }}
+          S3_BUCKET: ${{ secrets.S3_BUCKET }}
+        run: |
+          echo "R2 credentials configured"
+          echo "Endpoint: $S3_ENDPOINT_URL"
+          echo "Bucket: $S3_BUCKET"
+      
+      - name: Sync Vantor data to R2
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          S3_ENDPOINT_URL: ${{ secrets.S3_ENDPOINT_URL }}
+          S3_BUCKET: ${{ secrets.S3_BUCKET }}
+          STRATEGY: ${{ github.event.inputs.strategy }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+        run: |
+          python3 scripts/sync-vantor-to-r2.py
+      
+      - name: Generate manifest
+        run: |
+          echo "Transfer complete. See manifest.json for details."
+      
+      - name: Upload manifest artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: vantor-sync-manifest
+          path: /tmp/vantor-manifest.json
+          retention-days: 30
