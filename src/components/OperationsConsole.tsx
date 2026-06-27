@@ -123,7 +123,7 @@ type Basemap = "map" | "aerial";
 
 export default function OperationsConsole() {
   const [catalog, setCatalog] = useState<AoiCatalog | null>(null);
-  const [activeId, setActiveId] = useState("emsr884-aoi06-moron");
+  const [activeId, setActiveId] = useState("emsr884-aoi12-caraballeda");
   const [language, setLanguage] = useState<Language>("es");
   const [filter, setFilter] = useState<Filter>("all");
   const [mode, setMode] = useState<Mode>("after");
