@@ -1,0 +1,19 @@
+{
+  "review_type": "post_event_only",
+  "model": "MiniMax-M3",
+  "reviewed": 43,
+  "official_ems_counts": {
+    "Damaged": 8,
+    "Possibly damaged": 35
+  },
+  "vlm_damage_class_counts": {
+    "uncertain_imagery_problem": 41,
+    "possible_major_damage": 2
+  },
+  "vlm_action_priority_counts": {
+    "urgent_review": 11,
+    "review": 32
+  },
+  "urgent_like_count": 11,
+  "warning": "VLM outputs are triage aids from post-event chips only; official EMS labels remain source of record; absence of visible VLM damage is not proof of no damage."
+}

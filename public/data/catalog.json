@@ -212,19 +212,23 @@
         "cog": "https://rapidmapping-viewer.s3.eu-west-1.amazonaws.com/EMSR884/AOI08/GRA_PRODUCT/EMSR884_AOI08_GRA_PRODUCT_PNEO_20260625_1500_ORTHO_cog.tif",
         "csv": "/data/aoi/emsr884-aoi08-san-felipe/damage.csv",
         "geojson": "/data/aoi/emsr884-aoi08-san-felipe/damage.geojson",
-        "kml": "/data/aoi/emsr884-aoi08-san-felipe/damage.kml"
+        "kml": "/data/aoi/emsr884-aoi08-san-felipe/damage.kml",
+        "vlm_jsonl": "/data/aoi/emsr884-aoi08-san-felipe/vlm_review.jsonl",
+        "vlm_csv": "/data/aoi/emsr884-aoi08-san-felipe/vlm_review_summary.csv",
+        "vlm_summary": "/data/aoi/emsr884-aoi08-san-felipe/vlm_summary.json"
       },
       "layers": {
         "afterImage": "https://rapidmapping-viewer.s3.eu-west-1.amazonaws.com/EMSR884/AOI08/GRA_PRODUCT/EMSR884_AOI08_GRA_PRODUCT_PNEO_20260625_1500_ORTHO_cog.tif",
         "damage": "/data/aoi/emsr884-aoi08-san-felipe/damage.geojson",
-        "afterTiles": "/data/tiles/emsr884-aoi08-san-felipe/after/{z}/{x}/{y}.webp"
+        "afterTiles": "/data/tiles/emsr884-aoi08-san-felipe/after/{z}/{x}/{y}.webp",
+        "vlm": "/data/aoi/emsr884-aoi08-san-felipe/vlm_review.jsonl"
       },
       "metrics": {
         "features": 43,
         "destroyed": 0,
         "damagedConfirmed": 8,
         "possibleDamage": 35,
-        "vlmReviewed": 0
+        "vlmReviewed": 43
       },
       "imagery": {
         "after": {
@@ -330,19 +334,23 @@
         "csv": "/data/aoi/emsr884-aoi12-caraballeda/damage.csv",
         "geojson": "/data/aoi/emsr884-aoi12-caraballeda/damage.geojson",
         "kml": "/data/aoi/emsr884-aoi12-caraballeda/damage.kml",
-        "cog": "https://rapidmapping-viewer.s3.eu-west-1.amazonaws.com/EMSR884/AOI12/GRA_PRODUCT/EMSR884_AOI12_GRA_PRODUCT_LEGION_20260626_1510_ORTHO_cog.tif"
+        "cog": "https://rapidmapping-viewer.s3.eu-west-1.amazonaws.com/EMSR884/AOI12/GRA_PRODUCT/EMSR884_AOI12_GRA_PRODUCT_LEGION_20260626_1510_ORTHO_cog.tif",
+        "vlm_jsonl": "/data/aoi/emsr884-aoi12-caraballeda/vlm_review.jsonl",
+        "vlm_csv": "/data/aoi/emsr884-aoi12-caraballeda/vlm_review_summary.csv",
+        "vlm_summary": "/data/aoi/emsr884-aoi12-caraballeda/vlm_summary.json"
       },
       "layers": {
         "damage": "/data/aoi/emsr884-aoi12-caraballeda/damage.geojson",
         "afterImage": "https://rapidmapping-viewer.s3.eu-west-1.amazonaws.com/EMSR884/AOI12/GRA_PRODUCT/EMSR884_AOI12_GRA_PRODUCT_LEGION_20260626_1510_ORTHO_cog.tif",
-        "afterTiles": "/data/tiles/emsr884-aoi12-caraballeda/after/{z}/{x}/{y}.webp"
+        "afterTiles": "/data/tiles/emsr884-aoi12-caraballeda/after/{z}/{x}/{y}.webp",
+        "vlm": "/data/aoi/emsr884-aoi12-caraballeda/vlm_review.jsonl"
       },
       "metrics": {
         "features": 120,
         "destroyed": 10,
         "damagedConfirmed": 96,
         "possibleDamage": 24,
-        "vlmReviewed": 0
+        "vlmReviewed": 120
       },
       "imagery": {
         "after": {

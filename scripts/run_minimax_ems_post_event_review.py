@@ -26,6 +26,8 @@ OUTPUTS = ROOT.parent
 LOCAL_COGS = {
     "emsr884-aoi02-caracas": OUTPUTS / "emsr884_imagery" / "EMSR884_AOI02_GRA_PRODUCT_PNEO_20260625_1459_ORTHO_cog.tif",
     "emsr884-aoi06-moron": OUTPUTS / "emsr884_imagery" / "EMSR884_AOI06_GRA_PRODUCT_LEGION_20260625_2036_ORTHO_cog.tif",
+    "emsr884-aoi08-san-felipe": OUTPUTS / "emsr884_imagery" / "EMSR884_AOI08_GRA_PRODUCT_PNEO_20260625_1500_ORTHO_cog.tif",
+    "emsr884-aoi12-caraballeda": OUTPUTS / "emsr884_imagery" / "EMSR884_AOI12_GRA_PRODUCT_LEGION_20260626_1510_ORTHO_cog.tif",
 }
 
 SYSTEM = (
@@ -234,7 +236,8 @@ def run_aoi(aoi_id: str, limit: int, workers: int) -> int:
 
 
 def main() -> None:
-    load_env(Path("/Users/luisrosal/Documents/Codex/2026-06-26/he/.env"))
+    load_env(ROOT / ".env")
+    load_env(ROOT.parents[1] / ".env")
     if len(sys.argv) < 2:
         raise SystemExit("Usage: scripts/run_minimax_ems_post_event_review.py AOI_ID [AOI_ID...] [--limit N]")
     args = sys.argv[1:]
