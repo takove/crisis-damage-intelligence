@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-27T17:30:00Z",
+  "updatedAt": "2026-06-27T17:35:00Z",
   "platform": "Crisis Damage Intelligence",
   "aois": [
     {
@@ -349,6 +349,55 @@
         "before": null,
         "note": "Post-event COG only. No EMSR884 before imagery pair is exposed for this AOI yet."
       }
+    },
+    {
+      "id": "emsr884-aoi08-san-felipe-monitor01",
+      "country": "Venezuela",
+      "event": "EMSR884 Venezuela earthquake",
+      "name": {
+        "en": "AOI08 San Felipe - EMSR884 MONIT01 Points",
+        "es": "AOI08 San Felipe - Puntos EMSR884 MONIT01"
+      },
+      "status": "official-monitor-points",
+      "source": "Copernicus EMSR884 GRA_MONIT01 ZIP -> builtUpP_v1 point layer. Monitoring points, not builtUpA polygons; keep counts separate from PRODUCT polygon features.",
+      "bounds": [
+        [
+          10.24332479,
+          -68.8548408
+        ],
+        [
+          10.3432325,
+          -68.71883593
+        ]
+      ],
+      "center": [
+        10.287578654043717,
+        -68.79145209344263
+      ],
+      "downloads": {
+        "csv": "/data/aoi/emsr884-aoi08-san-felipe-monitor01/damage.csv",
+        "geojson": "/data/aoi/emsr884-aoi08-san-felipe-monitor01/damage.geojson",
+        "kml": "/data/aoi/emsr884-aoi08-san-felipe-monitor01/damage.kml",
+        "metadata": "/data/aoi/emsr884-aoi08-san-felipe-monitor01/source_metadata.json",
+        "zip": "https://rapidmapping.emergency.copernicus.eu/backend/EMSR884/AOI08/GRA_MONIT01/EMSR884_AOI08_GRA_MONIT01_v1.zip"
+      },
+      "layers": {
+        "damage": "/data/aoi/emsr884-aoi08-san-felipe-monitor01/damage.geojson"
+      },
+      "metrics": {
+        "features": 183,
+        "destroyed": 0,
+        "damagedConfirmed": 14,
+        "possibleDamage": 169,
+        "vlmReviewed": 0
+      },
+      "imagery": {
+        "before": null,
+        "after": null,
+        "note": "MONIT01 point layer only. Use parent AOI imagery for visual context."
+      },
+      "parentAoi": "emsr884-aoi08-san-felipe",
+      "geometryType": "Point"
     },
     {
       "id": "emsr884-aoi10-guacara",
