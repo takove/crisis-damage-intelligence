@@ -116,9 +116,22 @@ QA evidence:
 - Moving assets to R2/CDN requires confirming public object URLs and updating catalog paths safely.
 - Any social media/bookmark evidence requires source verification before it can be shown as operational data.
 
+## Active Goal
+
+Improve the crisis damage intelligence app, prioritizing more before/after VLM analysis. The markdown files are memory and guardrails for the loop; they are not the goal.
+
 ## Next Recommended Loop
 
-Move large chips/tiles from Vercel to R2/CDN, update `public/data/catalog.json` to point to remote assets, run browser QA for AOI12 before/after chips and tiles, and confirm the deployment package shrinks.
+Run the next before/after VLM expansion loop:
+
+1. Inventory post-event imagery and possible pre-event baselines for AOI02, AOI06, AOI08, AOI03, and AOI10.
+2. Select one non-AOI12 pilot area with credible pre/post coverage.
+3. Generate aligned before/after chips for a small candidate set.
+4. Run VLM on that pilot.
+5. Compare output quality manually and record skipped/no-before cases.
+6. If useful, batch the remaining high-value candidates and wire results into catalog/app.
+
+Do not run post-event-only VLM as if it were before/after comparison.
 
 ## Loop Entry Template
 

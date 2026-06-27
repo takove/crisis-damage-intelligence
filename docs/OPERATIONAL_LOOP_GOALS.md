@@ -1,12 +1,14 @@
 # Operational Loop Goals
 
-Use this document as the source of truth for the next work loop. Each iteration must read this file and `docs/OPERATIONAL_PROGRESS.md` before changing the app.
+Use this document as the source of truth for the app-improvement loop. The goal is not to maintain documents; the goal is to improve the operational damage intelligence app. These documents exist so each loop stays grounded, remembers what was already done, and does not drift or hallucinate priorities.
+
+Current top priority: expand credible before/after VLM analysis.
 
 ## Loop Protocol
 
 1. Read this file.
 2. Read `docs/OPERATIONAL_PROGRESS.md`.
-3. Pick the highest-leverage unchecked objective that is not blocked.
+3. Pick the highest-leverage unchecked objective that is not blocked, starting with before/after VLM analysis unless there is a concrete reason it cannot proceed.
 4. Implement the smallest complete improvement that can be tested.
 5. Run build and browser QA.
 6. Update `docs/OPERATIONAL_PROGRESS.md` with commands, results, screenshots, blockers, and next recommendation.
@@ -16,7 +18,36 @@ Use this document as the source of truth for the next work loop. Each iteration 
 
 This is an emergency-response damage intelligence platform. It should be fast, simple, bilingual, static-first, cheap to host, and careful about confidence. Never imply that VLM or external predictions are official damage confirmations.
 
-## Priority 1: Imagery Loading And Coverage
+## Priority 1: VLM Before/After Expansion
+
+Goal: use VLM to compare credible pre-event and post-event imagery for more high-value candidates, while clearly labeling source confidence.
+
+Acceptance criteria:
+- AOI12 before/after VLM remains the canonical VLM pattern.
+- No feature is labeled as before/after reviewed unless both images were actually used.
+- Areas with only post-event imagery are not treated as before/after VLM comparisons.
+- VLM outputs include evidence chips, prompt/model metadata, source imagery dates, and triage warning.
+- Run VLM first on high-value candidates, not every feature by default.
+- The app exposes VLM before/after results clearly in the evidence panel and downloads.
+
+Immediate work order:
+1. Inventory all areas with usable post-event imagery.
+2. Find or generate acceptable pre-event baselines for AOI02, AOI06, AOI08, AOI03, and AOI10.
+3. Generate before/after chips where pre-event coverage is nonblank and aligned enough.
+4. Run VLM on prioritized candidates:
+   - official EMS destroyed/damaged first,
+   - then official possibly damaged / MONIT01,
+   - then AOI12/Catia La Mar external prediction candidates near populated/high-density zones.
+5. Publish per-area VLM JSONL/CSV/summary outputs.
+6. Update catalog and UI so VLM comparison coverage is visible.
+
+Candidate next work:
+- Identify acceptable pre-event baselines for AOI02, AOI06, AOI08, AOI03, and AOI10.
+- Generate before/after chips only where before coverage is nonblank.
+- Add per-area VLM coverage metrics: reviewed, skipped no-before, uncertain comparison, likely destroyed.
+- Run a small pilot first, compare outputs, then batch the rest.
+
+## Priority 2: Imagery Loading And Coverage
 
 Goal: make available imagery useful across all affected areas without making the public app slow.
 
@@ -33,7 +64,7 @@ Preferred implementation:
 - Lazy-load raster/tile layers only when the user navigates to a zone or the viewport intersects that area.
 - Move large tiles/chips out of Vercel to R2/CDN when possible.
 
-## Priority 2: Operational Ranking By Severity And Source
+## Priority 3: Operational Ranking By Severity And Source
 
 Goal: order affected areas and priority items by response value, not raw feature count alone.
 
@@ -47,22 +78,6 @@ Acceptance criteria:
   - External prediction candidates: medium, triage-only
   - Imagery-only: low, navigation/context only
 - The UI copy explains the ranking source in Spanish and English.
-
-## Priority 3: VLM Before/After Expansion
-
-Goal: use VLM only where it can compare a credible pre-event reference with post-event imagery.
-
-Acceptance criteria:
-- AOI12 before/after VLM remains the canonical VLM pattern.
-- No area is labeled as before/after reviewed unless both images were actually used.
-- Areas with only post-event review are labeled lower confidence or removed from operational default views.
-- VLM outputs include evidence chips, prompt/version metadata, source imagery dates, and triage warning.
-- Run VLM first on high-value candidates, not every feature by default.
-
-Candidate next work:
-- Identify acceptable pre-event baselines for AOI02, AOI06, and AOI08.
-- Generate before/after chips only where before coverage is nonblank.
-- Add per-area VLM coverage metrics: reviewed, skipped no-before, uncertain comparison, likely destroyed.
 
 ## Priority 4: Static/Free-Tier Performance
 
@@ -129,4 +144,4 @@ Acceptance criteria:
 
 ## Current Highest-Leverage Recommendation
 
-Move large chips/tiles out of Vercel into R2/CDN, then update catalog URLs and validate remote asset loading. This reduces deployment weight and makes the app more reliable before adding more imagery or VLM outputs.
+Run the next before/after VLM expansion loop. First inventory usable pre-event baselines for AOI02/AOI06/AOI08/AOI03/AOI10 and create a small verified pilot batch. Move chips/tiles to R2/CDN immediately after or during that work if deployment weight blocks publishing new VLM outputs.
