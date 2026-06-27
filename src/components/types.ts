@@ -62,6 +62,8 @@ export type DamageFeature = {
 export type VlmRecord = {
   id: string;
   triplet_chip?: string;
+  compare_chip?: string;
+  before_event_chip?: string;
   post_event_chip?: string;
   review_type?: string;
   official_ems_damage_gra?: string;
@@ -71,6 +73,10 @@ export type VlmRecord = {
     damage_class?: string;
     damage_percent?: number;
     confidence?: number | string;
+    change_evidence?: string;
+    before_observation?: string;
+    after_observation?: string;
+    image_alignment?: string;
     evidence?: string;
     visible_evidence?: string;
     image_quality?: string;

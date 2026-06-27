@@ -1,0 +1,364 @@
+#!/usr/bin/env python3
+"""Run MiniMax-M3 VLM triage using before/after chips where a baseline exists.
+
+This runner is intentionally separate from the legacy post-event-only review.
+It currently supports AOI12 because it has a dated Vantor pre-event reference
+mosaic and EMS post-event imagery. Outputs are labeled as VLM triage aids, not
+official damage confirmation.
+"""
+
+import base64
+import csv
+import json
+import math
+import os
+import re
+import subprocess
+import sys
+import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from pathlib import Path
+from threading import Lock
+from urllib.error import HTTPError
+from urllib.request import Request, urlopen
+
+
+ROOT = Path(__file__).resolve().parents[1]
+OUTPUTS = ROOT.parent
+
+LOCAL_AFTER_COGS = {
+    "emsr884-aoi12-caraballeda": OUTPUTS / "emsr884_imagery" / "EMSR884_AOI12_GRA_PRODUCT_LEGION_20260626_1510_ORTHO_cog.tif",
+}
+
+LOCAL_BEFORE_COGS = {
+    "emsr884-aoi12-caraballeda": OUTPUTS / "vantor_before_aoi12" / "aoi12_vantor_before_reference_2025-11_2026-04_cog.tif",
+}
+
+BEFORE_SOURCE_LABEL = {
+    "emsr884-aoi12-caraballeda": "Vantor Open Data pre-event reference mosaic, 2025-11-03 / 2026-03-21 / 2026-04-07, not official EMS before imagery",
+}
+
+SYSTEM = (
+    "You are assisting emergency earthquake damage triage by comparing pre-event and post-event aerial/satellite chips. "
+    "You will receive a before chip and an after chip for the same EMS mapped feature centroid. "
+    "Be conservative: VLM output is a triage aid, not official confirmation. "
+    "Return only valid JSON with keys damage_class, damage_percent, confidence, change_evidence, before_observation, "
+    "after_observation, image_alignment, image_quality, action_priority, uncertainty_reason. "
+    "damage_class must be one of no_change_visible, minor_visible_damage, possible_major_damage, likely_destroyed, "
+    "uncertain_comparison_problem. action_priority must be one of urgent_review, review, deprioritize. "
+    "Focus on visible before/after change: new rubble, roof loss, collapse, footprint distortion, exposed floors, debris fields, "
+    "shadow/height loss, or clear disappearance. If alignment, resolution, cloud, black/missing before tile, or scene mismatch prevents "
+    "comparison, return uncertain_comparison_problem."
+)
+
+
+def load_env(path: Path) -> None:
+    if not path.exists():
+        return
+    for raw in path.read_text().splitlines():
+        line = raw.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, value = line.split("=", 1)
+        os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))
+
+
+def lonlat_to_webmercator(lon: float, lat: float) -> tuple[float, float]:
+    radius = 6378137.0
+    x = radius * math.radians(lon)
+    y = radius * math.log(math.tan(math.pi / 4.0 + math.radians(lat) / 2.0))
+    return x, y
+
+
+def encode_image(path: Path) -> str:
+    return "data:image/png;base64," + base64.b64encode(path.read_bytes()).decode("ascii")
+
+
+def chip_path(aoi_id: str, feature_id: str, kind: str) -> Path:
+    return ROOT / "public" / "data" / "chips" / aoi_id / f"{feature_id}_{kind}.png"
+
+
+def make_chip(cog: Path, feature: dict, out: Path, size_m: int = 96) -> bool:
+    props = feature["properties"]
+    lat = float(props["centroid_lat"])
+    lon = float(props["centroid_lon"])
+    x, y = lonlat_to_webmercator(lon, lat)
+    half = size_m / 2
+    out.parent.mkdir(parents=True, exist_ok=True)
+    tmp = out.with_suffix(".raw.png")
+    cmd = [
+        "gdal_translate",
+        "--quiet",
+        "-of",
+        "PNG",
+        "-projwin",
+        str(x - half),
+        str(y + half),
+        str(x + half),
+        str(y - half),
+        "-outsize",
+        "512",
+        "512",
+        str(cog),
+        str(tmp),
+    ]
+    try:
+        subprocess.run(cmd, check=True)
+    except subprocess.CalledProcessError:
+        return False
+    from PIL import Image, ImageDraw, ImageStat
+
+    image = Image.open(tmp).convert("RGB")
+    stat = ImageStat.Stat(image)
+    # Very dark chips are usually outside a partial pre-event mosaic.
+    if sum(stat.mean) / 3 < 4:
+        tmp.unlink(missing_ok=True)
+        tmp.with_suffix(tmp.suffix + ".aux.xml").unlink(missing_ok=True)
+        return False
+    draw = ImageDraw.Draw(image)
+    cx = cy = 256
+    draw.ellipse((cx - 9, cy - 9, cx + 9, cy + 9), outline=(255, 255, 255), width=4)
+    draw.ellipse((cx - 6, cy - 6, cx + 6, cy + 6), outline=(220, 38, 38), width=3)
+    draw.line((cx - 18, cy, cx - 11, cy), fill=(255, 255, 255), width=3)
+    draw.line((cx + 11, cy, cx + 18, cy), fill=(255, 255, 255), width=3)
+    draw.line((cx, cy - 18, cx, cy - 11), fill=(255, 255, 255), width=3)
+    draw.line((cx, cy + 11, cx, cy + 18), fill=(255, 255, 255), width=3)
+    image.save(out, optimize=True)
+    tmp.unlink(missing_ok=True)
+    tmp.with_suffix(tmp.suffix + ".aux.xml").unlink(missing_ok=True)
+    return True
+
+
+def make_compare_chip(before: Path, after: Path, out: Path) -> None:
+    from PIL import Image, ImageDraw, ImageFont
+
+    before_img = Image.open(before).convert("RGB")
+    after_img = Image.open(after).convert("RGB")
+    panel = Image.new("RGB", (1024, 548), (245, 242, 235))
+    panel.paste(before_img, (0, 36))
+    panel.paste(after_img, (512, 36))
+    draw = ImageDraw.Draw(panel)
+    draw.rectangle((0, 0, 1024, 35), fill=(20, 21, 18))
+    draw.text((14, 10), "BEFORE - Vantor pre-event reference", fill=(255, 255, 255))
+    draw.text((526, 10), "AFTER - EMS post-event", fill=(255, 255, 255))
+    draw.line((512, 0, 512, 548), fill=(245, 242, 235), width=3)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    panel.save(out, optimize=True)
+
+
+def call_minimax(item: dict) -> dict:
+    key = os.environ.get("MINIMAX_API_KEY")
+    if not key:
+        raise SystemExit("MINIMAX_API_KEY missing")
+    model = os.environ.get("MINIMAX_MODEL", "MiniMax-M3")
+    prompt = (
+        "Compare the before and after chips for emergency earthquake damage triage. "
+        "Both chips are centered on the same EMS mapped feature centroid marked by the reticle. "
+        f"AOI: {item['aoi_id']}. Feature: {item['id']}. Official EMS label: {item['ems_damage_gra']}. "
+        f"Official EMS percent: {item.get('ems_damage_percent')}. "
+        f"Before source: {item['before_source_label']}. "
+        "Assess visible physical change between before and after. Do not rely only on the official EMS label. "
+        "If the before reference is missing, too misaligned, lower quality, or from a different viewing geometry that prevents a fair comparison, "
+        "return uncertain_comparison_problem and explain why."
+    )
+    payload = {
+        "model": model,
+        "messages": [
+            {"role": "system", "content": SYSTEM},
+            {
+                "role": "user",
+                "content": [
+                    {"type": "text", "text": prompt},
+                    {"type": "image_url", "image_url": {"url": encode_image(Path(item["compare_chip"]))}},
+                ],
+            },
+        ],
+        "temperature": 0,
+    }
+    req = Request(
+        "https://api.minimax.io/v1/text/chatcompletion_v2",
+        data=json.dumps(payload).encode("utf-8"),
+        headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"},
+        method="POST",
+    )
+    try:
+        with urlopen(req, timeout=90) as resp:
+            raw = resp.read().decode("utf-8")
+    except HTTPError as exc:
+        detail = exc.read().decode("utf-8", errors="replace")
+        raise RuntimeError(f"MiniMax HTTP {exc.code}: {detail}") from exc
+    data = json.loads(raw)
+    text = data["choices"][0]["message"]["content"]
+    match = re.search(r"\{.*\}", text, re.S)
+    if not match:
+        raise ValueError(f"No JSON in MiniMax response: {text[:400]}")
+    result = json.loads(match.group(0))
+    result["vlm_model"] = model
+    result["review_type"] = "dated_pre_event_comparison"
+    result["before_source"] = item["before_source_label"]
+    return result
+
+
+def priority(feature: dict) -> tuple[int, str]:
+    props = feature["properties"]
+    raw = str(props.get("damage_gra") or "").lower()
+    if "destroy" in raw:
+        return (0, props["id"])
+    if raw == "damaged":
+        return (1, props["id"])
+    if "possibly" in raw or "possible" in raw:
+        return (2, props["id"])
+    return (9, props["id"])
+
+
+def public_chip(path: Path) -> str:
+    return "/data/chips/" + path.relative_to(ROOT / "public" / "data" / "chips").as_posix()
+
+
+def make_record(aoi_id: str, before_cog: Path, after_cog: Path, feature: dict) -> dict | None:
+    props = feature["properties"]
+    fid = props["id"]
+    before_chip = chip_path(aoi_id, fid, "before_event")
+    after_chip = chip_path(aoi_id, fid, "after_event")
+    compare_chip = chip_path(aoi_id, fid, "before_after_compare")
+    if not before_chip.exists() and not make_chip(before_cog, feature, before_chip):
+        return None
+    if not after_chip.exists():
+        make_chip(after_cog, feature, after_chip)
+    if not compare_chip.exists():
+        make_compare_chip(before_chip, after_chip, compare_chip)
+    item = {
+        "aoi_id": aoi_id,
+        "id": fid,
+        "ems_damage_gra": props.get("damage_gra"),
+        "ems_damage_percent": props.get("damage_percent"),
+        "before_source_label": BEFORE_SOURCE_LABEL[aoi_id],
+        "compare_chip": str(compare_chip),
+    }
+    result = call_minimax(item)
+    return {
+        "id": fid,
+        "aoi_id": aoi_id,
+        "google_maps_url": props.get("google_maps_url"),
+        "official_ems_damage_gra": props.get("damage_gra"),
+        "official_ems_damage_percent": props.get("damage_percent"),
+        "before_event_chip": public_chip(before_chip),
+        "post_event_chip": public_chip(after_chip),
+        "compare_chip": public_chip(compare_chip),
+        "vlm": result,
+    }
+
+
+def write_summary(aoi_id: str, records: list[dict]) -> None:
+    out_dir = ROOT / "public" / "data" / "aoi" / aoi_id
+    summary_path = out_dir / "vlm_before_after_summary.json"
+    csv_path = out_dir / "vlm_before_after_summary.csv"
+    classes: dict[str, int] = {}
+    priorities: dict[str, int] = {}
+    for record in records:
+        v = record.get("vlm", {})
+        classes[v.get("damage_class", "unknown")] = classes.get(v.get("damage_class", "unknown"), 0) + 1
+        priorities[v.get("action_priority", "unknown")] = priorities.get(v.get("action_priority", "unknown"), 0) + 1
+    summary = {
+        "aoi_id": aoi_id,
+        "review_type": "dated_pre_event_comparison",
+        "reviewed": len(records),
+        "damage_classes": classes,
+        "action_priorities": priorities,
+        "before_source": BEFORE_SOURCE_LABEL[aoi_id],
+        "warning": "VLM before/after outputs are triage aids only; official EMS labels remain source of record.",
+    }
+    summary_path.write_text(json.dumps(summary, indent=2) + "\n")
+    with csv_path.open("w", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=["id", "official_ems_damage_gra", "vlm_damage_class", "confidence", "action_priority", "compare_chip", "google_maps_url"])
+        writer.writeheader()
+        for record in records:
+            v = record.get("vlm", {})
+            writer.writerow({
+                "id": record["id"],
+                "official_ems_damage_gra": record.get("official_ems_damage_gra"),
+                "vlm_damage_class": v.get("damage_class"),
+                "confidence": v.get("confidence"),
+                "action_priority": v.get("action_priority"),
+                "compare_chip": record.get("compare_chip"),
+                "google_maps_url": record.get("google_maps_url"),
+            })
+
+
+def run_aoi(aoi_id: str, limit: int, workers: int) -> int:
+    before_cog = LOCAL_BEFORE_COGS[aoi_id]
+    after_cog = LOCAL_AFTER_COGS[aoi_id]
+    if not before_cog.exists():
+        raise SystemExit(f"Before COG missing: {before_cog}")
+    if not after_cog.exists():
+        raise SystemExit(f"After COG missing: {after_cog}")
+    geojson_path = ROOT / "public" / "data" / "aoi" / aoi_id / "damage.geojson"
+    out_path = ROOT / "public" / "data" / "aoi" / aoi_id / "vlm_before_after_review.jsonl"
+    data = json.loads(geojson_path.read_text())
+    features = sorted(data.get("features", []), key=priority)
+    if limit:
+        features = features[:limit]
+    done = set()
+    records: list[dict] = []
+    if out_path.exists():
+        for line in out_path.read_text().splitlines():
+          if line.strip():
+              record = json.loads(line)
+              done.add(record["id"])
+              records.append(record)
+    pending = [feature for feature in features if feature["properties"]["id"] not in done]
+    reviewed = 0
+    skipped = 0
+    write_lock = Lock()
+    with out_path.open("a") as dst, ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
+        futures = {pool.submit(make_record, aoi_id, before_cog, after_cog, feature): feature for feature in pending}
+        for future in as_completed(futures):
+            feature = futures[future]
+            fid = feature["properties"]["id"]
+            record = future.result()
+            if record is None:
+                skipped += 1
+                print(f"{aoi_id} {fid} skipped: missing/black before reference", flush=True)
+                continue
+            with write_lock:
+                if record["id"] in done:
+                    continue
+                done.add(record["id"])
+                records.append(record)
+                reviewed += 1
+                dst.write(json.dumps(record, ensure_ascii=True, separators=(",", ":")) + "\n")
+                dst.flush()
+            result = record["vlm"]
+            print(f"{aoi_id} {len(done)}/{len(features)} {fid} -> {result.get('damage_class')} conf={result.get('confidence')}", flush=True)
+            time.sleep(0.25)
+    write_summary(aoi_id, records)
+    print(f"Reviewed {reviewed} new features; skipped {skipped}; total before/after records {len(records)}")
+    return reviewed
+
+
+def main() -> None:
+    load_env(ROOT / ".env")
+    load_env(ROOT.parents[1] / ".env")
+    if len(sys.argv) < 2:
+        raise SystemExit("Usage: scripts/run_minimax_ems_before_after_review.py AOI_ID [AOI_ID...] [--limit N]")
+    args = sys.argv[1:]
+    limit = 0
+    workers = int(os.environ.get("VLM_WORKERS", "3"))
+    if "--workers" in args:
+        index = args.index("--workers")
+        workers = int(args[index + 1])
+        args = args[:index] + args[index + 2 :]
+    if "--limit" in args:
+        index = args.index("--limit")
+        limit = int(args[index + 1])
+        args = args[:index] + args[index + 2 :]
+    total = 0
+    for aoi_id in args:
+        if aoi_id not in LOCAL_BEFORE_COGS:
+            raise SystemExit(f"No before/after VLM configuration for {aoi_id}")
+        total += run_aoi(aoi_id, limit, workers)
+    print(f"Reviewed {total} new before/after comparisons")
+
+
+if __name__ == "__main__":
+    main()

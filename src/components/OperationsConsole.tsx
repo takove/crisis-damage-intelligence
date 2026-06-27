@@ -50,7 +50,7 @@ const copy = {
     demoOnly: "Demo/VLM benchmark - not Venezuela operational data",
     confidenceTitle: "Data confidence",
     confidenceText:
-      "Official EMS vector labels are the source of record for this AOI. MiniMax-M3 VLM results are post-event-only triage aids unless before/after chips are explicitly available. They can prioritize review, but they are not confirmed damage.",
+      "Official EMS vector labels are the source of record for this AOI. MiniMax-M3 VLM results are triage aids. When before/after chips are available, the VLM compares visible change; otherwise it is lower-confidence post-event-only review.",
     statuses: {
       "test-fixture": "Readiness test",
       "official-vector": "Official EMS vector",
@@ -106,7 +106,7 @@ const copy = {
     demoOnly: "Demo/benchmark VLM - no es dato operativo de Venezuela",
     confidenceTitle: "Confianza del dato",
     confidenceText:
-      "Las etiquetas vectoriales oficiales de EMS son la fuente principal para este AOI. Los resultados MiniMax-M3 son triage auxiliar post-evento salvo que existan chips antes/despues explicitos. Sirven para priorizar revisión, no son daño confirmado.",
+      "Las etiquetas vectoriales oficiales de EMS son la fuente principal para este AOI. Los resultados MiniMax-M3 son ayudas de triage. Cuando existen chips antes/después, el VLM compara cambio visible; si no, es revisión post-evento de menor confianza.",
     statuses: {
       "test-fixture": "Prueba de preparación",
       "official-vector": "Vector oficial EMS",
@@ -403,7 +403,7 @@ function formatBytes(bytes?: number) {
 function Evidence({ feature, vlm, language, onBackToPriority }: { feature: DamageFeature; vlm?: VlmRecord; language: Language; onBackToPriority: () => void }) {
   const t = copy[language];
   const p = feature.properties;
-  const chip = vlm?.post_event_chip ?? vlm?.triplet_chip?.replace(/^.*chips\//, "/data/chips/");
+  const chip = vlm?.compare_chip ?? vlm?.post_event_chip ?? vlm?.triplet_chip?.replace(/^.*chips\//, "/data/chips/");
   const mapsUrl = typeof p.google_maps_url === "string" ? p.google_maps_url : "";
   return (
     <div className="evidence-body">
@@ -413,9 +413,10 @@ function Evidence({ feature, vlm, language, onBackToPriority }: { feature: Damag
         <div><dt>Pixel</dt><dd>{p.damage_class ?? p.damage_gra ?? p.confirmed_damage_class ?? "unknown"}</dd></div>
         <div><dt>Score</dt><dd>{p.damage_score ?? p.damage_percent ?? p.confirmed_damage_percent ?? "-"}</dd></div>
         <div><dt>VLM</dt><dd>{vlm?.vlm?.damage_class ?? "not reviewed"}</dd></div>
-        <div><dt>VLM type</dt><dd>{vlm ? (vlm.vlm?.review_type ?? "post_event_only") : "-"}</dd></div>
+        <div><dt>VLM type</dt><dd>{vlm ? (vlm.vlm?.review_type ?? vlm.review_type ?? "post_event_only") : "-"}</dd></div>
         <div><dt>Priority</dt><dd>{vlm?.vlm?.action_priority ?? "-"}</dd></div>
       </dl>
+      {vlm?.vlm?.change_evidence && <p className="evidence-text">{vlm.vlm.change_evidence}</p>}
       {vlm?.vlm?.evidence && <p className="evidence-text">{vlm.vlm.evidence}</p>}
       {vlm?.vlm?.uncertainty_reason && <p className="evidence-text"><b>Uncertainty:</b> {vlm.vlm.uncertainty_reason}</p>}
       {chip && <a href={chip} target="_blank">

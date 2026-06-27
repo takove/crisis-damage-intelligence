@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-27T17:35:00Z",
+  "updatedAt": "2026-06-27T18:05:00Z",
   "platform": "Crisis Damage Intelligence",
   "aois": [
     {
@@ -484,13 +484,16 @@
         "cog": "https://rapidmapping-viewer.s3.eu-west-1.amazonaws.com/EMSR884/AOI12/GRA_PRODUCT/EMSR884_AOI12_GRA_PRODUCT_LEGION_20260626_1510_ORTHO_cog.tif",
         "vlm_jsonl": "/data/aoi/emsr884-aoi12-caraballeda/vlm_review.jsonl",
         "vlm_csv": "/data/aoi/emsr884-aoi12-caraballeda/vlm_review_summary.csv",
-        "vlm_summary": "/data/aoi/emsr884-aoi12-caraballeda/vlm_summary.json"
+        "vlm_summary": "/data/aoi/emsr884-aoi12-caraballeda/vlm_summary.json",
+        "vlm_before_after_jsonl": "/data/aoi/emsr884-aoi12-caraballeda/vlm_before_after_review.jsonl",
+        "vlm_before_after_csv": "/data/aoi/emsr884-aoi12-caraballeda/vlm_before_after_summary.csv",
+        "vlm_before_after_summary": "/data/aoi/emsr884-aoi12-caraballeda/vlm_before_after_summary.json"
       },
       "layers": {
         "damage": "/data/aoi/emsr884-aoi12-caraballeda/damage.geojson",
         "afterImage": "https://rapidmapping-viewer.s3.eu-west-1.amazonaws.com/EMSR884/AOI12/GRA_PRODUCT/EMSR884_AOI12_GRA_PRODUCT_LEGION_20260626_1510_ORTHO_cog.tif",
         "afterTiles": "/data/tiles/emsr884-aoi12-caraballeda/after/{z}/{x}/{y}.webp",
-        "vlm": "/data/aoi/emsr884-aoi12-caraballeda/vlm_review.jsonl",
+        "vlm": "/data/aoi/emsr884-aoi12-caraballeda/vlm_before_after_review.jsonl",
         "beforeTiles": "/data/tiles/emsr884-aoi12-caraballeda/before/{z}/{x}/{y}.webp"
       },
       "metrics": {
@@ -498,7 +501,9 @@
         "destroyed": 10,
         "damagedConfirmed": 96,
         "possibleDamage": 24,
-        "vlmReviewed": 120
+        "vlmReviewed": 107,
+        "vlmBeforeAfterReviewed": 107,
+        "vlmBeforeAfterSkippedNoBefore": 13
       },
       "imagery": {
         "after": {
@@ -561,7 +566,7 @@
             }
           ]
         },
-        "note": "After imagery is official Copernicus EMS post-event COG/tiles. Before imagery is Vantor Open Data pre-event reference mosaic, not official EMS before imagery, and may have partial coverage/gaps."
+        "note": "After imagery is official Copernicus EMS post-event COG/tiles. Before imagery is Vantor Open Data pre-event reference mosaic, not official EMS before imagery, and may have partial coverage/gaps. VLM for AOI12 now uses before/after comparison where Vantor before coverage exists."
       }
     },
     {
