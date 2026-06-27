@@ -152,12 +152,66 @@ QA evidence:
 - Next recommended action:
   - For VLM chips, consider using a better representative point derived from polygon interior/building footprint or a small multi-chip context around the feature, instead of relying only on the EMS centroid.
 
+### 2026-06-27 - AOI03 OSM Candidate Before/After VLM Pilot
+
+- Objective: continue before/after VLM expansion without pretending AOI03 has official EMS damage vectors.
+- Files changed:
+  - Added `scripts/inventory_pre_event_baselines.py`.
+  - Added `scripts/extract_aoi03_osm_candidates.py`.
+  - Added `scripts/run_aoi03_osm_before_after_pilot.py`.
+  - Wrote baseline inventory under `ops/baseline_inventory/`.
+  - Wrote candidate-only VLM pilot outputs under `ops/aoi03_osm_before_after_pilot/`.
+- Commands run:
+  - `python3 scripts/inventory_pre_event_baselines.py`
+  - `python3 scripts/extract_aoi03_osm_candidates.py`
+  - `python3 scripts/run_aoi03_osm_before_after_pilot.py --run-vlm --limit 24 --workers 4`
+  - `python3 scripts/run_aoi03_osm_before_after_pilot.py --run-vlm --limit 60 --workers 5`
+- Baseline inventory result:
+  - AOI03 Antimano has Vantor Open Data pre-event scene intersections suitable for a building-level pilot.
+  - AOI06 Moron, AOI08 San Felipe, and AOI10 Guacara still only found Sentinel-2 context imagery in this inventory pass; this is not suitable for building-level VLM.
+- Candidate extraction result:
+  - Extracted 498 AOI03 OpenStreetMap building-footprint candidates.
+  - These are not damage claims and are not official EMS features.
+- Parallel VLM result:
+  - Selected first 60 prioritized OSM candidates.
+  - Generated 25 usable before/after chip triplets.
+  - Skipped/failed 35 because before/after chips were missing, blank, or unusable.
+  - VLM classes among 25 generated comparisons:
+    - uncertain_comparison_problem: 17
+    - possible_major_damage: 6
+    - minor_visible_damage: 1
+    - likely_destroyed: 1
+  - Action priorities:
+    - urgent_review: 6
+    - review: 18
+    - deprioritize: 1
+- QA performed:
+  - Visual contact sheet review confirmed many AOI03 after chips are degraded by haze/smoke/blank imagery.
+  - The `possible_major_damage` and `likely_destroyed` outputs are useful as a review queue signal only; they are not publishable as operational damage because AOI03 features are OSM candidates and several comparisons have imagery-quality caveats.
+- Evidence:
+  - `ops/aoi03_osm_before_after_pilot/pilot_records.json`
+  - `ops/aoi03_osm_before_after_pilot/pilot_summary.json`
+  - `ops/aoi03_osm_before_after_pilot/pilot_summary.csv`
+  - `qa/aoi03-osm-before-after-vlm-25-contact-sheet.png`
+- Deployment:
+  - Not deployed and not added to `public/data/catalog.json`.
+  - Temporary public chip files were removed after copying pilot artifacts to `ops/`.
+- Result:
+  - The before/after VLM pipeline now supports a parallel candidate-only workflow for areas without official EMS damage vectors.
+  - AOI03 can produce a triage review queue, but the current post-event imagery quality is too weak for public operational claims.
+- Blockers:
+  - AOI03 needs better post-event imagery, official damage vectors, or human-verified candidate reports before any candidate layer should be published.
+  - The Vantor `/vsicurl/` path emits GDAL `.msk` warnings and can be slow; larger batches need chunking/timeouts or cached source rasters.
+- Next recommended action:
+  - Use the AOI03 candidate pilot only as internal triage evidence.
+  - For public app value, prioritize official EMS AOI updates and better pre-event baselines for AOI06/AOI08, or move current tiles/chips to R2 so public loading stays fast.
+
 ## Known Gaps
 
 1. Imagery is still active-area based. The map loads all vector features, but not all AOI imagery at once.
 2. Vercel deployment package is too large because chips/tiles are still bundled.
 3. Area ranking currently includes external prediction counts in the visible order; this is labeled, but needs better source-weighted ranking.
-4. VLM before/after exists for AOI12 and AOI02 only. AOI02 is mostly uncertainty due to imagery quality/centering.
+4. Public VLM before/after exists for AOI12 and AOI02 only. AOI03 has an internal OSM-candidate VLM pilot, but it is not public operational data.
 5. Mobile end-to-end QA is incomplete.
 6. Operator docs may be stale after the recent area-navigation and VLM before/after changes.
 7. Human validation workflow is not implemented.
@@ -166,6 +220,7 @@ QA evidence:
 ## Blockers
 
 - More before imagery coverage is needed before running credible before/after VLM for AOI06, AOI08, and AOI10. AOI02 has coverage but poor comparison quality in many chips.
+- AOI03 has before/after candidate chips, but current after imagery quality and non-official OSM candidates make it unsuitable for public damage claims.
 - Moving assets to R2/CDN requires confirming public object URLs and updating catalog paths safely.
 - Any social media/bookmark evidence requires source verification before it can be shown as operational data.
 
