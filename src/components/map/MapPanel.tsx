@@ -131,13 +131,13 @@ export default function MapPanel({ aoi, features, mode, opacity, filter, basemap
       return new Style({
         image: new CircleStyle({
           radius: kind === "severe" ? 7 : 5,
-          stroke: new Stroke({ color, width: 2 }),
+          stroke: new Stroke({ color: hexToRgba(color, opacity), width: 2 }),
           fill: new Fill({ color: hexToRgba(color, Math.max(0.45, opacity)) }),
         }),
       });
     }
     return new Style({
-      stroke: new Stroke({ color, width: kind === "low" ? 1 : 2 }),
+      stroke: new Stroke({ color: hexToRgba(color, opacity), width: kind === "low" ? 1 : 2 }),
       fill: new Fill({ color: hexToRgba(color, opacity) }),
     });
   }, [opacity]);
@@ -226,10 +226,7 @@ export default function MapPanel({ aoi, features, mode, opacity, filter, basemap
     vector.setStyle((feature) => styleFor(feature as OlDamageFeature));
     nodeRef.current?.setAttribute("data-visible-features", String(visible.length));
     setDebug(visible);
-    if (selectedIdRef.current) {
-      window.setTimeout(() => focusFeature(selectedIdRef.current), 0);
-    }
-  }, [filter, focusFeature, setDebug, styleFor, vlm]);
+  }, [filter, setDebug, styleFor, vlm]);
 
   useEffect(() => {
     renderVectorsRef.current = renderVectors;
