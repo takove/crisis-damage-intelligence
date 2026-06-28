@@ -208,6 +208,7 @@ const cityGroups: Array<Omit<
     primaryAoiId: "emsr884-aoi12-caraballeda",
     sourceIds: [
       "emsr884-aoi12-caraballeda",
+      "emsr884-aoi12-caraballeda-monitor01",
       "external-msft-catia-la-mar-predicted-damage",
       "external-msft-caraballeda-east-predicted-damage",
       "external-msft-catia-la-mar-east-predicted-damage",
@@ -220,6 +221,12 @@ const cityGroups: Array<Omit<
     primaryAoiId: "emsr884-aoi08-san-felipe",
     sourceIds: ["emsr884-aoi08-san-felipe", "emsr884-aoi08-san-felipe-monitor01"],
     name: { en: "San Felipe", es: "San Felipe" },
+  },
+  {
+    id: "santa-cruz",
+    primaryAoiId: "emsr884-aoi05-santa-cruz",
+    sourceIds: ["emsr884-aoi05-santa-cruz"],
+    name: { en: "Santa Cruz", es: "Santa Cruz" },
   },
   {
     id: "moron",

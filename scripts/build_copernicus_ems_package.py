@@ -27,31 +27,32 @@ def prepare_input(path):
 
 
 def find_product_root(root):
-    gpkg = sorted(root.rglob("*_PRODUCT_v*.gpkg"))
+    gpkg = sorted(root.rglob("*_v*.gpkg"))
     if gpkg:
         return gpkg[0].parent
-    shp = sorted(root.rglob("*_PRODUCT_builtUpA_v*.shp"))
+    shp = sorted(root.rglob("*_builtUp[AP]_v*.shp"))
     if shp:
         return shp[0].parent
-    raise SystemExit(f"No EMS product GeoPackage/Shapefile found under {root}")
+    raise SystemExit(f"No EMS GeoPackage/Shapefile found under {root}")
 
 
 def layer_source(product_root):
-    gpkg = sorted(product_root.glob("*_PRODUCT_v*.gpkg"))
+    gpkg = sorted(product_root.glob("*_v*.gpkg"))
     if gpkg:
         info = run(["ogrinfo", str(gpkg[0])])
-        if "builtUpA_v1" in info:
-            return str(gpkg[0]), "builtUpA_v1", gpkg[0]
-    shp = sorted(product_root.glob("*_PRODUCT_builtUpA_v*.shp"))
+        for layer in ("builtUpA_v1", "builtUpP_v1"):
+            if layer in info:
+                return str(gpkg[0]), layer, gpkg[0]
+    shp = sorted(product_root.glob("*_builtUp[AP]_v*.shp"))
     if shp:
         return str(shp[0]), None, shp[0]
-    raise SystemExit(f"No builtUpA layer found in {product_root}")
+    raise SystemExit(f"No builtUpA/builtUpP layer found in {product_root}")
 
 
 def product_id_from_path(product_path, product_root):
     stem = product_path.stem
-    if "_PRODUCT" in stem:
-        return stem.replace("_PRODUCT", "")
+    if "_v" in stem:
+        return stem.rsplit("_v", 1)[0]
     return product_root.name
 
 

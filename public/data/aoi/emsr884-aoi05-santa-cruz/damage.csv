@@ -1,0 +1,4 @@
+id,aoi,obj_type,name,info,simplified,damage_gra,damage_class,damage_percent,det_method,notation,or_src_id,dmg_src_id,centroid_lat,centroid_lon,google_maps_url
+ems_00001,EMSR884_AOI05_GRA_PRODUCT,11-Residential Buildings,Unknown,997-Not Applicable,Residential,Destroyed,destroyed,100,Photo-interpretation,Building point,978,2,10.21239458,-67.48101676,"https://www.google.com/maps/search/?api=1&query=10.21239458,-67.48101676"
+ems_00002,EMSR884_AOI05_GRA_PRODUCT,11-Residential Buildings,Unknown,997-Not Applicable,Residential,Destroyed,destroyed,100,Photo-interpretation,Building point,978,2,10.21245015,-67.48110059,"https://www.google.com/maps/search/?api=1&query=10.21245015,-67.48110059"
+ems_00003,EMSR884_AOI05_GRA_PRODUCT,11-Residential Buildings,Unknown,997-Not Applicable,Residential,Destroyed,destroyed,100,Photo-interpretation,Building point,978,2,10.2125796,-67.48089413,"https://www.google.com/maps/search/?api=1&query=10.2125796,-67.48089413"

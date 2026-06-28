@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"><Document><name>EMS Damage Assessment</name>
+
+    <Placemark>
+      <name>ems_00001</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI05_GRA_PRODUCT<br/><b>EMS damage:</b> Destroyed<br/><b>Damage %:</b> 100<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.21239458,-67.48101676'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff00005b</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-67.48101676,10.21239458,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00002</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI05_GRA_PRODUCT<br/><b>EMS damage:</b> Destroyed<br/><b>Damage %:</b> 100<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.21245015,-67.48110059'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff00005b</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-67.48110059,10.21245015,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ems_00003</name>
+      <description><![CDATA[<b>AOI:</b> EMSR884_AOI05_GRA_PRODUCT<br/><b>EMS damage:</b> Destroyed<br/><b>Damage %:</b> 100<br/><b>Object:</b> 11-Residential Buildings<br/><b>Detection:</b> Photo-interpretation<br/><b>Google Maps:</b> <a href='https://www.google.com/maps/search/?api=1&amp;query=10.2125796,-67.48089413'>open</a><br/>]]></description>
+      <Style><IconStyle><color>ff00005b</color><scale>0.9</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon></IconStyle></Style>
+      <Point><coordinates>-67.48089413,10.2125796,0</coordinates></Point>
+    </Placemark>
+</Document></kml>

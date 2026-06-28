@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-28T18:02:44Z",
+  "updatedAt": "2026-06-28T18:20:00Z",
   "platform": "Respuesta Venezuela",
   "aois": [
     {
@@ -243,6 +243,70 @@
       }
     },
     {
+      "id": "emsr884-aoi05-santa-cruz",
+      "country": "Venezuela",
+      "event": "EMSR884 Venezuela earthquake",
+      "name": {
+        "en": "AOI05 Santa Cruz - Official EMSR884 Points",
+        "es": "AOI05 Santa Cruz - Puntos oficiales EMSR884"
+      },
+      "status": "official-monitor-points",
+      "source": "Copernicus EMSR884 GRA_PRODUCT ZIP -> EMSR884_AOI05_GRA_PRODUCT_v1.gpkg / builtUpP_v1 point layer. Official EMS point damage layer; keep separate from polygon builtUpA products.",
+      "bounds": [
+        [
+          10.21239458,
+          -67.48110059
+        ],
+        [
+          10.2125796,
+          -67.48089413
+        ]
+      ],
+      "center": [
+        10.212474776666667,
+        -67.48100382666667
+      ],
+      "downloads": {
+        "csv": "/data/aoi/emsr884-aoi05-santa-cruz/damage.csv",
+        "geojson": "/data/aoi/emsr884-aoi05-santa-cruz/damage.geojson",
+        "kml": "/data/aoi/emsr884-aoi05-santa-cruz/damage.kml",
+        "metadata": "/data/aoi/emsr884-aoi05-santa-cruz/source_metadata.json",
+        "zip": "https://rapidmapping.emergency.copernicus.eu/backend/EMSR884/AOI05/GRA_PRODUCT/EMSR884_AOI05_GRA_PRODUCT_v1.zip",
+        "cog": "https://rapidmapping-viewer.s3.eu-west-1.amazonaws.com/EMSR884/AOI05/GRA_PRODUCT/EMSR884_AOI05_GRA_PRODUCT_WORLDVIEW3_20260626_1510_ORTHO_cog.tif"
+      },
+      "layers": {
+        "damage": "/data/aoi/emsr884-aoi05-santa-cruz/damage.geojson",
+        "afterImage": "https://rapidmapping-viewer.s3.eu-west-1.amazonaws.com/EMSR884/AOI05/GRA_PRODUCT/EMSR884_AOI05_GRA_PRODUCT_WORLDVIEW3_20260626_1510_ORTHO_cog.tif"
+      },
+      "metrics": {
+        "features": 3,
+        "destroyed": 3,
+        "damagedConfirmed": 0,
+        "possibleDamage": 0,
+        "vlmReviewed": 0
+      },
+      "imagery": {
+        "before": null,
+        "after": {
+          "url": "https://rapidmapping-viewer.s3.eu-west-1.amazonaws.com/EMSR884/AOI05/GRA_PRODUCT/EMSR884_AOI05_GRA_PRODUCT_WORLDVIEW3_20260626_1510_ORTHO_cog.tif",
+          "sensor": "WorldView-3",
+          "acquisitionUtc": "2026-06-26T15:10:00",
+          "bytes": null,
+          "sha256": null,
+          "r2Key": null
+        },
+        "note": "Official EMS point damage layer with post-event image URL. No dated pre-event imagery pair is exposed for this AOI yet.",
+        "approximateReference": {
+          "label": "Esri World Imagery aerial reference",
+          "urlTemplate": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+          "source": "Esri World Imagery / Maxar / Earthstar Geographics / GIS User Community basemap as displayed in the app aerial toggle",
+          "intendedUse": "Human visual orientation only when no dated high-resolution pre-event baseline is available.",
+          "limitations": "Not official EMS before imagery, not guaranteed to be pre-event, and must not be used for official damage counts."
+        }
+      },
+      "geometryType": "Point"
+    },
+    {
       "id": "emsr884-aoi06-moron",
       "country": "Venezuela",
       "event": "EMSR884 Venezuela earthquake",
@@ -470,7 +534,7 @@
         "es": "AOI08 San Felipe - Puntos EMSR884 MONIT01"
       },
       "status": "official-monitor-points",
-      "source": "Copernicus EMSR884 GRA_MONIT01 ZIP -> builtUpP_v1 point layer. Monitoring points, not builtUpA polygons; keep counts separate from PRODUCT polygon features.",
+      "source": "Copernicus EMSR884 GRA_MONIT01 ZIP -> EMSR884_AOI08_GRA_MONIT01_v1.gpkg / builtUpP_v1 point layer. Monitoring points, not builtUpA polygons; keep counts separate from PRODUCT polygon features.",
       "bounds": [
         [
           10.24332479,
@@ -722,6 +786,62 @@
           "limitations": "Not official EMS before imagery, not guaranteed to be pre-event at each tile, licensing/terms must be reviewed before bulk downloading or redistributing tiles, and it must not be used for official damage counts."
         }
       }
+    },
+    {
+      "id": "emsr884-aoi12-caraballeda-monitor01",
+      "country": "Venezuela",
+      "event": "EMSR884 Venezuela earthquake",
+      "name": {
+        "en": "AOI12 Caraballeda / La Guaira - EMSR884 MONIT01 Points",
+        "es": "AOI12 Caraballeda / La Guaira - Puntos EMSR884 MONIT01"
+      },
+      "status": "official-monitor-points",
+      "source": "Copernicus EMSR884 GRA_MONIT01 ZIP -> EMSR884_AOI12_GRA_MONIT01_v1.gpkg / builtUpP_v1 point layer. Monitoring points, not builtUpA polygons; keep counts separate from PRODUCT polygon features.",
+      "bounds": [
+        [
+          10.58800407,
+          -67.06339977
+        ],
+        [
+          10.6199689,
+          -66.82119358
+        ]
+      ],
+      "center": [
+        10.60925838010956,
+        -66.97142493317729
+      ],
+      "downloads": {
+        "csv": "/data/aoi/emsr884-aoi12-caraballeda-monitor01/damage.csv",
+        "geojson": "/data/aoi/emsr884-aoi12-caraballeda-monitor01/damage.geojson",
+        "kml": "/data/aoi/emsr884-aoi12-caraballeda-monitor01/damage.kml",
+        "metadata": "/data/aoi/emsr884-aoi12-caraballeda-monitor01/source_metadata.json",
+        "zip": "https://rapidmapping.emergency.copernicus.eu/backend/EMSR884/AOI12/GRA_MONIT01/EMSR884_AOI12_GRA_MONIT01_v1.zip"
+      },
+      "layers": {
+        "damage": "/data/aoi/emsr884-aoi12-caraballeda-monitor01/damage.geojson"
+      },
+      "metrics": {
+        "features": 1004,
+        "destroyed": 422,
+        "damagedConfirmed": 346,
+        "possibleDamage": 236,
+        "vlmReviewed": 0
+      },
+      "imagery": {
+        "before": null,
+        "after": null,
+        "note": "MONIT01 point layer only. Use parent AOI12 imagery for visual context.",
+        "approximateReference": {
+          "label": "Esri World Imagery aerial reference",
+          "urlTemplate": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+          "source": "Esri World Imagery / Maxar / Earthstar Geographics / GIS User Community basemap as displayed in the app aerial toggle",
+          "intendedUse": "Human visual orientation and low-confidence VLM context when no dated high-resolution pre-event baseline is available.",
+          "limitations": "Not official EMS before imagery, not guaranteed to be pre-event at each tile, licensing/terms must be reviewed before bulk downloading or redistributing tiles, and it must not be used for official damage counts."
+        }
+      },
+      "parentAoi": "emsr884-aoi12-caraballeda",
+      "geometryType": "Point"
     },
     {
       "id": "external-msft-catia-la-mar-predicted-damage",
