@@ -1,7 +1,7 @@
 # Crisis Damage Intelligence Operational QA
 
-Base URL: http://localhost:3000
-Generated: 2026-06-28T14:44:20.792Z
+Base URL: https://crisis-damage-intelligence.vercel.app
+Generated: 2026-06-28T14:54:35.366Z
 
 ## Result
 
