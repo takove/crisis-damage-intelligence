@@ -380,6 +380,27 @@ QA evidence:
 - Next recommended action:
   - Bulk upload `public/data/chips` and `public/data/tiles` to the R2 bucket preserving the `data/chips/...` and `data/tiles/...` keys, preferably using S3-compatible credentials and `aws s3 sync`. One-file-at-a-time Wrangler uploads are too slow for 64k tile files.
 
+### 2026-06-27 - Evidence Chips Mirrored To Public R2
+
+- Objective: make the remote-asset package useful for VLM evidence previews by moving chips out of Vercel.
+- Commands run:
+  - `find public/data/chips -type f ... > /tmp/cdi-chip-files.txt`
+  - Parallel `npx wrangler r2 object put crisis-damage-intelligence/data/chips/... --remote --file ... --content-type image/png --cache-control 'public, max-age=31536000, immutable'`
+  - Full public URL audit with `curl` against `https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/...`
+- Result:
+  - 681 evidence chip images uploaded to R2 under `data/chips/...`.
+  - One Cloudflare R2 500 occurred for `emsr884-aoi12-caraballeda/ems_00081_after_event.png`; retry succeeded.
+  - A high-concurrency audit produced 71 `429` responses from `r2.dev`; a slower follow-up audit confirmed those objects return HTTP 200.
+- Verified examples:
+  - `https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00006_before_after_compare.png` -> HTTP 200, PNG 1024x548.
+  - `https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi02-caracas/ems_00001_before_after_compare.png` -> HTTP 200, PNG 1024x548.
+- Current blocker:
+  - Tile URL sample still returns 404:
+    - `https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi12-caraballeda/after/18/82294/123319.webp`
+  - Wrangler has no bulk `r2 object sync` or `list` command in the installed version; object-level `put/get/delete` only.
+- Next recommended action:
+  - Upload tiles with S3-compatible R2 credentials and `aws s3 sync`, or install/use an S3-compatible sync client. Avoid Wrangler-per-file for the 63k tile pyramid unless there is no alternative.
+
 ## Known Gaps
 
 1. Imagery is still active-area based. The map loads all vector features, but not all AOI imagery at once.

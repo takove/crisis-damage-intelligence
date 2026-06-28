@@ -140,10 +140,11 @@ https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/ems/generated/catalog.json
 https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/ems/generated/aoi/emsr884-aoi12-caraballeda/damage.geojson
 ```
 
-Still not complete:
+Current remote asset status:
 
-- `public/data/tiles` and `public/data/chips` are not yet mirrored to public R2/CDN paths.
-- Vercel deployment should not exclude local tiles/chips until the app catalog points those URLs to verified remote assets.
+- Evidence chips are mirrored to public R2 under `data/chips/...`.
+- `public/data/tiles` is not yet mirrored to public R2/CDN paths.
+- Vercel deployment should not exclude local tiles until the app catalog points tile URLs to verified remote assets.
 
 Remote-asset Vercel package:
 
@@ -179,7 +180,14 @@ aws s3 sync public/data/chips s3://crisis-damage-intelligence/data/chips \
   --cache-control "public, max-age=31536000, immutable"
 ```
 
-Do not use one-file-at-a-time Wrangler uploads for the full tile pyramid unless there is no alternative; there are more than 60k tile files.
+`public/data/chips` was mirrored with parallel Wrangler remote object uploads because it is only 681 files. Do not use one-file-at-a-time Wrangler uploads for the full tile pyramid unless there is no alternative; there are more than 60k tile files.
+
+Verified chip examples:
+
+```text
+https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00006_before_after_compare.png
+https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi02-caracas/ems_00001_before_after_compare.png
+```
 
 R2 token note:
 
