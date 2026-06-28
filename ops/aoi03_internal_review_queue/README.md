@@ -9,3 +9,5 @@ Use this only to route human review or requests for better imagery. Do not publi
 - Machine-readable outputs: `review_queue.csv`, `review_queue.geojson`, `review_queue.kml`
 - Human-review packet: `review_report.md`, `review_packet.html`
 - Contact sheet: `qa/aoi03-internal-review-queue-19-contact-sheet.png`
+- Second-pass adjudication: `adjudication/aoi03_internal_adjudication.json`, `adjudication/aoi03_internal_adjudication.csv`, `adjudication/adjudication_report.md`, `adjudication/adjudication_packet.html`
+- Adjudication contact sheet: `qa/aoi03-internal-adjudication-19-contact-sheet.png`

@@ -46,7 +46,7 @@ Candidate next work:
 - Generate before/after chips only where before coverage is nonblank.
 - Add per-area VLM coverage metrics: reviewed, skipped no-before, uncertain comparison, likely destroyed.
 - Run a small pilot first, compare outputs, then batch the rest.
-- AOI03 now has an internal OSM-candidate pilot: 95 VLM-reviewed comparisons and 19 review candidates. Review those candidates before publishing or expanding claims.
+- AOI03 now has an internal OSM-candidate pilot: 95 VLM-reviewed comparisons and 19 review candidates. A stricter second-pass adjudication reduced this to 5 urgent human-review candidates, 1 normal human-review candidate, and 13 hold-for-better-imagery candidates. Review only the urgent subset first and do not publish AOI03 claims without human validation or better imagery.
 
 ## Priority 2: Imagery Loading And Coverage
 
@@ -145,4 +145,4 @@ Acceptance criteria:
 
 ## Current Highest-Leverage Recommendation
 
-Run the next before/after VLM expansion loop. First human-review the 19 AOI03 internal candidates or find stronger pre-event baselines for AOI06/AOI08/AOI10; only then expand VLM batches. Move chips/tiles to R2/CDN immediately after or during that work if deployment weight blocks publishing new VLM outputs.
+Run the next before/after VLM expansion loop. First human-review the 5 AOI03 internal urgent candidates or find stronger pre-event baselines for AOI06/AOI08/AOI10; only then expand VLM batches. Move chips/tiles to R2/CDN immediately after or during that work if deployment weight blocks publishing new VLM outputs.

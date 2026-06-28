@@ -487,6 +487,40 @@ QA evidence:
 - Next recommended action:
   - Have a human review the 19 AOI03 contact-sheet candidates first, then either run another bounded AOI03 batch or prioritize AOI06/AOI08 only after credible pre-event imagery is identified.
 
+### 2026-06-27 - AOI03 Internal VLM Second-Pass Adjudication
+
+- Objective: reduce overclaim risk in the AOI03 internal OSM-candidate queue by running a stricter second-pass VLM adjudication on the 19 before/after comparison chips.
+- Commands run:
+  - `python3 -m py_compile scripts/adjudicate_aoi03_internal_review_queue.py`
+  - `VLM_WORKERS=2 python3 scripts/adjudicate_aoi03_internal_review_queue.py --limit 2 --workers 2`
+  - `VLM_WORKERS=5 python3 scripts/adjudicate_aoi03_internal_review_queue.py --workers 5`
+- Result:
+  - 19 candidates adjudicated.
+  - Adjudicated classes:
+    - `likely_destroyed`: 4
+    - `possible_major_damage`: 2
+    - `uncertain_comparison_problem`: 13
+  - Recommended actions:
+    - `urgent_human_review`: 5
+    - `human_review`: 1
+    - `hold_for_better_imagery`: 13
+- Files changed:
+  - `scripts/adjudicate_aoi03_internal_review_queue.py`
+  - `ops/aoi03_internal_review_queue/adjudication/aoi03_internal_adjudication.json`
+  - `ops/aoi03_internal_review_queue/adjudication/aoi03_internal_adjudication.csv`
+  - `ops/aoi03_internal_review_queue/adjudication/summary.json`
+  - `ops/aoi03_internal_review_queue/adjudication/adjudication_report.md`
+  - `ops/aoi03_internal_review_queue/adjudication/adjudication_packet.html`
+  - `qa/aoi03-internal-adjudication-19-contact-sheet.png`
+- Guardrail:
+  - This second-pass output is internal only. It makes the system more conservative: most AOI03 OSM candidates should be held for better imagery instead of being shown as operational damage.
+- QA evidence:
+  - Adjudication JSON count is 19.
+  - `adjudication_packet.html` references 19 comparison images, 0 missing.
+  - `adjudication_report.md` includes internal-only and not-official warnings.
+- Next recommended action:
+  - Only the 5 `urgent_human_review` AOI03 candidates should be manually checked first. Do not expand or publish AOI03 candidates until a human review or better post-event imagery is available.
+
 ## Known Gaps
 
 1. Imagery is still active-area based. The map loads all vector features, but not all AOI imagery at once.

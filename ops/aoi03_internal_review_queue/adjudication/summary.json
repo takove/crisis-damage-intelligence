@@ -1,0 +1,14 @@
+{
+  "count": 19,
+  "adjudicated_classes": {
+    "likely_destroyed": 4,
+    "possible_major_damage": 2,
+    "uncertain_comparison_problem": 13
+  },
+  "recommended_actions": {
+    "urgent_human_review": 5,
+    "human_review": 1,
+    "hold_for_better_imagery": 13
+  },
+  "warning": "Internal OSM-candidate VLM adjudication only; not official EMS damage."
+}
