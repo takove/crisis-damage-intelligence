@@ -31,7 +31,7 @@ declare global {
   }
 }
 
-const provider = process.env.NEXT_PUBLIC_ANALYTICS_EVENTS_PROVIDER;
+const provider = process.env.NEXT_PUBLIC_ANALYTICS_EVENTS_PROVIDER ?? "openpanel";
 const debug = process.env.NEXT_PUBLIC_ANALYTICS_DEBUG === "true";
 
 function compactProperties(properties: AnalyticsProperties = {}) {

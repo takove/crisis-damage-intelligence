@@ -18,7 +18,7 @@ Score: 76/100, usable with gaps.
 - Do not send names, emails, IPs, coordinates, free text, or full Google Maps/chip/download URLs from custom events.
 - AOI ids, affected-area/city ids, language, selected mode, filter, basemap, file format, evidence surface, priority rank, source category, and coarse damage/VLM context are allowed.
 - Priority events intentionally omit feature/building ids. Evidence chip events record `chip_kind`, not the chip path.
-- Web Analytics pageviews are handled by Vercel's cookie-free script. Interaction events are queued locally and only sent to a provider when explicitly enabled.
+- Web Analytics pageviews are handled by Vercel's cookie-free script. Interaction events are queued locally and sent to OpenPanel by default with sanitized properties.
 
 ## Event Taxonomy
 
@@ -39,24 +39,24 @@ Score: 76/100, usable with gaps.
 
 Vercel Web Analytics pageviews are enabled by rendering `@vercel/analytics/next` in the root layout. No client secrets are required.
 
-Interaction events are provider-neutral by default:
+Interaction events remain provider-neutral at the app boundary:
 
 - Every event is pushed to `window.crisisDamageAnalyticsQueue`.
 - Every event dispatches a `crisis_damage_analytics` browser event.
 - A future provider can attach `window.crisisDamageAnalytics.track(event)` without changing UI code.
-- If `NEXT_PUBLIC_ANALYTICS_EVENTS_PROVIDER=openpanel` and `NEXT_PUBLIC_OPENPANEL_CLIENT_ID` are set, OpenPanel screen views and sanitized interaction events are sent with `@openpanel/nextjs`.
+- OpenPanel screen views, outgoing links, data-attribute events, and sanitized custom interaction events are enabled by default with `@openpanel/nextjs`.
 
 Optional environment variables:
 
 | Variable | Default | Purpose |
 | --- | --- | --- |
-| `NEXT_PUBLIC_ANALYTICS_EVENTS_PROVIDER` | unset | Set to `openpanel` to send screen views and custom interaction events through OpenPanel. Set to `vercel` only if custom Vercel events are intentionally enabled. Leave unset for pageviews-only, lowest-cost operation. |
-| `NEXT_PUBLIC_OPENPANEL_CLIENT_ID` | unset | Public OpenPanel client id. Required only when `NEXT_PUBLIC_ANALYTICS_EVENTS_PROVIDER=openpanel`. |
+| `NEXT_PUBLIC_ANALYTICS_EVENTS_PROVIDER` | `openpanel` | Default sends screen views and custom interaction events through OpenPanel. Set to `disabled` to disable OpenPanel/custom forwarding. Set to `vercel` only if custom Vercel events are intentionally enabled. |
+| `NEXT_PUBLIC_OPENPANEL_CLIENT_ID` | `8f14c2ad-cd7b-4f57-9ecd-65f5d2659c75` | Public OpenPanel client id. Override only when moving to a different OpenPanel project. |
 | `NEXT_PUBLIC_OPENPANEL_API_URL` | unset | Optional OpenPanel API URL for self-hosted/proxied deployments. |
 | `NEXT_PUBLIC_OPENPANEL_SCRIPT_URL` | unset | Optional OpenPanel script URL for self-hosted/proxied deployments. |
 | `NEXT_PUBLIC_ANALYTICS_DEBUG` | `false` | Set to `true` to log sanitized events in the browser console during QA. |
 
-OpenPanel is initialized only when both `NEXT_PUBLIC_ANALYTICS_EVENTS_PROVIDER=openpanel` and `NEXT_PUBLIC_OPENPANEL_CLIENT_ID` are present. Session replay, automatic outgoing-link tracking, user identification, and profile ids are intentionally disabled. Vercel custom events can require a paid plan or consume event quota. Keep `NEXT_PUBLIC_ANALYTICS_EVENTS_PROVIDER` unset unless the deployment owner has accepted the provider behavior. The app remains static-first either way.
+OpenPanel is initialized unless `NEXT_PUBLIC_ANALYTICS_EVENTS_PROVIDER` is set to something other than `openpanel`. Session replay, user identification, and profile ids remain disabled. Automatic outgoing-link tracking and `data-track` attribute tracking are enabled. Vercel custom events can require a paid plan or consume event quota; use `NEXT_PUBLIC_ANALYTICS_EVENTS_PROVIDER=vercel` only intentionally. The app remains static-first either way.
 
 ## Validation Checklist
 
@@ -64,7 +64,7 @@ OpenPanel is initialized only when both `NEXT_PUBLIC_ANALYTICS_EVENTS_PROVIDER=o
 2. Load the app and confirm one `app_loaded` event after `catalog.json` resolves.
 3. Switch language, AOI, basemap, imagery mode, and filter; confirm each event fires once per state change.
 4. Click a priority row, Google Maps link, evidence chip, and CSV/GeoJSON/KML download; confirm no full URL, feature id, coordinates, or free text appears in event properties.
-5. If `NEXT_PUBLIC_ANALYTICS_EVENTS_PROVIDER=openpanel` is enabled, verify screen views and interaction events in OpenPanel before using them for operational decisions.
+5. Verify screen views and interaction events in OpenPanel before using them for operational decisions.
 6. If `NEXT_PUBLIC_ANALYTICS_EVENTS_PROVIDER=vercel` is enabled, verify events in the Vercel dashboard before using them for operational decisions.
 
 ## Interpretation Caveats

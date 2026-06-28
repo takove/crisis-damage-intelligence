@@ -744,6 +744,22 @@ Improve the crisis damage intelligence app, prioritizing more before/after VLM a
 - Next recommended action:
   - Configure Vercel env vars for OpenPanel, deploy, then verify screen views and sanitized interaction events before using analytics for decisions.
 
+### 2026-06-28 - OpenPanel Production Connection Finalized
+
+- Objective: finish OpenPanel connection using the production public client id.
+- Files changed:
+  - `src/components/OpenPanelAnalytics.tsx`
+  - `src/lib/analytics.ts`
+  - `docs/ANALYTICS.md`
+- Result:
+  - OpenPanel is now enabled by default with public client id `8f14c2ad-cd7b-4f57-9ecd-65f5d2659c75`.
+  - `trackScreenViews`, `trackOutgoingLinks`, and `trackAttributes` are enabled.
+  - Sanitized custom events from `trackAnalytics` forward to OpenPanel by default.
+  - Session replay remains disabled.
+  - Env vars still allow override/disable without code changes.
+- Measurement readiness:
+  - Still `76/100` until production dashboard QA confirms event arrival and no duplication.
+
 ### 2026-06-28 - Source-Aware Operational Ranking
 
 - Objective: ensure affected-area and priority-item ordering reflects response value and source confidence, not raw feature count alone.
