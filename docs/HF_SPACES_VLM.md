@@ -29,6 +29,44 @@ export VLM_PROVIDER=minimax
 export MINIMAX_API_KEY="..."
 ```
 
+## Space Package
+
+Prepared local Space package:
+
+```text
+spaces/vlm-damage-triage/
+```
+
+Recommended Space repo:
+
+```text
+takove/respuesta-venezuela-vlm
+```
+
+Create and upload once a Hugging Face write token is available:
+
+```bash
+export HF_TOKEN="<write token from https://huggingface.co/settings/tokens>"
+
+hf repo create takove/respuesta-venezuela-vlm \
+  --type space \
+  --space-sdk docker \
+  --public \
+  --exist-ok \
+  --env HF_VLM_MODEL=Qwen/Qwen3-VL-8B-Instruct \
+  --env DRY_RUN=1 \
+  --token "$HF_TOKEN"
+
+cd spaces/vlm-damage-triage
+git init
+git remote add origin https://huggingface.co/spaces/takove/respuesta-venezuela-vlm
+git add README.md Dockerfile requirements.txt app.py
+git commit -m "Create Respuesta Venezuela VLM Space"
+git push https://takove:${HF_TOKEN}@huggingface.co/spaces/takove/respuesta-venezuela-vlm main
+```
+
+After credits/hardware are assigned, set `DRY_RUN=0` and choose an appropriate GPU. For the 8B VL models, start with `l4x1` or better if available.
+
 ## Expected HF Space Contract
 
 The Space endpoint should accept a JSON `POST` body:
