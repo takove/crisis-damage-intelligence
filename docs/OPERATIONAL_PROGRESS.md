@@ -206,6 +206,31 @@ QA evidence:
   - Use the AOI03 candidate pilot only as internal triage evidence.
   - For public app value, prioritize official EMS AOI updates and better pre-event baselines for AOI06/AOI08, or move current tiles/chips to R2 so public loading stays fast.
 
+### 2026-06-27 - AOI03 Internal Review Queue Export
+
+- Objective: make the AOI03 candidate-only VLM pilot actionable for human review without publishing it as confirmed/operational damage.
+- Files changed:
+  - Added `scripts/build_aoi03_internal_review_queue.py`.
+  - Generated `ops/aoi03_internal_review_queue/review_queue.csv`.
+  - Generated `ops/aoi03_internal_review_queue/review_queue.geojson`.
+  - Generated `ops/aoi03_internal_review_queue/review_queue.kml`.
+  - Generated `ops/aoi03_internal_review_queue/README.md`.
+- Commands run:
+  - `python3 scripts/build_aoi03_internal_review_queue.py`
+- Result:
+  - Exported 8 AOI03 OSM candidate points for internal review:
+    - 1 `likely_destroyed`
+    - 6 `possible_major_damage`
+    - 1 `minor_visible_damage`
+  - The queue is sorted by severity/confidence and includes Google Maps links, compare-chip paths, before/after source metadata, VLM evidence, uncertainty text, and a repeated internal-only warning.
+- Guardrail:
+  - These outputs remain under `ops/`, not `public/data/`.
+  - They are not in `public/data/catalog.json`.
+  - They should be used only to request human validation or better imagery, not as a public damage layer.
+- Next recommended action:
+  - If humans can review these 8 candidates, record validation outcomes as static JSONL/CSV before considering any public display.
+  - Otherwise, continue official EMS monitoring and before-baseline search for AOI06/AOI08.
+
 ## Known Gaps
 
 1. Imagery is still active-area based. The map loads all vector features, but not all AOI imagery at once.
