@@ -566,6 +566,22 @@ QA evidence:
 - Next recommended action:
   - Human-review the 5 AOI03 urgent candidates or continue external source search specifically for high-resolution AOI06/AOI08/AOI10 pre-event imagery.
 
+### 2026-06-27 - AOI03 Urgent Human Review Shortlist
+
+- Objective: turn the second-pass AOI03 VLM adjudication into the smallest actionable internal review artifact.
+- Files changed:
+  - `ops/aoi03_internal_review_queue/adjudication/urgent_human_review_shortlist.md`
+  - `ops/aoi03_internal_review_queue/README.md`
+- Result:
+  - Shortlist contains 5 `urgent_human_review` OSM-candidate leads.
+  - Each row includes candidate id, name, adjudicated class, confidence, Google Maps link, and before/after chip link.
+- QA evidence:
+  - 5 Google Maps links present.
+  - 5 chip links present, 0 missing.
+  - Internal-only / not official EMS warning present.
+- Next recommended action:
+  - A human operator should inspect these 5 chips and locations before any field escalation or public presentation.
+
 ## Known Gaps
 
 1. Imagery is still active-area based. The map loads all vector features, but not all AOI imagery at once.

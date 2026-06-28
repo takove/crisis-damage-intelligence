@@ -11,3 +11,4 @@ Use this only to route human review or requests for better imagery. Do not publi
 - Contact sheet: `qa/aoi03-internal-review-queue-19-contact-sheet.png`
 - Second-pass adjudication: `adjudication/aoi03_internal_adjudication.json`, `adjudication/aoi03_internal_adjudication.csv`, `adjudication/adjudication_report.md`, `adjudication/adjudication_packet.html`
 - Adjudication contact sheet: `qa/aoi03-internal-adjudication-19-contact-sheet.png`
+- Fastest operator entrypoint: `adjudication/urgent_human_review_shortlist.md`
