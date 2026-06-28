@@ -43,6 +43,37 @@ Update this after every work loop. Keep entries factual: what changed, how it wa
 
 ## Recent Completed Work
 
+### 2026-06-28 - External Source Quality/Recency Review
+
+- Objective: classify newly supplied sources by operational value, recency, and publication risk.
+- Files changed:
+  - Updated `public/data/sources/earthquake_source_review.json`.
+  - Updated `ops/external_source_review/review_queue.csv`.
+- Commands/checks run:
+  - Queried HDX CKAN metadata for Microsoft AI4G Venezuela datasets.
+  - Checked VOSOCC JPEG URLs for HTTP availability and file type.
+  - Checked ArcGIS item metadata through ArcGIS REST.
+  - Checked PKU, INGV, Rodolfo Franco, EarthquakeInsights, and Marksblogg pages for availability and relevance.
+  - `python3 scripts/validate_external_source_registry.py`
+- Keep as high-value operational/triage data:
+  - Microsoft AI4G via HDX: Catia La Mar, Catia La Mar East, La Guaira, and Caraballeda datasets. These are recent, include GPKG/GeoJSON/JPEG resources, and are useful as external model triage, but they remain non-official and must stay separate from EMS labels.
+  - VOSOCC-hosted Rescue International sector JPEGs for Macuto, Los Corales/Caraballeda W, and Vargas/La Guaira. The JPEGs are available and high-resolution, but not georeferenced and redistribution/derivative rights are not confirmed.
+  - Mitchell Ulrich X thread reporting 295 visually mapped collapsed/partially collapsed structures. This is very recent and potentially valuable, especially west-to-east coastal coverage, but no downloadable coordinates/vector source or reuse permission was found.
+- Keep as secondary/reference only:
+  - Rodolfo Franco ArcGIS WebScene. It visualizes Microsoft AI4G/HDX Catia La Mar data and is useful for cross-checking, but direct HDX GPKG ingestion remains the reproducible source.
+  - HOT/OSM/Overture HDX context export. Useful for exposure/roads/buildings context after filtering, not a damage source.
+- Keep as scientific/context only:
+  - PKU preliminary rupture model.
+  - INGV extended source article.
+  - EarthquakeInsights Substack article.
+  - Rodolfo Franco disaster geodata directory.
+- Do not spend operational product time on:
+  - Marksblogg SAR aircraft article. It is remote-sensing methodology background and not Venezuela earthquake damage data.
+- Next recommended action:
+  - Georeference the VOSOCC sector JPEGs outside the repo and use them as human validation evidence.
+  - Request or derive geometry for the Mitchell Ulrich collapse inventory before using it in any map/count.
+  - Review the newly found Microsoft AI4G GPKGs against official EMS AOI12/AOI02/AOI06 coverage before adding any public layer.
+
 ### Before/After VLM For AOI12
 
 - Added `scripts/run_minimax_ems_before_after_review.py`.

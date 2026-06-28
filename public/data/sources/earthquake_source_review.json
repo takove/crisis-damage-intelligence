@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-06-28T10:20:00Z",
+  "updatedAt": "2026-06-28T11:10:00Z",
   "registryPurpose": "Track external evidence sources before they are ingested or exposed as operational layers. This registry is not a publication approval.",
   "publicationPolicy": {
     "doNotTreatSocialOrBookmarkSourcesAsOfficial": true,
@@ -74,6 +74,12 @@
       "lastKnownSourceModifiedUtc": "2026-06-27T15:03:50.342248",
       "resources": [
         {
+          "name": "venezuela-2026-page-2-updated-large.jpg",
+          "format": "JPEG",
+          "lastModifiedUtc": "2026-06-27T15:03:50.342248",
+          "url": "https://data.humdata.org/dataset/029efb88-3a8a-40d9-8aea-65477e6eb744/resource/ac4ec923-02c2-43c2-92b9-50c439608e90/download/venezuela-2026-page-2-updated-large.jpg"
+        },
+        {
           "name": "predicted_damage_catia_la_mar_footprints.gpkg",
           "format": "GPKG",
           "lastModifiedUtc": "2026-06-26T05:16:28.651374",
@@ -123,6 +129,12 @@
           "url": "https://data.humdata.org/dataset/1a77bd9c-5170-4651-92c2-0dd42cdc303e/resource/d82d36cf-e728-4f03-b8a8-7615d05a8374/download/caraballeda_east_vantor_6-26_building_predictions_merged.gpkg"
         },
         {
+          "name": "caraballeda-page-2-large.jpg",
+          "format": "JPEG",
+          "lastModifiedUtc": "2026-06-27T14:59:30.939048",
+          "url": "https://data.humdata.org/dataset/1a77bd9c-5170-4651-92c2-0dd42cdc303e/resource/05fec012-848c-4eab-83e8-79bebb750d31/download/caraballeda-page-2-large.jpg"
+        },
+        {
           "name": "caraballeda_east_vantor_6-26_valid_area_mask.geojson",
           "format": "GeoJSON",
           "lastModifiedUtc": "2026-06-27T14:09:19.198448",
@@ -159,6 +171,12 @@
       "reviewStatus": "queued_for_source_review",
       "lastKnownSourceModifiedUtc": "2026-06-27T21:18:56.956382",
       "resources": [
+        {
+          "name": "catia-la-mar-east-page-2.jpg",
+          "format": "JPEG",
+          "lastModifiedUtc": "2026-06-27T21:18:56.956382",
+          "url": "https://data.humdata.org/dataset/0c439581-b14d-4092-a104-95b5abee3002/resource/53738332-56ed-4011-86ae-d57d2473ee1c/download/catia-la-mar-east-page-2.jpg"
+        },
         {
           "name": "predicted_damage_East-Catia-La-Mar-Skysat-final.gpkg",
           "format": "GPKG",
@@ -203,6 +221,12 @@
       "lastKnownSourceModifiedUtc": "2026-06-27T15:00:19.039959",
       "resources": [
         {
+          "name": "la-guiara-page-2-large.jpg",
+          "format": "JPEG",
+          "lastModifiedUtc": "2026-06-27T15:00:19.039959",
+          "url": "https://data.humdata.org/dataset/0b1912ea-20d1-4f32-8232-f2631d1a639d/resource/488f70da-f265-4a20-a239-9f44ad4069c7/download/la-guiara-page-2-large.jpg"
+        },
+        {
           "name": "predicted_damage_La-Guaira-East-BlackSky-06-25-model-337_filtered.gpkg",
           "format": "GPKG",
           "lastModifiedUtc": "2026-06-26T23:48:50.995224",
@@ -216,6 +240,242 @@
         }
       ],
       "caveat": "Do not publish as a new public layer until source geometry, thresholding, and overlap with official EMS AOIs are reviewed. Treat as external model triage only."
+    },
+    {
+      "id": "vosocc-rescue-international-la-guaira-sector-maps",
+      "title": "VOSOCC-hosted Rescue International high-resolution sector maps for La Guaira coastal damage",
+      "url": "https://vosocc.unocha.org/",
+      "dateAccessed": "2026-06-28",
+      "dataOwner": "Rescue International (NL) / Search and Rescue Specialist Intelligence Analysis / Risk Assessment, hosted via VOSOCC/OCHA file service",
+      "licenseOrTerms": "Unknown; verify permission and attribution before redistribution or derivative publication.",
+      "geography": {
+        "label": "Macuto, Los Corales/Caraballeda W, and Vargas/La Guaira sectors",
+        "country": "Venezuela",
+        "bounds": null
+      },
+      "official": false,
+      "confidence": "medium_high_visual_reference_pending_georeference",
+      "sourceType": "high-resolution post-event visual assessment JPEGs",
+      "status": "documented_not_loaded",
+      "reviewStatus": "queued_for_human_visual_review",
+      "lastKnownSourceModifiedUtc": null,
+      "resources": [
+        {
+          "name": "Sector A Macuto high-resolution JPEG",
+          "format": "JPEG",
+          "lastModifiedUtc": null,
+          "url": "https://vosocc.unocha.org/GetFile.aspx?file=map_16885_1.jpeg"
+        },
+        {
+          "name": "Sector B Los Corales / Caraballeda W high-resolution JPEG",
+          "format": "JPEG",
+          "lastModifiedUtc": null,
+          "url": "https://vosocc.unocha.org/GetFile.aspx?file=map_16886_1.jpeg"
+        },
+        {
+          "name": "Sector C Vargas / La Guaira Zona 1 high-resolution JPEG",
+          "format": "JPEG",
+          "lastModifiedUtc": null,
+          "url": "https://vosocc.unocha.org/GetFile.aspx?file=map_16884_2.jpeg"
+        }
+      ],
+      "caveat": "Very useful for human review and road/access interpretation, but not georeferenced or licensed for app publication yet. Do not use to update official damage counts until sector images are georeferenced, attribution is confirmed, and features are validated."
+    },
+    {
+      "id": "mitchell-ulrich-x-collapse-thread-20260627",
+      "title": "Mitchell Ulrich X thread: 295 visually mapped collapsed structures along the Venezuelan coast",
+      "url": "https://x.com/Mitch_Ulrich/status/2071030863723176007",
+      "dateAccessed": "2026-06-28",
+      "dataOwner": "Mitchell Ulrich, using on-scene media and Vantor satellite imagery per thread text",
+      "licenseOrTerms": "Social media post; no downloadable data license found. Request coordinates/source file and permission before reuse.",
+      "geography": {
+        "label": "Catia La Mar, Playa Grande/Playa Verde, Maiquetia, Macuto, Caraballeda",
+        "country": "Venezuela",
+        "bounds": null
+      },
+      "official": false,
+      "confidence": "medium_social_triage_pending_geometry",
+      "sourceType": "crowdsourced/social collapse inventory claim",
+      "status": "documented_not_loaded",
+      "reviewStatus": "queued_for_source_contact_or_manual_validation",
+      "lastKnownSourceModifiedUtc": "2026-06-28T00:40:00Z",
+      "resources": [
+        {
+          "name": "Claimed breakdown from thread text",
+          "format": "Social post",
+          "lastModifiedUtc": "2026-06-28T00:40:00Z",
+          "url": "https://x.com/Mitch_Ulrich/status/2071030863723176007"
+        }
+      ],
+      "caveat": "Potentially high operational value because it reports 295 collapsed/partially collapsed structures across areas beyond current official vectors, but it is not downloadable geodata and includes a broader collapse definition. Keep as triage intelligence only until coordinates/evidence are obtained and validated."
+    },
+    {
+      "id": "arcgis-rodolfo-franco-catia-la-mar-webscene",
+      "title": "Afectacion en Catia La Mar, Sismo 2026.06.24 - ArcGIS WebScene by Rodolfo Franco",
+      "url": "https://www.arcgis.com/home/webscene/viewer.html?webscene=c01ef4b6b74b4d25a39f7a1e4865be58",
+      "dateAccessed": "2026-06-28",
+      "dataOwner": "Rodolfo Franco; layer source credits Microsoft AI for Good Research Lab via OCHA HDX",
+      "licenseOrTerms": "Visualization indicates academic use and field verification required; underlying Microsoft AI4G/HDX data should be used as canonical data source.",
+      "geography": {
+        "label": "Catia La Mar, La Guaira, Venezuela",
+        "country": "Venezuela",
+        "bounds": null
+      },
+      "official": false,
+      "confidence": "medium_secondary_visualization",
+      "sourceType": "ArcGIS web scene visualization of external model data",
+      "status": "documented_not_loaded",
+      "reviewStatus": "use_as_secondary_reference_only",
+      "lastKnownSourceModifiedUtc": "2026-06-28T00:38:44Z",
+      "resources": [
+        {
+          "name": "ArcGIS FeatureServer layer Edificios_Afectados",
+          "format": "ArcGIS FeatureServer",
+          "lastModifiedUtc": "2026-06-28T00:38:44Z",
+          "url": "https://services8.arcgis.com/w0z3NDBGLWwOLx2y/arcgis/rest/services/Catia_La_Mar_3D_WFL1/FeatureServer/0"
+        }
+      ],
+      "caveat": "Do not duplicate as a separate operational layer unless it contains materially different features from the HDX Microsoft GPKG. Prefer direct HDX GPKG ingestion for reproducibility."
+    },
+    {
+      "id": "pku-geophysics-venezuela-rupture-model-20260625",
+      "title": "PKU Geophysics preliminary rupture model of the 25 Jun 2026 Venezuela Mw 7.6 earthquake",
+      "url": "https://pku-geophysics-source.group/htmls/20260625060431Venezuela.html",
+      "dateAccessed": "2026-06-28",
+      "dataOwner": "PKU Geophysics source research group",
+      "licenseOrTerms": "Unknown; cite as scientific context and verify terms before redistributing model files.",
+      "geography": {
+        "label": "San Sebastian fault / northern Venezuela rupture context",
+        "country": "Venezuela",
+        "bounds": null
+      },
+      "official": false,
+      "confidence": "medium_scientific_context",
+      "sourceType": "seismology rupture model",
+      "status": "context_only_not_damage_data",
+      "reviewStatus": "usable_for_context_not_counts",
+      "lastKnownSourceModifiedUtc": "2026-06-27T06:09:13Z",
+      "resources": [
+        {
+          "name": "202606250604_Venezuela_Rupture_Info_1.txt",
+          "format": "TXT",
+          "lastModifiedUtc": "2026-06-27T06:09:13Z",
+          "url": "https://pku-geophysics-source.group/models/20260624VenezuelaInfo.txt"
+        }
+      ],
+      "caveat": "Useful for hazard context and regional prioritization only. It does not identify damaged buildings."
+    },
+    {
+      "id": "ingv-venezuela-extended-source-20260626",
+      "title": "INGVterremoti: Sorgente estesa della sequenza sismica in Venezuela, 24 giugno 2026",
+      "url": "https://ingvterremoti.com/2026/06/26/sorgente-estesa-della-sequenza-sismica-in-venezuela-24-giugno-2026/",
+      "dateAccessed": "2026-06-28",
+      "dataOwner": "INGVterremoti",
+      "licenseOrTerms": "Website/article terms; cite as context, do not redistribute figures without checking terms.",
+      "geography": {
+        "label": "Northern Venezuela earthquake sequence context",
+        "country": "Venezuela",
+        "bounds": null
+      },
+      "official": false,
+      "confidence": "medium_scientific_context",
+      "sourceType": "seismology context article",
+      "status": "context_only_not_damage_data",
+      "reviewStatus": "usable_for_context_not_counts",
+      "lastKnownSourceModifiedUtc": "2026-06-28T10:31:36Z",
+      "resources": [
+        {
+          "name": "INGV article",
+          "format": "HTML",
+          "lastModifiedUtc": "2026-06-28T10:31:36Z",
+          "url": "https://ingvterremoti.com/2026/06/26/sorgente-estesa-della-sequenza-sismica-in-venezuela-24-giugno-2026/"
+        }
+      ],
+      "caveat": "Useful scientific context, not a building damage source."
+    },
+    {
+      "id": "rodolfo-franco-disaster-geodata-directory",
+      "title": "Rodolfo Franco: Geodata de respuesta a desastres",
+      "url": "https://rodolfofrancoweb.com/geodata/geodata_mundial/geodata-riesgos-y-desastres/geodata_de_respuesta_a_desastres/",
+      "dateAccessed": "2026-06-28",
+      "dataOwner": "Rodolfo Franco",
+      "licenseOrTerms": "Website directory; each linked source has separate terms.",
+      "geography": {
+        "label": "Global disaster geodata directory with Venezuela Catia La Mar visualization reference",
+        "country": "Global",
+        "bounds": null
+      },
+      "official": false,
+      "confidence": "low_directory_only",
+      "sourceType": "source directory / secondary reference",
+      "status": "context_only_not_damage_data",
+      "reviewStatus": "use_for_source_discovery_only",
+      "lastKnownSourceModifiedUtc": "2026-06-28T10:31:35Z",
+      "resources": [
+        {
+          "name": "Disaster geodata directory",
+          "format": "HTML",
+          "lastModifiedUtc": "2026-06-28T10:31:35Z",
+          "url": "https://rodolfofrancoweb.com/geodata/geodata_mundial/geodata-riesgos-y-desastres/geodata_de_respuesta_a_desastres/"
+        }
+      ],
+      "caveat": "Not a primary dataset. Use it to discover sources, then ingest primary datasets directly."
+    },
+    {
+      "id": "earthquakeinsights-substack-venezuela-m75",
+      "title": "Earthquake Insights: Catastrophic M7.5 earthquake strikes northern Venezuela",
+      "url": "https://earthquakeinsights.substack.com/p/catastrophic-m75-earthquake-strikes",
+      "dateAccessed": "2026-06-28",
+      "dataOwner": "Earthquake Insights / Substack author",
+      "licenseOrTerms": "Substack article; no operational data license identified.",
+      "geography": {
+        "label": "Northern Venezuela earthquake narrative context",
+        "country": "Venezuela",
+        "bounds": null
+      },
+      "official": false,
+      "confidence": "low_context_only",
+      "sourceType": "news/analysis article",
+      "status": "context_only_not_damage_data",
+      "reviewStatus": "do_not_ingest_without_primary_data",
+      "lastKnownSourceModifiedUtc": null,
+      "resources": [
+        {
+          "name": "Substack article",
+          "format": "HTML",
+          "lastModifiedUtc": null,
+          "url": "https://earthquakeinsights.substack.com/p/catastrophic-m75-earthquake-strikes"
+        }
+      ],
+      "caveat": "Do not use for counts or map layers unless it links to primary downloadable geodata."
+    },
+    {
+      "id": "marksblogg-ai-sar-satellites-methodology",
+      "title": "Marksblogg: Satellites Spotting Aircraft",
+      "url": "https://tech.marksblogg.com/ai-sar-satellites-umbra-aircraft-detection.html",
+      "dateAccessed": "2026-06-28",
+      "dataOwner": "Mark Litwintschik / marksblogg.com",
+      "licenseOrTerms": "Blog article; no Venezuela operational data license identified.",
+      "geography": {
+        "label": "Not Venezuela-specific",
+        "country": "Global",
+        "bounds": null
+      },
+      "official": false,
+      "confidence": "low_methodology_only",
+      "sourceType": "remote sensing methodology article",
+      "status": "discard_for_operational_damage_catalog",
+      "reviewStatus": "do_not_ingest",
+      "lastKnownSourceModifiedUtc": "2026-06-15T06:41:16Z",
+      "resources": [
+        {
+          "name": "SAR methodology article",
+          "format": "HTML",
+          "lastModifiedUtc": "2026-06-15T06:41:16Z",
+          "url": "https://tech.marksblogg.com/ai-sar-satellites-umbra-aircraft-detection.html"
+        }
+      ],
+      "caveat": "Useful background for SAR workflows only; it has no Venezuela earthquake damage data."
     },
     {
       "id": "hdx-hot-venezuela-earthquake-osm-overture",
