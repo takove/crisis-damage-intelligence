@@ -582,6 +582,27 @@ QA evidence:
 - Next recommended action:
   - A human operator should inspect these 5 chips and locations before any field escalation or public presentation.
 
+### 2026-06-27 - AOI03 Human Validation Templates
+
+- Objective: make the 5 urgent AOI03 VLM leads reviewable by humans without publishing them as official damage.
+- Files changed:
+  - `ops/aoi03_internal_review_queue/adjudication/human_validation/README.md`
+  - `ops/aoi03_internal_review_queue/adjudication/human_validation/human_validation_template.csv`
+  - `ops/aoi03_internal_review_queue/adjudication/human_validation/human_validation_template.jsonl`
+  - `ops/aoi03_internal_review_queue/README.md`
+- Result:
+  - 5 validation rows generated, one for each `urgent_human_review` candidate.
+  - Each row includes candidate id, AOI, name, centroid, Google Maps URL, before/after chip, VLM adjudication, uncertainty, and blank human review fields.
+  - Allowed human statuses documented: `confirmed_damage`, `false_positive`, `needs_better_imagery`, `needs_field_check`, `duplicate_or_bad_footprint`.
+- QA evidence:
+  - CSV rows: 5.
+  - JSONL rows: 5.
+  - Google Maps links: 5.
+  - Missing chip links: 0.
+  - Human review fields intentionally blank.
+- Next recommended action:
+  - Have a reviewer fill the CSV/JSONL. Only rows with `human_status=confirmed_damage` and an evidence URI should be considered for any public/internal escalation beyond triage.
+
 ## Known Gaps
 
 1. Imagery is still active-area based. The map loads all vector features, but not all AOI imagery at once.
