@@ -401,6 +401,31 @@ QA evidence:
 - Next recommended action:
   - Upload tiles with S3-compatible R2 credentials and `aws s3 sync`, or install/use an S3-compatible sync client. Avoid Wrangler-per-file for the 63k tile pyramid unless there is no alternative.
 
+### 2026-06-27 - AOI12 Medium-Zoom Tiles Mirrored To Public R2
+
+- Objective: make La Guaira/Caraballeda imagery available from R2 at useful entry/city zoom levels while avoiding an impractical 19k-file Wrangler run for all z18 residential tiles.
+- Files changed:
+  - Added `scripts/upload_r2_tiles_with_wrangler.py`, a resumable, logged Wrangler fallback uploader for scoped tile batches.
+  - Added upload logs under `ops/r2_tile_uploads/`.
+- Commands run:
+  - `python3 -m py_compile scripts/upload_r2_tiles_with_wrangler.py`
+  - Smoke: `python3 scripts/upload_r2_tiles_with_wrangler.py --aoi emsr884-aoi12-caraballeda --kind after --min-zoom 18 --max-zoom 18 --limit 20 --workers 8`
+  - Full scoped batch: `python3 scripts/upload_r2_tiles_with_wrangler.py --aoi emsr884-aoi12-caraballeda --kind after --kind before --min-zoom 12 --max-zoom 16 --workers 10`
+- Result:
+  - AOI12 z12-z16 before/after tiles uploaded: 1,409/1,409, 0 failures.
+  - Additional interrupted exploratory AOI12 upload logged 451 successful tiles across z12-z18 before stopping because full z18 upload via Wrangler was too slow.
+  - Initial z18 smoke uploaded 20/20 tiles.
+- Verified public examples:
+  - `https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi12-caraballeda/after/12/1285/1927.webp` -> HTTP 200
+  - `https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi12-caraballeda/after/16/20555/30824.webp` -> HTTP 200
+  - `https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi12-caraballeda/before/12/1285/1926.webp` -> HTTP 200
+  - `https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi12-caraballeda/before/16/20555/30826.webp` -> HTTP 200
+- Still pending:
+  - Most AOI12 z17-z18 tiles are not mirrored yet. Example z18 tile still returns 404:
+    - `https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi12-caraballeda/after/18/82294/123319.webp`
+- Next recommended action:
+  - Use S3-compatible sync for z17-z18 and other AOIs. Wrangler fallback is acceptable for scoped z12-z16 batches but too slow for the full residential tile pyramid.
+
 ## Known Gaps
 
 1. Imagery is still active-area based. The map loads all vector features, but not all AOI imagery at once.

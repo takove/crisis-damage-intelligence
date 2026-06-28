@@ -143,8 +143,9 @@ https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/ems/generated/aoi/emsr884-ao
 Current remote asset status:
 
 - Evidence chips are mirrored to public R2 under `data/chips/...`.
-- `public/data/tiles` is not yet mirrored to public R2/CDN paths.
-- Vercel deployment should not exclude local tiles until the app catalog points tile URLs to verified remote assets.
+- AOI12 Caraballeda/La Guaira z12-z16 before/after tiles are mirrored to public R2 under `data/tiles/emsr884-aoi12-caraballeda/...`.
+- Most z17-z18 residential tiles and non-AOI12 tile pyramids are not yet mirrored to public R2/CDN paths.
+- Vercel deployment should not rely exclusively on remote tiles until all required zoom levels for the operational AOIs return HTTP 200.
 
 Remote-asset Vercel package:
 
@@ -181,6 +182,18 @@ aws s3 sync public/data/chips s3://crisis-damage-intelligence/data/chips \
 ```
 
 `public/data/chips` was mirrored with parallel Wrangler remote object uploads because it is only 681 files. Do not use one-file-at-a-time Wrangler uploads for the full tile pyramid unless there is no alternative; there are more than 60k tile files.
+
+Scoped Wrangler fallback for small/medium tile batches:
+
+```bash
+python3 scripts/upload_r2_tiles_with_wrangler.py \
+  --aoi emsr884-aoi12-caraballeda \
+  --kind after --kind before \
+  --min-zoom 12 --max-zoom 16 \
+  --workers 10
+```
+
+This is resumable via `ops/r2_tile_uploads/*.jsonl`. It was used successfully for AOI12 z12-z16, but it is too slow for the full z17-z18 residential pyramid.
 
 Verified chip examples:
 
