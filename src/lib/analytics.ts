@@ -57,6 +57,10 @@ export function trackAnalytics(name: AnalyticsEventName, properties: AnalyticsPr
     trackVercel(name, event.properties);
   }
 
+  if (provider === "openpanel") {
+    window.op?.("track", name, event.properties);
+  }
+
   if (debug) {
     console.info("[analytics]", event.name, event.properties);
   }

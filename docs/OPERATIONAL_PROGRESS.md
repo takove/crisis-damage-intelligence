@@ -625,6 +625,37 @@ QA evidence:
 
 Improve the crisis damage intelligence app, prioritizing more before/after VLM analysis. The markdown files are memory and guardrails for the loop; they are not the goal.
 
+### 2026-06-28 - Optional OpenPanel Analytics Provider
+
+- Objective: add OpenPanel analytics without making public app viewing depend on analytics infrastructure.
+- Files changed:
+  - `package.json`
+  - `package-lock.json`
+  - `src/app/layout.tsx`
+  - `src/components/OpenPanelAnalytics.tsx`
+  - `src/lib/analytics.ts`
+  - `docs/ANALYTICS.md`
+- Result:
+  - Added `@openpanel/nextjs`.
+  - Added an OpenPanel initializer that only renders when `NEXT_PUBLIC_ANALYTICS_EVENTS_PROVIDER=openpanel` and `NEXT_PUBLIC_OPENPANEL_CLIENT_ID` are both configured.
+  - Existing sanitized `trackAnalytics` wrapper now forwards custom interaction events to OpenPanel when enabled.
+  - Session replay, automatic outgoing-link tracking, profile ids, and user identification remain disabled.
+- Commands run:
+  - `npm install @openpanel/nextjs`
+  - `npm run lint`
+  - `npm run build`
+  - `NEXT_PUBLIC_ANALYTICS_EVENTS_PROVIDER=openpanel NEXT_PUBLIC_OPENPANEL_CLIENT_ID=test_client npm run build`
+  - `npm run build`
+- QA performed:
+  - Lint passed.
+  - Default production build passed.
+  - OpenPanel-enabled production build passed with a dummy public client id.
+  - Rebuilt again without analytics env vars so local artifact remains in default no-OpenPanel mode.
+- Blockers:
+  - Production capture still requires adding a real OpenPanel client id in Vercel and validating events in the OpenPanel dashboard.
+- Next recommended action:
+  - Configure Vercel env vars for OpenPanel, deploy, then verify screen views and sanitized interaction events before using analytics for decisions.
+
 ## Next Recommended Loop
 
 Run the next before/after VLM expansion loop:

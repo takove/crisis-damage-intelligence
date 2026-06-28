@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import AnalyticsEvents from "@/components/AnalyticsEvents";
+import OpenPanelAnalytics from "@/components/OpenPanelAnalytics";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body>
         {children}
         <AnalyticsEvents />
+        <OpenPanelAnalytics />
         <Analytics />
       </body>
     </html>
