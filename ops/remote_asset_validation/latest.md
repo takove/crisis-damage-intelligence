@@ -1,6 +1,6 @@
 # Remote Asset Validation
 
-- Generated UTC: `2026-06-28T10:19:24.349465+00:00`
+- Generated UTC: `2026-06-28T10:41:35.410932+00:00`
 - Remote base: `https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev`
 - Result: `pass`
 
@@ -30,6 +30,6 @@
 
 ## Remote Asset Checks
 
-- Checks run: 140
-- OK: 140
+- Checks run: 70
+- OK: 70
 - Failed: 0

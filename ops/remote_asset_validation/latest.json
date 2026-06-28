@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-06-28T10:19:24.349465+00:00",
+  "generated_utc": "2026-06-28T10:41:35.410932+00:00",
   "catalog": "/Users/luisrosal/Documents/Codex/2026-06-26/he/outputs/crisis_damage_intelligence_platform/public/data/catalog.json",
   "remote_base": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev",
   "result": "pass",
@@ -8,7 +8,7 @@
       "path": "public/data",
       "exists": true,
       "files": 64504,
-      "bytes": 253110777,
+      "bytes": 253123701,
       "human": "241.4 MB"
     },
     "chips": {
@@ -107,8 +107,8 @@
         "template": "/data/tiles/emsr884-aoi12-caraballeda/before/{z}/{x}/{y}.webp"
       }
     ],
-    "checked": 140,
-    "ok": 140,
+    "checked": 70,
+    "ok": 70,
     "failed": 0,
     "checks": [
       {
@@ -120,19 +120,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/1274",
-        "elapsed_ms": 190,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[0].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi02-caracas/after/12/1287/1927.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi02-caracas/after/12/1287/1927.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/614",
-        "elapsed_ms": 131,
+        "elapsed_ms": 125,
         "error": null
       },
       {
@@ -144,19 +132,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/328",
-        "elapsed_ms": 116,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[0].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi02-caracas/after/13/2572/3854.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi02-caracas/after/13/2572/3854.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/248",
-        "elapsed_ms": 132,
+        "elapsed_ms": 123,
         "error": null
       },
       {
@@ -168,31 +144,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/6334",
-        "elapsed_ms": 110,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[0].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi02-caracas/after/13/2574/3858.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi02-caracas/after/13/2574/3858.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/460",
-        "elapsed_ms": 112,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[0].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi02-caracas/after/14/5144/7709.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi02-caracas/after/14/5144/7709.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/222",
-        "elapsed_ms": 105,
+        "elapsed_ms": 121,
         "error": null
       },
       {
@@ -204,19 +156,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/222",
-        "elapsed_ms": 110,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[0].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi02-caracas/after/14/5149/7716.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi02-caracas/after/14/5149/7716.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/222",
-        "elapsed_ms": 123,
+        "elapsed_ms": 135,
         "error": null
       },
       {
@@ -228,7 +168,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/222",
-        "elapsed_ms": 259,
+        "elapsed_ms": 108,
         "error": null
       },
       {
@@ -240,19 +180,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/222",
-        "elapsed_ms": 295,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[0].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi02-caracas/after/16/20579/30839.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi02-caracas/after/16/20579/30839.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/222",
-        "elapsed_ms": 105,
+        "elapsed_ms": 120,
         "error": null
       },
       {
@@ -264,31 +192,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/994",
-        "elapsed_ms": 115,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[0].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi02-caracas/after/16/20597/30865.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi02-caracas/after/16/20597/30865.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/222",
-        "elapsed_ms": 115,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[0].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi02-caracas/after/17/41159/61679.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi02-caracas/after/17/41159/61679.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/222",
-        "elapsed_ms": 104,
+        "elapsed_ms": 100,
         "error": null
       },
       {
@@ -300,18 +204,6 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/910",
-        "elapsed_ms": 99,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[0].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi02-caracas/after/17/41195/61730.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi02-caracas/after/17/41195/61730.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/222",
         "elapsed_ms": 103,
         "error": null
       },
@@ -324,19 +216,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/222",
-        "elapsed_ms": 124,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[0].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi02-caracas/after/18/82354/123410.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi02-caracas/after/18/82354/123410.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/652",
-        "elapsed_ms": 107,
+        "elapsed_ms": 168,
         "error": null
       },
       {
@@ -348,7 +228,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/222",
-        "elapsed_ms": 125,
+        "elapsed_ms": 101,
         "error": null
       },
       {
@@ -360,19 +240,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/532",
-        "elapsed_ms": 122,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[3].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi06-moron/after/12/1272/1927.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi06-moron/after/12/1272/1927.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/1416",
-        "elapsed_ms": 111,
+        "elapsed_ms": 104,
         "error": null
       },
       {
@@ -384,19 +252,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/872",
-        "elapsed_ms": 115,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[3].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi06-moron/after/13/2542/3855.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi06-moron/after/13/2542/3855.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/222",
-        "elapsed_ms": 105,
+        "elapsed_ms": 104,
         "error": null
       },
       {
@@ -408,31 +264,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/3622",
-        "elapsed_ms": 103,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[3].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi06-moron/after/13/2545/3856.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi06-moron/after/13/2545/3856.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/416",
-        "elapsed_ms": 102,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[3].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi06-moron/after/14/5085/7710.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi06-moron/after/14/5085/7710.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/222",
-        "elapsed_ms": 103,
+        "elapsed_ms": 105,
         "error": null
       },
       {
@@ -444,19 +276,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/3150",
-        "elapsed_ms": 116,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[3].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi06-moron/after/14/5090/7713.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi06-moron/after/14/5090/7713.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/222",
-        "elapsed_ms": 108,
+        "elapsed_ms": 117,
         "error": null
       },
       {
@@ -468,7 +288,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/222",
-        "elapsed_ms": 107,
+        "elapsed_ms": 117,
         "error": null
       },
       {
@@ -480,19 +300,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/222",
-        "elapsed_ms": 116,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[3].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi06-moron/after/16/20342/30842.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi06-moron/after/16/20342/30842.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/222",
-        "elapsed_ms": 111,
+        "elapsed_ms": 105,
         "error": null
       },
       {
@@ -504,31 +312,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/10986",
-        "elapsed_ms": 106,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[3].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi06-moron/after/16/20362/30852.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi06-moron/after/16/20362/30852.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/222",
-        "elapsed_ms": 113,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[3].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi06-moron/after/17/40685/61684.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi06-moron/after/17/40685/61684.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/222",
-        "elapsed_ms": 107,
+        "elapsed_ms": 112,
         "error": null
       },
       {
@@ -540,19 +324,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/7084",
-        "elapsed_ms": 117,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[3].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi06-moron/after/17/40725/61704.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi06-moron/after/17/40725/61704.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/222",
-        "elapsed_ms": 109,
+        "elapsed_ms": 108,
         "error": null
       },
       {
@@ -564,19 +336,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/222",
-        "elapsed_ms": 117,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[3].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi06-moron/after/18/81411/123368.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi06-moron/after/18/81411/123368.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/222",
-        "elapsed_ms": 117,
+        "elapsed_ms": 111,
         "error": null
       },
       {
@@ -588,7 +348,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/222",
-        "elapsed_ms": 108,
+        "elapsed_ms": 103,
         "error": null
       },
       {
@@ -600,19 +360,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/222",
-        "elapsed_ms": 109,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[5].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi08-san-felipe/after/12/1265/1929.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi08-san-felipe/after/12/1265/1929.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/2990",
-        "elapsed_ms": 115,
+        "elapsed_ms": 112,
         "error": null
       },
       {
@@ -624,18 +372,6 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/340",
-        "elapsed_ms": 109,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[5].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi08-san-felipe/after/13/2529/3857.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi08-san-felipe/after/13/2529/3857.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/222",
         "elapsed_ms": 110,
         "error": null
       },
@@ -648,31 +384,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/9022",
-        "elapsed_ms": 105,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[5].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi08-san-felipe/after/13/2533/3861.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi08-san-felipe/after/13/2533/3861.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/222",
-        "elapsed_ms": 107,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[5].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi08-san-felipe/after/14/5058/7714.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi08-san-felipe/after/14/5058/7714.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/222",
-        "elapsed_ms": 103,
+        "elapsed_ms": 108,
         "error": null
       },
       {
@@ -684,19 +396,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/222",
-        "elapsed_ms": 106,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[5].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi08-san-felipe/after/14/5067/7723.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi08-san-felipe/after/14/5067/7723.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/222",
-        "elapsed_ms": 105,
+        "elapsed_ms": 197,
         "error": null
       },
       {
@@ -708,7 +408,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/222",
-        "elapsed_ms": 103,
+        "elapsed_ms": 107,
         "error": null
       },
       {
@@ -720,19 +420,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/222",
-        "elapsed_ms": 114,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[5].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi08-san-felipe/after/16/20232/30859.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi08-san-felipe/after/16/20232/30859.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/222",
-        "elapsed_ms": 111,
+        "elapsed_ms": 103,
         "error": null
       },
       {
@@ -744,31 +432,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/222",
-        "elapsed_ms": 106,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[5].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi08-san-felipe/after/16/20271/30894.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi08-san-felipe/after/16/20271/30894.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/222",
         "elapsed_ms": 109,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[5].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi08-san-felipe/after/17/40465/61719.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi08-san-felipe/after/17/40465/61719.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/222",
-        "elapsed_ms": 125,
         "error": null
       },
       {
@@ -780,19 +444,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/8268",
-        "elapsed_ms": 108,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[5].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi08-san-felipe/after/17/40543/61789.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi08-san-felipe/after/17/40543/61789.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/222",
-        "elapsed_ms": 122,
+        "elapsed_ms": 111,
         "error": null
       },
       {
@@ -804,19 +456,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/222",
-        "elapsed_ms": 124,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[5].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi08-san-felipe/after/18/81009/123508.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi08-san-felipe/after/18/81009/123508.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/7708",
-        "elapsed_ms": 122,
+        "elapsed_ms": 125,
         "error": null
       },
       {
@@ -828,7 +468,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/222",
-        "elapsed_ms": 99,
+        "elapsed_ms": 107,
         "error": null
       },
       {
@@ -840,19 +480,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/1188",
-        "elapsed_ms": 105,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[8].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi12-caraballeda/after/12/1286/1926.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi12-caraballeda/after/12/1286/1926.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/3888",
-        "elapsed_ms": 113,
+        "elapsed_ms": 104,
         "error": null
       },
       {
@@ -864,19 +492,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/224",
-        "elapsed_ms": 96,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[8].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi12-caraballeda/after/13/2569/3852.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi12-caraballeda/after/13/2569/3852.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/224",
-        "elapsed_ms": 121,
+        "elapsed_ms": 105,
         "error": null
       },
       {
@@ -888,31 +504,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/8060",
-        "elapsed_ms": 110,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[8].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi12-caraballeda/after/13/2575/3854.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi12-caraballeda/after/13/2575/3854.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/224",
-        "elapsed_ms": 125,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[8].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi12-caraballeda/after/14/5138/7705.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi12-caraballeda/after/14/5138/7705.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/224",
-        "elapsed_ms": 122,
+        "elapsed_ms": 106,
         "error": null
       },
       {
@@ -924,19 +516,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/224",
-        "elapsed_ms": 110,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[8].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi12-caraballeda/after/14/5151/7708.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi12-caraballeda/after/14/5151/7708.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/224",
-        "elapsed_ms": 100,
+        "elapsed_ms": 105,
         "error": null
       },
       {
@@ -948,7 +528,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/224",
-        "elapsed_ms": 106,
+        "elapsed_ms": 114,
         "error": null
       },
       {
@@ -960,19 +540,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/224",
-        "elapsed_ms": 110,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[8].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi12-caraballeda/after/16/20555/30822.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi12-caraballeda/after/16/20555/30822.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/224",
-        "elapsed_ms": 108,
+        "elapsed_ms": 123,
         "error": null
       },
       {
@@ -990,49 +558,13 @@
       {
         "kind": "tile",
         "catalog_path": "aois[8].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi12-caraballeda/after/16/20606/30832.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi12-caraballeda/after/16/20606/30832.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/224",
-        "elapsed_ms": 121,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[8].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi12-caraballeda/after/17/41110/61644.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi12-caraballeda/after/17/41110/61644.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/224",
-        "elapsed_ms": 111,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[8].layers.afterTiles",
         "data_path": "/data/tiles/emsr884-aoi12-caraballeda/after/17/41162/61644.webp",
         "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi12-caraballeda/after/17/41162/61644.webp",
         "ok": true,
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/224",
-        "elapsed_ms": 118,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[8].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi12-caraballeda/after/17/41213/61664.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi12-caraballeda/after/17/41213/61664.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/224",
-        "elapsed_ms": 110,
+        "elapsed_ms": 123,
         "error": null
       },
       {
@@ -1044,19 +576,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/224",
-        "elapsed_ms": 112,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[8].layers.afterTiles",
-        "data_path": "/data/tiles/emsr884-aoi12-caraballeda/after/18/82324/123288.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi12-caraballeda/after/18/82324/123288.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/224",
-        "elapsed_ms": 109,
+        "elapsed_ms": 117,
         "error": null
       },
       {
@@ -1068,7 +588,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/224",
-        "elapsed_ms": 105,
+        "elapsed_ms": 104,
         "error": null
       },
       {
@@ -1086,37 +606,13 @@
       {
         "kind": "tile",
         "catalog_path": "aois[8].layers.beforeTiles",
-        "data_path": "/data/tiles/emsr884-aoi12-caraballeda/before/12/1286/1926.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi12-caraballeda/before/12/1286/1926.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/2254",
-        "elapsed_ms": 105,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[8].layers.beforeTiles",
         "data_path": "/data/tiles/emsr884-aoi12-caraballeda/before/12/1287/1926.webp",
         "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi12-caraballeda/before/12/1287/1926.webp",
         "ok": true,
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/2358",
-        "elapsed_ms": 120,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[8].layers.beforeTiles",
-        "data_path": "/data/tiles/emsr884-aoi12-caraballeda/before/13/2569/3852.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi12-caraballeda/before/13/2569/3852.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/278",
-        "elapsed_ms": 107,
+        "elapsed_ms": 105,
         "error": null
       },
       {
@@ -1128,31 +624,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/6436",
-        "elapsed_ms": 116,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[8].layers.beforeTiles",
-        "data_path": "/data/tiles/emsr884-aoi12-caraballeda/before/13/2575/3853.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi12-caraballeda/before/13/2575/3853.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/5196",
-        "elapsed_ms": 105,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[8].layers.beforeTiles",
-        "data_path": "/data/tiles/emsr884-aoi12-caraballeda/before/14/5138/7705.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi12-caraballeda/before/14/5138/7705.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/262",
-        "elapsed_ms": 115,
+        "elapsed_ms": 122,
         "error": null
       },
       {
@@ -1164,19 +636,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/284",
-        "elapsed_ms": 115,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[8].layers.beforeTiles",
-        "data_path": "/data/tiles/emsr884-aoi12-caraballeda/before/14/5151/7707.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi12-caraballeda/before/14/5151/7707.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/812",
-        "elapsed_ms": 114,
+        "elapsed_ms": 108,
         "error": null
       },
       {
@@ -1188,7 +648,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/328",
-        "elapsed_ms": 105,
+        "elapsed_ms": 119,
         "error": null
       },
       {
@@ -1200,19 +660,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/530",
-        "elapsed_ms": 112,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[8].layers.beforeTiles",
-        "data_path": "/data/tiles/emsr884-aoi12-caraballeda/before/16/20555/30823.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi12-caraballeda/before/16/20555/30823.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/602",
-        "elapsed_ms": 113,
+        "elapsed_ms": 106,
         "error": null
       },
       {
@@ -1224,31 +672,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/350",
-        "elapsed_ms": 119,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[8].layers.beforeTiles",
-        "data_path": "/data/tiles/emsr884-aoi12-caraballeda/before/16/20604/30830.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi12-caraballeda/before/16/20604/30830.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/1280",
-        "elapsed_ms": 105,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[8].layers.beforeTiles",
-        "data_path": "/data/tiles/emsr884-aoi12-caraballeda/before/17/41111/61646.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi12-caraballeda/before/17/41111/61646.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/494",
-        "elapsed_ms": 105,
+        "elapsed_ms": 110,
         "error": null
       },
       {
@@ -1260,19 +684,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/314",
-        "elapsed_ms": 108,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[8].layers.beforeTiles",
-        "data_path": "/data/tiles/emsr884-aoi12-caraballeda/before/17/41208/61660.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi12-caraballeda/before/17/41208/61660.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/3502",
-        "elapsed_ms": 106,
+        "elapsed_ms": 113,
         "error": null
       },
       {
@@ -1284,19 +696,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/656",
-        "elapsed_ms": 102,
-        "error": null
-      },
-      {
-        "kind": "tile",
-        "catalog_path": "aois[8].layers.beforeTiles",
-        "data_path": "/data/tiles/emsr884-aoi12-caraballeda/before/18/82320/123293.webp",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/tiles/emsr884-aoi12-caraballeda/before/18/82320/123293.webp",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/webp",
-        "content_range": "bytes 0-0/342",
-        "elapsed_ms": 112,
+        "elapsed_ms": 107,
         "error": null
       },
       {
@@ -1308,7 +708,7 @@
         "status": 206,
         "content_type": "image/webp",
         "content_range": "bytes 0-0/366",
-        "elapsed_ms": 117,
+        "elapsed_ms": 104,
         "error": null
       },
       {
@@ -1320,463 +720,223 @@
         "status": 206,
         "content_type": "image/png",
         "content_range": "bytes 0-0/31940",
-        "elapsed_ms": 109,
+        "elapsed_ms": 113,
         "error": null
       },
       {
         "kind": "chip",
         "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi02-caracas/ems_00005_before_after_compare.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi02-caracas/ems_00005_before_after_compare.png",
+        "data_path": "/data/chips/emsr884-aoi02-caracas/ems_00010_after_event.png",
+        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi02-caracas/ems_00010_after_event.png",
         "ok": true,
         "status": 206,
         "content_type": "image/png",
-        "content_range": "bytes 0-0/190548",
-        "elapsed_ms": 119,
-        "error": null
-      },
-      {
-        "kind": "chip",
-        "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi02-caracas/ems_00009_post_event.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi02-caracas/ems_00009_post_event.png",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/png",
-        "content_range": "bytes 0-0/34456",
-        "elapsed_ms": 109,
-        "error": null
-      },
-      {
-        "kind": "chip",
-        "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi02-caracas/ems_00014_after_event.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi02-caracas/ems_00014_after_event.png",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/png",
-        "content_range": "bytes 0-0/37234",
-        "elapsed_ms": 117,
-        "error": null
-      },
-      {
-        "kind": "chip",
-        "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi06-moron/ems_00003_post_event.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi06-moron/ems_00003_post_event.png",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/png",
-        "content_range": "bytes 0-0/98748",
-        "elapsed_ms": 129,
-        "error": null
-      },
-      {
-        "kind": "chip",
-        "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi06-moron/ems_00020_post_event.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi06-moron/ems_00020_post_event.png",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/png",
-        "content_range": "bytes 0-0/103715",
-        "elapsed_ms": 112,
-        "error": null
-      },
-      {
-        "kind": "chip",
-        "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi06-moron/ems_00038_post_event.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi06-moron/ems_00038_post_event.png",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/png",
-        "content_range": "bytes 0-0/91162",
-        "elapsed_ms": 102,
-        "error": null
-      },
-      {
-        "kind": "chip",
-        "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi06-moron/ems_00055_post_event.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi06-moron/ems_00055_post_event.png",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/png",
-        "content_range": "bytes 0-0/80551",
-        "elapsed_ms": 104,
-        "error": null
-      },
-      {
-        "kind": "chip",
-        "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi06-moron/ems_00072_post_event.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi06-moron/ems_00072_post_event.png",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/png",
-        "content_range": "bytes 0-0/56037",
-        "elapsed_ms": 118,
-        "error": null
-      },
-      {
-        "kind": "chip",
-        "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi06-moron/ems_00090_post_event.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi06-moron/ems_00090_post_event.png",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/png",
-        "content_range": "bytes 0-0/65702",
-        "elapsed_ms": 108,
-        "error": null
-      },
-      {
-        "kind": "chip",
-        "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi06-moron/ems_00107_post_event.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi06-moron/ems_00107_post_event.png",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/png",
-        "content_range": "bytes 0-0/74792",
-        "elapsed_ms": 117,
-        "error": null
-      },
-      {
-        "kind": "chip",
-        "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi06-moron/ems_00125_post_event.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi06-moron/ems_00125_post_event.png",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/png",
-        "content_range": "bytes 0-0/77650",
-        "elapsed_ms": 118,
-        "error": null
-      },
-      {
-        "kind": "chip",
-        "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi08-san-felipe/ems_00013_post_event.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi08-san-felipe/ems_00013_post_event.png",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/png",
-        "content_range": "bytes 0-0/32346",
-        "elapsed_ms": 114,
-        "error": null
-      },
-      {
-        "kind": "chip",
-        "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi08-san-felipe/ems_00031_post_event.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi08-san-felipe/ems_00031_post_event.png",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/png",
-        "content_range": "bytes 0-0/34285",
-        "elapsed_ms": 108,
-        "error": null
-      },
-      {
-        "kind": "chip",
-        "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00002_after_event.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00002_after_event.png",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/png",
-        "content_range": "bytes 0-0/105954",
-        "elapsed_ms": 110,
-        "error": null
-      },
-      {
-        "kind": "chip",
-        "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00006_before_event.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00006_before_event.png",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/png",
-        "content_range": "bytes 0-0/69909",
-        "elapsed_ms": 116,
-        "error": null
-      },
-      {
-        "kind": "chip",
-        "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00010_post_event.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00010_post_event.png",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/png",
-        "content_range": "bytes 0-0/113354",
-        "elapsed_ms": 102,
-        "error": null
-      },
-      {
-        "kind": "chip",
-        "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00015_after_event.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00015_after_event.png",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/png",
-        "content_range": "bytes 0-0/101062",
-        "elapsed_ms": 106,
-        "error": null
-      },
-      {
-        "kind": "chip",
-        "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00019_before_event.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00019_before_event.png",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/png",
-        "content_range": "bytes 0-0/74911",
-        "elapsed_ms": 110,
-        "error": null
-      },
-      {
-        "kind": "chip",
-        "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00023_post_event.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00023_post_event.png",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/png",
-        "content_range": "bytes 0-0/113735",
-        "elapsed_ms": 106,
-        "error": null
-      },
-      {
-        "kind": "chip",
-        "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00028_before_after_compare.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00028_before_after_compare.png",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/png",
-        "content_range": "bytes 0-0/200276",
-        "elapsed_ms": 110,
-        "error": null
-      },
-      {
-        "kind": "chip",
-        "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00032_before_event.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00032_before_event.png",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/png",
-        "content_range": "bytes 0-0/72608",
-        "elapsed_ms": 108,
-        "error": null
-      },
-      {
-        "kind": "chip",
-        "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00037_after_event.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00037_after_event.png",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/png",
-        "content_range": "bytes 0-0/108992",
-        "elapsed_ms": 103,
-        "error": null
-      },
-      {
-        "kind": "chip",
-        "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00041_before_after_compare.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00041_before_after_compare.png",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/png",
-        "content_range": "bytes 0-0/172114",
+        "content_range": "bytes 0-0/33503",
         "elapsed_ms": 107,
         "error": null
       },
       {
         "kind": "chip",
         "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00045_before_event.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00045_before_event.png",
+        "data_path": "/data/chips/emsr884-aoi06-moron/ems_00005_post_event.png",
+        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi06-moron/ems_00005_post_event.png",
         "ok": true,
         "status": 206,
         "content_type": "image/png",
-        "content_range": "bytes 0-0/71177",
+        "content_range": "bytes 0-0/71002",
         "elapsed_ms": 104,
         "error": null
       },
       {
         "kind": "chip",
         "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00050_after_event.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00050_after_event.png",
+        "data_path": "/data/chips/emsr884-aoi06-moron/ems_00040_post_event.png",
+        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi06-moron/ems_00040_post_event.png",
         "ok": true,
         "status": 206,
         "content_type": "image/png",
-        "content_range": "bytes 0-0/108619",
-        "elapsed_ms": 114,
+        "content_range": "bytes 0-0/92894",
+        "elapsed_ms": 110,
         "error": null
       },
       {
         "kind": "chip",
         "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00054_before_after_compare.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00054_before_after_compare.png",
+        "data_path": "/data/chips/emsr884-aoi06-moron/ems_00076_post_event.png",
+        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi06-moron/ems_00076_post_event.png",
         "ok": true,
         "status": 206,
         "content_type": "image/png",
-        "content_range": "bytes 0-0/193318",
-        "elapsed_ms": 111,
+        "content_range": "bytes 0-0/61502",
+        "elapsed_ms": 107,
         "error": null
       },
       {
         "kind": "chip",
         "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00058_post_event.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00058_post_event.png",
+        "data_path": "/data/chips/emsr884-aoi06-moron/ems_00112_post_event.png",
+        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi06-moron/ems_00112_post_event.png",
         "ok": true,
         "status": 206,
         "content_type": "image/png",
-        "content_range": "bytes 0-0/110842",
+        "content_range": "bytes 0-0/94747",
+        "elapsed_ms": 108,
+        "error": null
+      },
+      {
+        "kind": "chip",
+        "catalog_path": "public/data/chips sample",
+        "data_path": "/data/chips/emsr884-aoi08-san-felipe/ems_00019_post_event.png",
+        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi08-san-felipe/ems_00019_post_event.png",
+        "ok": true,
+        "status": 206,
+        "content_type": "image/png",
+        "content_range": "bytes 0-0/36979",
+        "elapsed_ms": 115,
+        "error": null
+      },
+      {
+        "kind": "chip",
+        "catalog_path": "public/data/chips sample",
+        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00003_post_event.png",
+        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00003_post_event.png",
+        "ok": true,
+        "status": 206,
+        "content_type": "image/png",
+        "content_range": "bytes 0-0/107492",
+        "elapsed_ms": 124,
+        "error": null
+      },
+      {
+        "kind": "chip",
+        "catalog_path": "public/data/chips sample",
+        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00012_before_event.png",
+        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00012_before_event.png",
+        "ok": true,
+        "status": 206,
+        "content_type": "image/png",
+        "content_range": "bytes 0-0/62609",
+        "elapsed_ms": 112,
+        "error": null
+      },
+      {
+        "kind": "chip",
+        "catalog_path": "public/data/chips sample",
+        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00021_before_event.png",
+        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00021_before_event.png",
+        "ok": true,
+        "status": 206,
+        "content_type": "image/png",
+        "content_range": "bytes 0-0/71447",
         "elapsed_ms": 105,
         "error": null
       },
       {
         "kind": "chip",
         "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00063_after_event.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00063_after_event.png",
+        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00030_before_event.png",
+        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00030_before_event.png",
         "ok": true,
         "status": 206,
         "content_type": "image/png",
-        "content_range": "bytes 0-0/118585",
-        "elapsed_ms": 103,
+        "content_range": "bytes 0-0/66681",
+        "elapsed_ms": 107,
         "error": null
       },
       {
         "kind": "chip",
         "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00067_before_event.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00067_before_event.png",
+        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00039_before_event.png",
+        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00039_before_event.png",
         "ok": true,
         "status": 206,
         "content_type": "image/png",
-        "content_range": "bytes 0-0/74528",
-        "elapsed_ms": 285,
+        "content_range": "bytes 0-0/69938",
+        "elapsed_ms": 101,
         "error": null
       },
       {
         "kind": "chip",
         "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00072_before_event.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00072_before_event.png",
+        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00048_before_after_compare.png",
+        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00048_before_after_compare.png",
         "ok": true,
         "status": 206,
         "content_type": "image/png",
-        "content_range": "bytes 0-0/76934",
-        "elapsed_ms": 109,
+        "content_range": "bytes 0-0/198046",
+        "elapsed_ms": 129,
         "error": null
       },
       {
         "kind": "chip",
         "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00077_after_event.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00077_after_event.png",
+        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00057_before_after_compare.png",
+        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00057_before_after_compare.png",
         "ok": true,
         "status": 206,
         "content_type": "image/png",
-        "content_range": "bytes 0-0/117785",
-        "elapsed_ms": 114,
+        "content_range": "bytes 0-0/189627",
+        "elapsed_ms": 100,
         "error": null
       },
       {
         "kind": "chip",
         "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00082_after_event.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00082_after_event.png",
+        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00066_before_after_compare.png",
+        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00066_before_after_compare.png",
         "ok": true,
         "status": 206,
         "content_type": "image/png",
-        "content_range": "bytes 0-0/116379",
-        "elapsed_ms": 111,
+        "content_range": "bytes 0-0/193272",
+        "elapsed_ms": 105,
         "error": null
       },
       {
         "kind": "chip",
         "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00086_before_after_compare.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00086_before_after_compare.png",
+        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00076_after_event.png",
+        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00076_after_event.png",
         "ok": true,
         "status": 206,
         "content_type": "image/png",
-        "content_range": "bytes 0-0/175333",
-        "elapsed_ms": 125,
-        "error": null
-      },
-      {
-        "kind": "chip",
-        "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00090_post_event.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00090_post_event.png",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/png",
-        "content_range": "bytes 0-0/106321",
+        "content_range": "bytes 0-0/119514",
         "elapsed_ms": 104,
         "error": null
       },
       {
         "kind": "chip",
         "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00102_before_event.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00102_before_event.png",
+        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00085_post_event.png",
+        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00085_post_event.png",
         "ok": true,
         "status": 206,
         "content_type": "image/png",
-        "content_range": "bytes 0-0/77281",
+        "content_range": "bytes 0-0/113455",
+        "elapsed_ms": 113,
+        "error": null
+      },
+      {
+        "kind": "chip",
+        "catalog_path": "public/data/chips sample",
+        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00102_after_event.png",
+        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00102_after_event.png",
+        "ok": true,
+        "status": 206,
+        "content_type": "image/png",
+        "content_range": "bytes 0-0/113874",
+        "elapsed_ms": 102,
+        "error": null
+      },
+      {
+        "kind": "chip",
+        "catalog_path": "public/data/chips sample",
+        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00111_after_event.png",
+        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00111_after_event.png",
+        "ok": true,
+        "status": 206,
+        "content_type": "image/png",
+        "content_range": "bytes 0-0/112157",
         "elapsed_ms": 109,
-        "error": null
-      },
-      {
-        "kind": "chip",
-        "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00107_after_event.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00107_after_event.png",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/png",
-        "content_range": "bytes 0-0/109745",
-        "elapsed_ms": 122,
-        "error": null
-      },
-      {
-        "kind": "chip",
-        "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00111_before_after_compare.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00111_before_after_compare.png",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/png",
-        "content_range": "bytes 0-0/192430",
-        "elapsed_ms": 106,
-        "error": null
-      },
-      {
-        "kind": "chip",
-        "catalog_path": "public/data/chips sample",
-        "data_path": "/data/chips/emsr884-aoi12-caraballeda/ems_00116_before_event.png",
-        "url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/data/chips/emsr884-aoi12-caraballeda/ems_00116_before_event.png",
-        "ok": true,
-        "status": 206,
-        "content_type": "image/png",
-        "content_range": "bytes 0-0/71496",
-        "elapsed_ms": 110,
         "error": null
       },
       {
@@ -1788,7 +948,7 @@
         "status": 206,
         "content_type": "image/png",
         "content_range": "bytes 0-0/110551",
-        "elapsed_ms": 117,
+        "elapsed_ms": 104,
         "error": null
       }
     ],
