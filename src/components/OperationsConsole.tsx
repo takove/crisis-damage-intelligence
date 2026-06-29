@@ -12,6 +12,7 @@ const copy = {
     live: "Public read-only",
     language: "Language",
     aoi: "Go to affected area",
+    quickStart: "Start with La Guaira · switch Before/After · click red buildings",
     rankingNote: "Ranked by response value: official EMS destroyed/damaged first, then possible/MONIT01, VLM triage, and capped external predictions.",
     source: "Source",
     status: "Status",
@@ -40,7 +41,7 @@ const copy = {
     evidenceOnly: "Evidence chips only",
     notAvailable: "Not available",
     officialAfter: "Copernicus EMS post-event imagery",
-    nonOfficialBefore: "Vantor/OpenData reference - not official EMS imagery",
+    nonOfficialBefore: "Public/OpenData reference - not official EMS imagery",
     coverage: "Coverage",
     imageryOnly: "Imagery only - no official damage vector yet",
     opacity: "Damage opacity",
@@ -91,6 +92,7 @@ const copy = {
     live: "Publico solo lectura",
     language: "Idioma",
     aoi: "Ir a zona afectada",
+    quickStart: "Empieza por La Guaira · cambia Antes/Después · click en rojo",
     rankingNote: "Ordenado por valor de respuesta: primero destruido/dañado oficial EMS, luego posible/MONIT01, triage VLM y predicciones externas limitadas.",
     source: "Fuente",
     status: "Estado",
@@ -119,7 +121,7 @@ const copy = {
     evidenceOnly: "Solo chips de evidencia",
     notAvailable: "No disponible",
     officialAfter: "Imagen post-evento de Copernicus EMS",
-    nonOfficialBefore: "Referencia Vantor/OpenData - no es imagen oficial EMS",
+    nonOfficialBefore: "Referencia publica/OpenData - no es imagen oficial EMS",
     coverage: "Cobertura",
     imageryOnly: "Solo imagen - sin vector oficial de danos aun",
     opacity: "Opacidad de daño",
@@ -189,6 +191,7 @@ type CityNavItem = {
 let appLoadedTracked = false;
 
 const n = (value: unknown) => Number(value ?? 0) || 0;
+const interactionClockMs = () => performance.now();
 
 const cityGroups: Array<Omit<
   CityNavItem,
@@ -366,38 +369,61 @@ export default function OperationsConsole() {
   const rightRailRef = useRef<HTMLElement | null>(null);
   const priorityRef = useRef<HTMLElement | null>(null);
   const appLoadTrackedRef = useRef(false);
+  const sessionStartedAtRef = useRef<number>(0);
+  const firstInteractionTrackedRef = useRef(false);
+  const loadedDamageAoisRef = useRef<Set<string>>(new Set());
+  const loadedVlmAoisRef = useRef<Set<string>>(new Set());
+  const mapReadyTrackedRef = useRef<Set<string>>(new Set());
+  const firstTileTrackedRef = useRef<Set<string>>(new Set());
 
   useEffect(() => {
     fetch("/data/catalog.json").then((r) => r.json()).then(setCatalog);
+  }, []);
+
+  useEffect(() => {
+    sessionStartedAtRef.current = interactionClockMs();
   }, []);
 
   const active = useMemo<AoiRecord | undefined>(() => catalog?.aois.find((a) => a.id === activeId), [catalog, activeId]);
 
   useEffect(() => {
     if (!catalog) return;
+    const aoi = catalog.aois.find((candidate) => candidate.id === activeId);
+    if (!aoi || loadedVlmAoisRef.current.has(aoi.id) || !aoi.layers.vlm) return;
     let cancelled = false;
-    Promise.all(
-      catalog.aois.map(async (aoi) => {
-        if (!aoi.layers.vlm) return [];
-        const text = await fetch(aoi.layers.vlm).then((r) => r.text());
-        return text.split("\n").filter(Boolean).map((line) => {
+    fetch(aoi.layers.vlm)
+      .then((r) => {
+        if (!r.ok) throw new Error(`Unable to load VLM data for ${aoi.id}`);
+        return r.text();
+      })
+      .then((text) => {
+        if (cancelled) return;
+        const entries = text.split("\n").filter(Boolean).map((line) => {
           const entry = JSON.parse(line) as VlmRecord;
           return [`${aoi.id}__${entry.id}`, entry] as const;
         });
-      }),
-    ).then((groups) => {
-      if (!cancelled) setVlm(Object.fromEntries(groups.flat()));
-    });
+        setVlm((current) => ({ ...current, ...Object.fromEntries(entries) }));
+        loadedVlmAoisRef.current.add(aoi.id);
+      })
+      .catch(() => {
+        loadedVlmAoisRef.current.delete(aoi.id);
+      });
     return () => { cancelled = true; };
-  }, [catalog]);
+  }, [activeId, catalog]);
 
   useEffect(() => {
     if (!catalog) return;
+    const aoi = catalog.aois.find((candidate) => candidate.id === activeId);
+    if (!aoi || loadedDamageAoisRef.current.has(aoi.id)) return;
     let cancelled = false;
-    Promise.all(
-      catalog.aois.map(async (aoi) => {
-        const data = await fetch(aoi.layers.damage).then((r) => r.json()) as { features: DamageFeature[] };
-        return (data.features ?? []).map((feature) => {
+    fetch(aoi.layers.damage)
+      .then((r) => {
+        if (!r.ok) throw new Error(`Unable to load damage data for ${aoi.id}`);
+        return r.json();
+      })
+      .then((data: { features: DamageFeature[] }) => {
+        if (cancelled) return;
+        const nextFeatures = (data.features ?? []).map((feature) => {
           const sourceId = String(feature.properties.id);
           return {
             ...feature,
@@ -411,12 +437,17 @@ export default function OperationsConsole() {
             },
           } as DamageFeature;
         });
-      }),
-    ).then((groups) => {
-      if (!cancelled) setFeatures(groups.flat());
-    });
+        setFeatures((current) => {
+          const withoutAoi = current.filter((feature) => feature.properties.aoi_id !== aoi.id);
+          return [...withoutAoi, ...nextFeatures];
+        });
+        loadedDamageAoisRef.current.add(aoi.id);
+      })
+      .catch(() => {
+        loadedDamageAoisRef.current.delete(aoi.id);
+      });
     return () => { cancelled = true; };
-  }, [catalog]);
+  }, [activeId, catalog]);
 
   const t = copy[language];
   const metrics = active?.metrics;
@@ -454,7 +485,20 @@ export default function OperationsConsole() {
     });
   }, [activeId, basemap, catalog, language, mode]);
 
+  const trackFirstInteraction = (surface: string) => {
+    if (firstInteractionTrackedRef.current) return;
+    firstInteractionTrackedRef.current = true;
+    const startedAt = sessionStartedAtRef.current;
+    trackAnalytics("first_interaction_seconds", {
+      seconds: startedAt ? Math.round((interactionClockMs() - startedAt) / 1000) : 0,
+      surface,
+      aoi_id: activeId,
+      language,
+    });
+  };
+
   const changeLanguage = (nextLanguage: Language) => {
+    trackFirstInteraction("language");
     if (nextLanguage !== language) {
       trackAnalytics("language_switched", {
         from_language: language,
@@ -465,6 +509,7 @@ export default function OperationsConsole() {
     setLanguage(nextLanguage);
   };
   const selectAoi = (id: string, cityId?: string) => {
+    trackFirstInteraction("aoi");
     if (id !== activeId) {
       const nextAoi = catalog?.aois.find((aoi) => aoi.id === id);
       trackAnalytics("aoi_selected", {
@@ -480,6 +525,7 @@ export default function OperationsConsole() {
     setAoiFocusToken((value) => value + 1);
   };
   const changeMode = (nextMode: Mode) => {
+    trackFirstInteraction("imagery_mode");
     if (nextMode !== mode) {
       trackAnalytics("imagery_mode_changed", {
         aoi_id: activeId,
@@ -491,6 +537,7 @@ export default function OperationsConsole() {
     setMode(nextMode);
   };
   const changeBasemap = (nextBasemap: Basemap) => {
+    trackFirstInteraction("basemap");
     if (nextBasemap !== basemap) {
       trackAnalytics("basemap_changed", {
         aoi_id: activeId,
@@ -500,6 +547,7 @@ export default function OperationsConsole() {
     setBasemap(nextBasemap);
   };
   const changeFilter = (nextFilter: Filter) => {
+    trackFirstInteraction("filter");
     if (nextFilter !== filter) {
       trackAnalytics("damage_filter_changed", {
         aoi_id: activeId,
@@ -509,6 +557,7 @@ export default function OperationsConsole() {
     setFilter(nextFilter);
   };
   const selectPriorityFeature = (feature: DamageFeature, rank: number) => {
+    trackFirstInteraction("priority");
     const p = feature.properties;
     const record = vlm[p.id];
     trackAnalytics("priority_item_clicked", {
@@ -544,6 +593,7 @@ export default function OperationsConsole() {
           <div className="status-pill">{t.live}</div>
           <h1>{t.title}</h1>
           <p>{t.subtitle}</p>
+          <p className="quick-start">{t.quickStart}</p>
         </div>
 
         <label className="field-label">{t.language}</label>
@@ -616,7 +666,22 @@ export default function OperationsConsole() {
             selectedId={selected?.properties.id}
             focusToken={focusToken}
             aoiFocusToken={aoiFocusToken}
-            onSelect={setSelected}
+            onMapReady={(payload) => {
+              const key = `${payload.aoi_id}:${payload.feature_count}`;
+              if (mapReadyTrackedRef.current.has(key)) return;
+              mapReadyTrackedRef.current.add(key);
+              trackAnalytics("map_ready", payload);
+            }}
+            onFirstTileLoaded={(payload) => {
+              const key = `${payload.aoi_id}:${payload.layer}`;
+              if (firstTileTrackedRef.current.has(key)) return;
+              firstTileTrackedRef.current.add(key);
+              trackAnalytics("first_tile_loaded", payload);
+            }}
+            onSelect={(feature) => {
+              trackFirstInteraction(feature ? "map_feature" : "map_empty");
+              setSelected(feature);
+            }}
           />
         )}
         <div className="map-toolbar">

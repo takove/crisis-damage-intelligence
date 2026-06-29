@@ -46,6 +46,8 @@ type Props = {
   selectedId?: string;
   focusToken: number;
   aoiFocusToken: number;
+  onMapReady: (payload: { aoi_id: string; feature_count: number; mode: Props["mode"]; basemap: Props["basemap"] }) => void;
+  onFirstTileLoaded: (payload: { aoi_id: string; layer: string; mode: Props["mode"]; basemap: Props["basemap"] }) => void;
   onSelect: (feature: DamageFeature | null) => void;
 };
 
@@ -105,7 +107,7 @@ function hasBeforeLayer(aoi: AoiRecord) {
   return Boolean(aoi.layers.beforeTiles || aoi.layers.beforeImage || aoi.imagery?.approximateReference?.urlTemplate);
 }
 
-export default function MapPanel({ aoi, features, mode, opacity, filter, basemap, vlm, selectedId, focusToken, aoiFocusToken, onSelect }: Props) {
+export default function MapPanel({ aoi, features, mode, opacity, filter, basemap, vlm, selectedId, focusToken, aoiFocusToken, onMapReady, onFirstTileLoaded, onSelect }: Props) {
   const nodeRef = useRef<HTMLDivElement | null>(null);
   const popupRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<OlMap | null>(null);
@@ -118,14 +120,40 @@ export default function MapPanel({ aoi, features, mode, opacity, filter, basemap
   const markerRef = useRef<VectorLayer<VectorSource> | null>(null);
   const popupOverlayRef = useRef<Overlay | null>(null);
   const featuresRef = useRef<DamageFeature[]>([]);
+  const aoiIdRef = useRef(aoi.id);
   const olFeatureByIdRef = useRef<Map<string, OlDamageFeature>>(new Map());
   const modeRef = useRef(mode);
   const selectedIdRef = useRef(selectedId);
+  const onSelectRef = useRef(onSelect);
+  const onMapReadyRef = useRef(onMapReady);
+  const onFirstTileLoadedRef = useRef(onFirstTileLoaded);
   const renderVectorsRef = useRef<() => void>(() => {});
+  const tileTrackedRef = useRef<Set<string>>(new Set());
+  const basemapRef = useRef(basemap);
+
+  useEffect(() => {
+    onMapReadyRef.current = onMapReady;
+  }, [onMapReady]);
+
+  useEffect(() => {
+    onFirstTileLoadedRef.current = onFirstTileLoaded;
+  }, [onFirstTileLoaded]);
+
+  useEffect(() => {
+    aoiIdRef.current = aoi.id;
+  }, [aoi.id]);
+
+  useEffect(() => {
+    onSelectRef.current = onSelect;
+  }, [onSelect]);
 
   useEffect(() => {
     modeRef.current = mode;
   }, [mode]);
+
+  useEffect(() => {
+    basemapRef.current = basemap;
+  }, [basemap]);
 
   useEffect(() => {
     selectedIdRef.current = selectedId;
@@ -249,15 +277,59 @@ export default function MapPanel({ aoi, features, mode, opacity, filter, basemap
     vector.setStyle((feature) => styleFor(feature as OlDamageFeature));
     nodeRef.current?.setAttribute("data-visible-features", String(visible.length));
     setDebug(visible);
-  }, [aoi.id, filter, setDebug, styleFor, vlm]);
+    onMapReadyRef.current({
+      aoi_id: aoi.id,
+      feature_count: visible.length,
+      mode: modeRef.current,
+      basemap,
+    });
+  }, [aoi.id, basemap, filter, setDebug, styleFor, vlm]);
 
   useEffect(() => {
     renderVectorsRef.current = renderVectors;
   }, [renderVectors]);
 
+  const applyLayerVisibility = useCallback((nextMode: Props["mode"], nextBasemap: Props["basemap"]) => {
+    const map = mapRef.current;
+    const hasBefore = hasBeforeLayer(aoi);
+    const hasAfter = Boolean(aoi.layers.afterTiles || aoi.layers.afterImage);
+    baseRef.current?.setVisible(nextBasemap === "map");
+    aerialBaseRef.current?.setVisible(nextBasemap === "aerial");
+    beforeRef.current?.setVisible(nextMode === "before" && hasBefore);
+    afterRef.current?.setVisible(nextMode === "after" && hasAfter);
+    map?.renderSync();
+  }, [aoi]);
+
+  const attachFirstTileTracker = useCallback((source: unknown, layer: string) => {
+    const aoiId = aoiIdRef.current;
+    const key = `${aoiId}:${layer}`;
+    if (!source || tileTrackedRef.current.has(key)) return;
+    const maybeSource = source as {
+      once?: (event: string, listener: () => void) => void;
+      on?: (event: string, listener: () => void) => void;
+    };
+    const listener = () => {
+      if (tileTrackedRef.current.has(key)) return;
+      tileTrackedRef.current.add(key);
+      onFirstTileLoadedRef.current({
+        aoi_id: aoiId,
+        layer,
+        mode: modeRef.current,
+        basemap: basemapRef.current,
+      });
+    };
+    if (maybeSource.once) {
+      maybeSource.once("tileloadend", listener);
+      maybeSource.once("imageloadend", listener);
+      maybeSource.once("change", listener);
+    } else if (maybeSource.on) {
+      maybeSource.on("change", listener);
+    }
+  }, []);
+
   useEffect(() => {
     if (!nodeRef.current || mapRef.current) return;
-    const base = new TileLayer({ source: new OSM(), visible: true });
+    const base = new TileLayer({ source: new OSM(), visible: basemapRef.current === "map", zIndex: 0 });
     const aerialBase = new TileLayer({
       source: new XYZ({
         attributions: "Tiles © Esri, Maxar, Earthstar Geographics, and the GIS User Community",
@@ -265,13 +337,16 @@ export default function MapPanel({ aoi, features, mode, opacity, filter, basemap
         crossOrigin: "anonymous",
         maxZoom: 19,
       }),
-      visible: false,
-      zIndex: 1,
+      visible: basemapRef.current === "aerial",
+      zIndex: 0,
     });
     const vector = new VectorLayer({ source: new VectorSource(), zIndex: 30 });
     const highlight = new VectorLayer({ source: new VectorSource(), zIndex: 40 });
     const marker = new VectorLayer({ source: new VectorSource(), zIndex: 50 });
-    const popup = new Overlay({ element: popupRef.current ?? undefined, autoPan: { animation: { duration: 0 } }, offset: [0, -12] });
+    const popupElement = document.createElement("div");
+    popupElement.className = "ol-popup";
+    popupRef.current = popupElement;
+    const popup = new Overlay({ element: popupElement, autoPan: { animation: { duration: 0 } }, offset: [0, -12] });
     const map = new OlMap({
       target: nodeRef.current,
       layers: [base, aerialBase, vector, highlight, marker],
@@ -286,26 +361,30 @@ export default function MapPanel({ aoi, features, mode, opacity, filter, basemap
     markerRef.current = marker;
     popupOverlayRef.current = popup;
     mapRef.current = map;
+    attachFirstTileTracker(base.getSource(), "base_map");
+    attachFirstTileTracker(aerialBase.getSource(), "base_aerial");
 
     map.on("singleclick", (event) => {
       const hit = map.forEachFeatureAtPixel(event.pixel, (feature) => feature as OlDamageFeature, {
         layerFilter: (layer) => layer === vectorRef.current,
       });
-      if (hit?.original) onSelect(hit.original);
-      else onSelect(null);
+      if (hit?.original) onSelectRef.current(hit.original);
+      else onSelectRef.current(null);
     });
 
     return () => {
+      popup.setElement(undefined);
+      popupElement.remove();
+      popupRef.current = null;
       map.setTarget(undefined);
       mapRef.current = null;
     };
-  }, [aoi.center, onSelect]);
+  }, [aoi.center, attachFirstTileTracker]);
 
   useEffect(() => {
-    baseRef.current?.setVisible(basemap === "map");
-    aerialBaseRef.current?.setVisible(basemap === "aerial");
+    applyLayerVisibility(modeRef.current, basemap);
     setDebug(featuresRef.current.filter((feature) => feature.properties.aoi_id === aoi.id && passesFilter(feature, filter, vlm)));
-  }, [aoi.id, basemap, filter, setDebug, vlm]);
+  }, [aoi.id, applyLayerVisibility, basemap, filter, setDebug, vlm]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -352,6 +431,7 @@ export default function MapPanel({ aoi, features, mode, opacity, filter, basemap
           zIndex: 10,
         });
       map.addLayer(beforeRef.current);
+      attachFirstTileTracker(beforeRef.current.getSource(), "before");
     }
     if (aoi.layers.afterTiles || aoi.layers.afterImage) {
       afterRef.current = aoi.layers.afterTiles
@@ -369,11 +449,13 @@ export default function MapPanel({ aoi, features, mode, opacity, filter, basemap
           zIndex: 11,
         });
       map.addLayer(afterRef.current);
+      attachFirstTileTracker(afterRef.current.getSource(), "after");
     }
 
     map.getView().fit(bounds3857, { padding: [60, 60, 60, 60], duration: 0, maxZoom: 15 });
+    applyLayerVisibility(modeRef.current, basemapRef.current);
     renderVectorsRef.current();
-  }, [aoi]);
+  }, [aoi, applyLayerVisibility, attachFirstTileTracker]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -390,23 +472,16 @@ export default function MapPanel({ aoi, features, mode, opacity, filter, basemap
   }, [renderVectors]);
 
   useEffect(() => {
-    const hasBefore = hasBeforeLayer(aoi);
-    const hasAfter = Boolean(aoi.layers.afterTiles || aoi.layers.afterImage);
-    beforeRef.current?.setVisible(mode === "before" && hasBefore);
-    afterRef.current?.setVisible(mode === "after" && hasAfter);
-    if (!hasBefore && mode === "before") afterRef.current?.setVisible(false);
+    applyLayerVisibility(mode, basemapRef.current);
     setDebug(featuresRef.current.filter((feature) => feature.properties.aoi_id === aoi.id && passesFilter(feature, filter, vlm)));
-  }, [aoi, filter, mode, setDebug, vlm]);
+  }, [aoi.id, applyLayerVisibility, filter, mode, setDebug, vlm]);
 
   useEffect(() => {
     focusFeature(selectedId);
   }, [focusFeature, focusToken, selectedId]);
 
   return (
-    <>
-      <div ref={nodeRef} className="map-node" data-filter={filter} data-mode={mode} data-basemap={basemap} data-opacity={opacity} data-selected-id={selectedId ?? ""} />
-      <div ref={popupRef} className="ol-popup" />
-    </>
+    <div ref={nodeRef} className="map-node" data-filter={filter} data-mode={mode} data-basemap={basemap} data-opacity={opacity} data-selected-id={selectedId ?? ""} />
   );
 }
 
