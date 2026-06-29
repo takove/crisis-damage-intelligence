@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-06-29T08:20:46.406761+00:00",
+  "generated_utc": "2026-06-29T23:18:47.513774+00:00",
   "catalog": {
     "path": "public/data/catalog.json",
     "bytes": 63734,
@@ -11,17 +11,17 @@
   "bundle": {
     "build_present": true,
     "js_files": 24,
-    "js_bytes": 1792068,
+    "js_bytes": 1806867,
     "js_human": "1.7 MB",
     "css_files": 2,
-    "css_bytes": 59692,
-    "css_human": "58.3 KB",
+    "css_bytes": 65848,
+    "css_human": "64.3 KB",
     "next_dir": {
       "path": ".next",
       "exists": true,
-      "files": 195,
-      "bytes": 8905827,
-      "human": "8.5 MB"
+      "files": 295,
+      "bytes": 9965744,
+      "human": "9.5 MB"
     }
   },
   "public_data": {
