@@ -1,9 +1,9 @@
 # Performance Audit Baseline
 
-- Generated UTC: `2026-06-29T08:20:46.406761+00:00`
+- Generated UTC: `2026-06-29T23:18:47.513774+00:00`
 - Catalog: `62.2 KB` across `15` AOIs
 - JS bundle in `.next/static`: `1.7 MB` across `24` files
-- CSS bundle in `.next/static`: `58.3 KB` across `2` files
+- CSS bundle in `.next/static`: `64.3 KB` across `2` files
 - `public/data`: `268.9 MB` across `74613` files
 - `public/data/tiles`: `186.0 MB` across `73837` files
 - `public/data/chips`: `67.3 MB` across `681` files
