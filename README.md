@@ -48,6 +48,7 @@ Keep large rasters, chips, COGs, and PMTiles out of the Vercel repo. Store them 
 
 Analytics setup and the privacy-safe event taxonomy live in `docs/ANALYTICS.md`.
 HF Spaces VLM provider setup lives in `docs/HF_SPACES_VLM.md`.
+Contributor credits live in `docs/CONTRIBUTORS.md`, including attribution for Enderson Omaña's mobile PWA and offline workflow contribution.
 
 ## Data Model
 
