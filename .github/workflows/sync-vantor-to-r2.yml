@@ -6,11 +6,12 @@ on:
       strategy:
         description: 'Upload strategy'
         required: true
-        default: 'best'
+        default: 'pre'
         type: choice
         options:
+          - pre     # All pre-event COGs, streamed multipart to R2 without temp files
           - best    # Top 6 quality images (~23GB)
-          - all     # All images (~60GB)
+          - all     # All STAC items/assets, streamed multipart to R2 without temp files
           - thumbs  # Only thumbnails + metadata
       dry_run:
         description: 'Dry run (show what would upload)'
@@ -34,8 +35,7 @@ jobs:
       
       - name: Install dependencies
         run: |
-          pip install boto3 requests tqdm
-          npm install -g wrangler
+          pip install boto3 requests
       
       - name: Configure R2 credentials
         env:
@@ -54,6 +54,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           S3_ENDPOINT_URL: ${{ secrets.S3_ENDPOINT_URL }}
           S3_BUCKET: ${{ secrets.S3_BUCKET }}
+          R2_PUBLIC_BASE_URL: https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev
           STRATEGY: ${{ github.event.inputs.strategy }}
           DRY_RUN: ${{ github.event.inputs.dry_run }}
         run: |

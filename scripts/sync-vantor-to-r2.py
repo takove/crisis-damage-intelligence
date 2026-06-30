@@ -1,34 +1,35 @@
 #!/usr/bin/env python3
-"""
-Cloud-based Vantor → R2 sync script.
-Runs in GitHub Actions with cloud bandwidth.
-Uses boto3 for S3-compatible transfer.
+"""Stream Vantor Open Data imagery to R2 with multipart uploads.
+
+This script is intended for GitHub Actions or another cloud runner with R2
+S3-compatible credentials. It does not write COG/TIFF assets to local disk.
 """
 
 import json
 import os
 import sys
-import tempfile
 from datetime import datetime
 from pathlib import Path
 
-import boto3
 import requests
-from tqdm import tqdm
 
 # Configuration
 COLLECTION_URL = "https://vantor-opendata.s3.amazonaws.com/events/Venezuela-Earthquake-Jun-2026/collection.json"
 R2_BUCKET = os.environ.get('S3_BUCKET', 'crisis-damage-intelligence')
 R2_ENDPOINT = os.environ.get('S3_ENDPOINT_URL', '')
 R2_PREFIX = "vantor/venezuela-earthquake-jun-2026"
-STRATEGY = os.environ.get('STRATEGY', 'best')
+STRATEGY = os.environ.get('STRATEGY', 'pre')
 DRY_RUN = os.environ.get('DRY_RUN', 'false').lower() == 'true'
+PUBLIC_BASE_URL = os.environ.get("R2_PUBLIC_BASE_URL", "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev")
+PART_SIZE = 64 * 1024 * 1024
 
 def log(msg):
     print(f"[{datetime.now().strftime('%H:%M:%S')}] {msg}", flush=True)
 
 def get_r2_client():
     """Create S3 client for R2."""
+    import boto3
+
     return boto3.client(
         's3',
         endpoint_url=R2_ENDPOINT,
@@ -54,36 +55,114 @@ def format_size(size_bytes):
     else:
         return f"{size_bytes/1024**3:.1f}GB"
 
-def download_file(url, dest):
-    """Download file with progress bar."""
-    response = requests.get(url, stream=True, timeout=300)
+def head_url(url):
+    response = requests.head(url, timeout=60, allow_redirects=True)
     response.raise_for_status()
-    
-    total_size = int(response.headers.get('content-length', 0))
-    
-    with open(dest, 'wb') as f, tqdm(
-        total=total_size, unit='B', unit_scale=True, 
-        desc=Path(dest).name[:30]
-    ) as pbar:
-        for chunk in response.iter_content(chunk_size=8192):
-            if chunk:
-                f.write(chunk)
-                pbar.update(len(chunk))
-    
-    return dest.stat().st_size
+    return {
+        "content_length": int(response.headers.get("content-length", 0)),
+        "content_type": response.headers.get("content-type") or get_content_type(url),
+        "accept_ranges": response.headers.get("accept-ranges", ""),
+    }
 
-def upload_to_r2(s3_client, local_path, r2_key):
-    """Upload file to R2."""
-    s3_client.upload_file(
-        str(local_path),
+
+def r2_object_size(s3_client, r2_key):
+    try:
+        response = s3_client.head_object(Bucket=R2_BUCKET, Key=r2_key)
+    except Exception:
+        return None
+    return int(response.get("ContentLength") or 0)
+
+
+def upload_part(s3_client, r2_key, upload_id, part_number, body, uploaded, content_length):
+    response = s3_client.upload_part(
+        Bucket=R2_BUCKET,
+        Key=r2_key,
+        UploadId=upload_id,
+        PartNumber=part_number,
+        Body=body,
+    )
+    uploaded += len(body)
+    if part_number == 1 or part_number % 10 == 0 or uploaded == content_length:
+        total = format_size(content_length) if content_length else "unknown"
+        log(f"    part {part_number}: {format_size(uploaded)} / {total}")
+    return {"PartNumber": part_number, "ETag": response["ETag"]}, uploaded
+
+
+def upload_url_to_r2(s3_client, url, r2_key, content_type, content_length=0):
+    """Stream an HTTP response into an explicit R2 multipart upload."""
+    upload = s3_client.create_multipart_upload(
+        Bucket=R2_BUCKET,
+        Key=r2_key,
+        ContentType=content_type,
+        CacheControl="public, max-age=31536000, immutable",
+    )
+    upload_id = upload["UploadId"]
+    parts = []
+    part_number = 1
+    uploaded = 0
+    buffer = bytearray()
+
+    try:
+        with requests.get(url, stream=True, timeout=(30, 3600)) as response:
+            response.raise_for_status()
+            for chunk in response.iter_content(chunk_size=8 * 1024 * 1024):
+                if not chunk:
+                    continue
+                buffer.extend(chunk)
+                while len(buffer) >= PART_SIZE:
+                    body = bytes(buffer[:PART_SIZE])
+                    del buffer[:PART_SIZE]
+                    part, uploaded = upload_part(
+                        s3_client,
+                        r2_key,
+                        upload_id,
+                        part_number,
+                        body,
+                        uploaded,
+                        content_length,
+                    )
+                    parts.append(part)
+                    part_number += 1
+
+            if buffer:
+                part, uploaded = upload_part(
+                    s3_client,
+                    r2_key,
+                    upload_id,
+                    part_number,
+                    bytes(buffer),
+                    uploaded,
+                    content_length,
+                )
+                parts.append(part)
+
+            s3_client.complete_multipart_upload(
+                Bucket=R2_BUCKET,
+                Key=r2_key,
+                UploadId=upload_id,
+                MultipartUpload={"Parts": parts},
+            )
+    except Exception:
+        s3_client.abort_multipart_upload(
+            Bucket=R2_BUCKET,
+            Key=r2_key,
+            UploadId=upload_id,
+        )
+        raise
+
+
+def upload_bytes_to_r2(s3_client, body, r2_key, content_type, cache_control="public, max-age=300"):
+    s3_client.put_object(
         R2_BUCKET,
         r2_key,
-        ExtraArgs={'ContentType': get_content_type(local_path)}
+        Body=body,
+        ContentType=content_type,
+        CacheControl=cache_control,
     )
 
 def get_content_type(file_path):
     """Get content type based on extension."""
-    ext = Path(file_path).suffix.lower()
+    ext = Path(str(file_path)).suffix.lower()
     types = {
         '.tif': 'image/tiff',
         '.tiff': 'image/tiff',
@@ -95,7 +174,7 @@ def get_content_type(file_path):
     }
     return types.get(ext, 'application/octet-stream')
 
-def process_item(s3_client, item, temp_dir):
+def process_item(s3_client, item):
     """Process a single STAC item."""
     item_id = item['id']
     props = item['properties']
@@ -113,13 +192,27 @@ def process_item(s3_client, item, temp_dir):
         "assets": {}
     }
     
+    if not DRY_RUN:
+        item_json_key = f"{R2_PREFIX}/{item_id}/{item_id}.json"
+        upload_bytes_to_r2(
+            s3_client,
+            json.dumps(item, indent=2).encode("utf-8"),
+            item_json_key,
+            "application/json; charset=utf-8",
+        )
+        result["assets"]["stac_item"] = {
+            "r2_key": item_json_key,
+            "public_url": f"{PUBLIC_BASE_URL}/{item_json_key}",
+            "size": len(json.dumps(item).encode("utf-8")),
+            "type": "application/json",
+        }
+
     for asset_name, asset_info in item.get('assets', {}).items():
         url = asset_info['href']
         filename = Path(url).name
         r2_key = f"{R2_PREFIX}/{item_id}/{filename}"
-        local_path = temp_dir / item_id / filename
         
-        # Skip COGs for 'thumbs' strategy
+        # Skip COGs for metadata/thumb-only strategies.
         if STRATEGY == 'thumbs' and asset_name == 'visual':
             log(f"  ⏭️  Skipping COG (thumbs strategy)")
             continue
@@ -135,29 +228,28 @@ def process_item(s3_client, item, temp_dir):
             continue
         
         try:
-            # Download
-            local_path.parent.mkdir(parents=True, exist_ok=True)
-            size = download_file(url, local_path)
-            log(f"  ✅ Downloaded: {format_size(size)}")
-            
-            # Upload to R2
-            log(f"  ⬆️  Uploading to R2...")
-            upload_to_r2(s3_client, local_path, r2_key)
-            log(f"  ✅ Uploaded to r2://{R2_BUCKET}/{r2_key}")
+            meta = head_url(url)
+            existing_size = r2_object_size(s3_client, r2_key)
+            if existing_size == meta["content_length"] and existing_size > 0:
+                log(f"  ✅ Already present in R2: {format_size(existing_size)}")
+                size = existing_size
+            else:
+                log(f"  ⇄ Streaming to R2 without local file: {format_size(meta['content_length'])}")
+                upload_url_to_r2(s3_client, url, r2_key, meta["content_type"], meta["content_length"])
+                size = r2_object_size(s3_client, r2_key) or meta["content_length"]
+                log(f"  ✅ Uploaded to r2://{R2_BUCKET}/{r2_key}")
             
             result['assets'][asset_name] = {
                 "r2_key": r2_key,
+                "public_url": f"{PUBLIC_BASE_URL}/{r2_key}",
                 "size": size,
-                "type": asset_info.get('type', 'unknown')
+                "type": meta.get("content_type") or asset_info.get('type', 'unknown'),
+                "source_url": url,
             }
             
         except Exception as e:
             log(f"  ❌ Error: {e}")
             result['assets'][asset_name] = {"error": str(e)}
-        finally:
-            # Clean up
-            if local_path.exists():
-                local_path.unlink()
     
     return result
 
@@ -168,9 +260,11 @@ def main():
     log(f"Dry run: {DRY_RUN}")
     log("=" * 60)
     
-    # Initialize R2 client
-    s3_client = get_r2_client()
-    log("R2 client initialized")
+    # Initialize R2 client only when we are going to write.
+    s3_client = None
+    if not DRY_RUN:
+        s3_client = get_r2_client()
+        log("R2 client initialized")
     
     # Fetch collection
     log("Fetching STAC collection...")
@@ -192,6 +286,9 @@ def main():
         # Top 6 by quality
         items = items[:6]
         log(f"Selected top {len(items)} items by quality")
+    elif STRATEGY == 'pre':
+        items = [item for item in items if item['properties'].get('phase') == 'pre']
+        log(f"Selected all {len(items)} pre-event items")
     elif STRATEGY == 'thumbs':
         # All items, but only thumbnails
         log(f"Processing all {len(items)} items, thumbnails only")
@@ -210,18 +307,22 @@ def main():
         "items": []
     }
     
-    with tempfile.TemporaryDirectory() as temp_dir:
-        temp_path = Path(temp_dir)
-        
-        for idx, item in enumerate(items, 1):
-            log(f"\n[{idx}/{len(items)}] {'='*50}")
-            result = process_item(s3_client, item, temp_path)
-            manifest['items'].append(result)
-            
-            # Save progress
-            manifest_path = Path('/tmp/vantor-manifest.json')
-            with open(manifest_path, 'w') as f:
-                json.dump(manifest, f, indent=2)
+    for idx, item in enumerate(items, 1):
+        log(f"\n[{idx}/{len(items)}] {'='*50}")
+        result = process_item(s3_client, item)
+        manifest['items'].append(result)
+
+        # Save progress for the GitHub Actions artifact and R2.
+        manifest_path = Path('/tmp/vantor-manifest.json')
+        with open(manifest_path, 'w') as f:
+            json.dump(manifest, f, indent=2)
+        if not DRY_RUN:
+            upload_bytes_to_r2(
+                s3_client,
+                json.dumps(manifest, indent=2).encode("utf-8"),
+                f"{R2_PREFIX}/manifests/vantor-stream-manifest.json",
+                "application/json; charset=utf-8",
+            )
     
     # Final summary
     log("\n" + "=" * 60)
@@ -237,7 +338,8 @@ def main():
     )
     
     log(f"Items processed: {len(items)}")
-    log(f"Files uploaded: {total_files}")
+    file_label = "Files planned" if DRY_RUN else "Files uploaded"
+    log(f"{file_label}: {total_files}")
     log(f"Total size: {format_size(total_bytes)}")
     
     if DRY_RUN:
