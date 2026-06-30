@@ -45,7 +45,7 @@ Contract endpoints:
 - `GET /catalog`
 - `GET /aois`
 - `GET /aois/:id`
-- `GET /features?aoi_id=<aoi-id>&limit=<n>`
+- `GET /features?aoi_id=<aoi-id>&limit=<n>[&cursor=<opaque>][&bbox=minLon,minLat,maxLon,maxLat][&geometry=full|none][&format=items|geojson]`
 - `GET /priority?aoi_id=<aoi-id>&limit=<n>`
 - `GET /search?q=<query>&limit=<n>`
 - `GET /summary`
@@ -55,7 +55,8 @@ Response payloads may be direct JSON objects/arrays or enveloped as `{ "data": .
 
 - catalog includes `updatedAt` and `aois[]`;
 - AOIs include `id`, localized `name`, `status`, `center`, `bounds`, `layers`, and `metrics`;
-- features are GeoJSON `Feature` objects with `properties.id` and `properties.aoi_id`;
+- features are paginated GeoJSON `Feature` objects with `properties.id`, `properties.aoi_id`, and a `page` object containing `limit`, `offset`, `returned`, `totalFiltered`, `totalSource`, `hasMore`, and `nextCursor`;
+- feature pages must enforce `limit <= 500`; `geometry=none` returns rows with `geometry: null`; `format=geojson` returns a paginated `featureCollection`;
 - priority rows include `id`, `aoi_id`, and `google_maps_url`;
 - search results include `id`, `type`, and `label`, and must find AOIs/cities and feature ids;
 - summary includes `updatedAt` plus at least one numeric, array, or object summary field.

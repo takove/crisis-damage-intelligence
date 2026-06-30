@@ -47,13 +47,50 @@ Every error response uses the same envelope and replaces `data` with:
 - `GET /api/internal/v1/catalog`: catalog-derived AOI records with separated metrics and raw catalog metrics.
 - `GET /api/internal/v1/aois`: compact AOI list.
 - `GET /api/internal/v1/aois/:id`: one AOI record.
-- `GET /api/internal/v1/aois/:id/features`: that AOI's GeoJSON, read server-side on request.
-- `GET /api/internal/v1/features?aoi_id=:id`: alias for one AOI's GeoJSON, useful for clients that prefer query contracts.
+- `GET /api/internal/v1/aois/:id/features`: paginated AOI features, read server-side on request.
+- `GET /api/internal/v1/features?aoi_id=:id`: alias for paginated AOI features, useful for clients that prefer query contracts.
 - `GET /api/internal/v1/aois/:id/priority?limit=12`: ranked feature/evidence queue for one AOI, capped at `50`.
 - `GET /api/internal/v1/priority?aoi_id=:id&limit=12`: alias for the ranked queue.
 - `GET /api/internal/v1/search?q=...&limit=20`: catalog/watchlist search plus feature-id lookup when the query looks like a feature id, capped at `50`.
 - `GET /api/internal/v1/summary`: aggregate totals with official EMS vectors, MONIT01 points, external predictions, imagery context, and VLM triage separated.
 - `GET /api/internal/v1/health`: private health check.
+
+### Feature Pagination
+
+`/features` is paginated by default so large external-prediction layers are not returned as one unbounded payload.
+
+Supported query params:
+
+- `limit`: page size, default `200`, maximum `500`.
+- `offset`: numeric offset for the first page or ad hoc jumps.
+- `cursor`: opaque cursor returned as `data.page.nextCursor`; preferred over manual offset for sequential reads.
+- `bbox`: optional spatial window as `minLon,minLat,maxLon,maxLat`.
+- `geometry`: `full` by default, or `none` to return Feature rows with `geometry: null` for table/list clients.
+- `format`: `items` by default, or `geojson` to also return a paginated `featureCollection`.
+
+The response keeps `features[]` for simple clients and includes:
+
+```json
+{
+  "data": {
+    "featureCount": 120,
+    "sourceFeatureCount": 120,
+    "page": {
+      "limit": 200,
+      "offset": 0,
+      "returned": 120,
+      "totalFiltered": 120,
+      "totalSource": 120,
+      "hasMore": false,
+      "nextCursor": null,
+      "geometry": "full",
+      "format": "items",
+      "bbox": null
+    },
+    "features": []
+  }
+}
+```
 
 ## Source Separation Rules
 
@@ -74,5 +111,5 @@ Before making any endpoint public:
 1. Keep `sourceLabels`, `caveats`, and separated metrics in the response contract.
 2. Add public cache policy intentionally; current closed routes use `Cache-Control: no-store`.
 3. Keep broad search metadata-only unless feature index size and latency are measured. Current feature search only runs for feature-id-like queries.
-4. Review whether `/features` needs pagination, vector tiles, or FlatGeobuf for large external prediction layers.
+4. For public map-scale browsing, prefer vector tiles, PMTiles, or FlatGeobuf over repeatedly paging GeoJSON. Current `/features` is bounded by page/cursor/bbox controls for private intel clients.
 5. Confirm that public exposure does not require Supabase, VLM providers, analytics, or private services.

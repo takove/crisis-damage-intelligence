@@ -1,5 +1,5 @@
 import { handleInternalRequest } from "@/lib/api/internal-handler";
-import { featuresPayload } from "@/lib/data/internal-api-data";
+import { featuresPayload, parseFeatureParams } from "@/lib/data/internal-api-data";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -7,6 +7,7 @@ export const runtime = "nodejs";
 export async function GET(request: Request, { params }: { params: Promise<{ id: string }> }) {
   return handleInternalRequest(request, async () => {
     const { id } = await params;
-    return featuresPayload(id);
+    const query = parseFeatureParams(new URL(request.url).searchParams);
+    return featuresPayload(id, query);
   });
 }
