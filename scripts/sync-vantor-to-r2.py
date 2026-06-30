@@ -153,8 +153,8 @@ def upload_url_to_r2(s3_client, url, r2_key, content_type, content_length=0):
 
 def upload_bytes_to_r2(s3_client, body, r2_key, content_type, cache_control="public, max-age=300"):
     s3_client.put_object(
-        R2_BUCKET,
-        r2_key,
+        Bucket=R2_BUCKET,
+        Key=r2_key,
         Body=body,
         ContentType=content_type,
         CacheControl=cache_control,
