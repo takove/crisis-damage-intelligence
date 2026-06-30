@@ -194,16 +194,17 @@ def process_item(s3_client, item):
     
     if not DRY_RUN:
         item_json_key = f"{R2_PREFIX}/{item_id}/{item_id}.json"
+        item_json_body = json.dumps(item, indent=2).encode("utf-8")
         upload_bytes_to_r2(
             s3_client,
-            json.dumps(item, indent=2).encode("utf-8"),
+            item_json_body,
             item_json_key,
             "application/json; charset=utf-8",
         )
         result["assets"]["stac_item"] = {
             "r2_key": item_json_key,
             "public_url": f"{PUBLIC_BASE_URL}/{item_json_key}",
-            "size": len(json.dumps(item).encode("utf-8")),
+            "size": len(item_json_body),
             "type": "application/json",
         }
 
