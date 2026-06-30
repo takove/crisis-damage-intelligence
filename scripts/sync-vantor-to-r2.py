@@ -65,12 +65,44 @@ def head_url(url):
     }
 
 
-def r2_object_size(s3_client, r2_key):
+def r2_object_info(s3_client, r2_key):
     try:
         response = s3_client.head_object(Bucket=R2_BUCKET, Key=r2_key)
     except Exception:
         return None
-    return int(response.get("ContentLength") or 0)
+    return {
+        "size": int(response.get("ContentLength") or 0),
+        "cache_control": response.get("CacheControl", ""),
+        "content_type": response.get("ContentType", ""),
+    }
+
+
+def r2_object_size(s3_client, r2_key):
+    info = r2_object_info(s3_client, r2_key)
+    if info is None:
+        return None
+    return info["size"]
+
+
+def metadata_needs_repair(info, content_type, cache_control):
+    if info is None:
+        return False
+    existing_type = (info.get("content_type") or "").split(";")[0].lower()
+    desired_type = (content_type or "").split(";")[0].lower()
+    if existing_type != desired_type:
+        return True
+    return info.get("cache_control") != cache_control
+
+
+def repair_r2_metadata(s3_client, r2_key, content_type, cache_control):
+    s3_client.copy_object(
+        Bucket=R2_BUCKET,
+        Key=r2_key,
+        CopySource={"Bucket": R2_BUCKET, "Key": r2_key},
+        ContentType=content_type,
+        CacheControl=cache_control,
+        MetadataDirective="REPLACE",
+    )
 
 
 def upload_part(s3_client, r2_key, upload_id, part_number, body, uploaded, content_length):
@@ -232,10 +264,20 @@ def process_item(s3_client, item):
         
         try:
             meta = head_url(url)
-            existing_size = r2_object_size(s3_client, r2_key)
+            existing_info = r2_object_info(s3_client, r2_key)
+            existing_size = existing_info["size"] if existing_info else None
+            desired_cache = "public, max-age=31536000, immutable"
             if existing_size == meta["content_length"] and existing_size > 0:
-                log(f"  ✅ Already present in R2: {format_size(existing_size)}")
-                size = existing_size
+                if metadata_needs_repair(existing_info, meta["content_type"], desired_cache):
+                    try:
+                        log("  🛠️  Repairing R2 metadata")
+                        repair_r2_metadata(s3_client, r2_key, meta["content_type"], desired_cache)
+                    except Exception as e:
+                        log(f"  ⚠️  Metadata repair failed, re-streaming object: {e}")
+                        upload_url_to_r2(s3_client, url, r2_key, meta["content_type"], meta["content_length"])
+                else:
+                    log(f"  ✅ Already present in R2: {format_size(existing_size)}")
+                size = r2_object_size(s3_client, r2_key) or existing_size
             else:
                 log(f"  ⇄ Streaming to R2 without local file: {format_size(meta['content_length'])}")
                 upload_url_to_r2(s3_client, url, r2_key, meta["content_type"], meta["content_length"])
