@@ -119,11 +119,10 @@ async function expectInternalApiShapes(api: APIRequestContext) {
     metrics: expect.any(Object),
   }));
 
-  const features = collectionFrom(
-    unwrapPayload(await expectOkJson(await api.get(`${apiBasePath}/features?aoi_id=${DEFAULT_AOI_ID}&limit=5`))),
-    "features",
-  );
+  const featuresPayload = unwrapObject(await expectOkJson(await api.get(`${apiBasePath}/features?aoi_id=${DEFAULT_AOI_ID}&limit=5`)));
+  const features = collectionFrom(featuresPayload, "features");
   expect(features.length).toBeGreaterThan(0);
+  expect(features.length).toBeLessThanOrEqual(5);
   expect(features[0]).toEqual(expect.objectContaining({
     type: "Feature",
     geometry: expect.any(Object),
@@ -132,6 +131,49 @@ async function expectInternalApiShapes(api: APIRequestContext) {
       aoi_id: DEFAULT_AOI_ID,
     }),
   }));
+  const featurePage = objectFrom(featuresPayload, "page");
+  expect(featurePage).toEqual(expect.objectContaining({
+    limit: 5,
+    offset: 0,
+    returned: features.length,
+    totalSource: expect.any(Number),
+    totalFiltered: expect.any(Number),
+    hasMore: true,
+    nextCursor: expect.any(String),
+    geometry: "full",
+    format: "items",
+  }));
+
+  const nextFeaturesPayload = unwrapObject(await expectOkJson(await api.get(
+    `${apiBasePath}/features?aoi_id=${DEFAULT_AOI_ID}&limit=5&cursor=${encodeURIComponent(String(featurePage.nextCursor))}`,
+  )));
+  const nextFeatures = collectionFrom(nextFeaturesPayload, "features");
+  const firstPageIds = new Set(features.map((feature) => String(objectFrom(feature, "properties").id)));
+  expect(nextFeatures.some((feature) => firstPageIds.has(String(objectFrom(feature, "properties").id)))).toBe(false);
+
+  const lightweightPayload = unwrapObject(await expectOkJson(await api.get(
+    `${apiBasePath}/features?aoi_id=${DEFAULT_AOI_ID}&limit=2&geometry=none&format=items`,
+  )));
+  const lightweightFeatures = collectionFrom(lightweightPayload, "features");
+  expect(lightweightFeatures).toHaveLength(2);
+  expect(lightweightFeatures[0]).toEqual(expect.objectContaining({
+    type: "Feature",
+    geometry: null,
+  }));
+  expect("featureCollection" in lightweightPayload).toBe(false);
+
+  const geojsonPayload = unwrapObject(await expectOkJson(await api.get(
+    `${apiBasePath}/features?aoi_id=${DEFAULT_AOI_ID}&limit=3&format=geojson&bbox=-68,10,-66,11`,
+  )));
+  const featureCollection = objectFrom(geojsonPayload, "featureCollection");
+  expect(featureCollection).toEqual(expect.objectContaining({
+    type: "FeatureCollection",
+    features: expect.any(Array),
+  }));
+  expect(collectionFrom(featureCollection, "features").length).toBeLessThanOrEqual(3);
+
+  const tooLargePage = await api.get(`${apiBasePath}/features?aoi_id=${DEFAULT_AOI_ID}&limit=501`);
+  expect(tooLargePage.status()).toBe(400);
 
   const priority = collectionFrom(
     unwrapPayload(await expectOkJson(await api.get(`${apiBasePath}/priority?aoi_id=${DEFAULT_AOI_ID}&limit=5`))),
@@ -193,6 +235,12 @@ function collectionFrom(payload: Record<string, unknown> | unknown[], preferredK
     return payload.features as Array<Record<string, unknown>>;
   }
   throw new Error(`Expected collection under ${preferredKey}, items, results, or FeatureCollection.features`);
+}
+
+function objectFrom(payload: Record<string, unknown>, key: string) {
+  const value = payload[key];
+  if (!isRecord(value)) throw new Error(`Expected object at ${key}`);
+  return value;
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {

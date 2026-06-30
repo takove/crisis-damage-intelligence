@@ -172,6 +172,15 @@ export const PriorityQuerySchema = z.object({
   limit: z.coerce.number().int().min(1).max(50).default(12),
 });
 
+export const FeatureQuerySchema = z.object({
+  limit: z.coerce.number().int().min(1).max(500).default(200),
+  offset: z.coerce.number().int().min(0).max(1_000_000).default(0),
+  cursor: z.string().trim().min(1).max(128).optional(),
+  bbox: z.string().trim().min(1).max(200).optional(),
+  geometry: z.enum(["full", "none"]).default("full"),
+  format: z.enum(["items", "geojson"]).default("items"),
+});
+
 export type AoiStatus = z.infer<typeof AoiStatusSchema>;
 export type AoiRecord = z.infer<typeof AoiRecordSchema>;
 export type AoiCatalog = z.infer<typeof CatalogSchema>;
@@ -180,6 +189,7 @@ export type DamageFeatureCollection = z.infer<typeof DamageFeatureCollectionSche
 export type VlmRecord = z.infer<typeof VlmRecordSchema>;
 export type SearchQuery = z.infer<typeof SearchQuerySchema>;
 export type PriorityQuery = z.infer<typeof PriorityQuerySchema>;
+export type FeatureQuery = z.infer<typeof FeatureQuerySchema>;
 
 export type SourceClass =
   | "official_ems_vector"

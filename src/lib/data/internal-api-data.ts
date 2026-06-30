@@ -5,6 +5,7 @@ import {
   AoiRecordSchema,
   CatalogSchema,
   DamageFeatureCollectionSchema,
+  FeatureQuerySchema,
   PriorityQuerySchema,
   SearchQuerySchema,
   VlmRecordSchema,
@@ -13,6 +14,7 @@ import {
   type AoiStatus,
   type DamageFeature,
   type DamageFeatureCollection,
+  type FeatureQuery,
   type PriorityQuery,
   type SearchQuery,
   type SourceClass,
@@ -22,10 +24,22 @@ import { InternalApiHttpError, zodDetails } from "@/lib/api/internal-response";
 
 const CATALOG_PATH = path.join(process.cwd(), "public", "data", "catalog.json");
 const PUBLIC_AOI_ROOT = path.join(process.cwd(), "public", "data", "aoi");
+const FEATURE_CURSOR_VERSION = 1;
 
 let catalogPromise: Promise<AoiCatalog> | undefined;
 const featureCollectionPromises = new Map<string, Promise<DamageFeatureCollection>>();
 const vlmRecordPromises = new Map<string, Promise<VlmRecord[]>>();
+
+type Bbox = readonly [number, number, number, number];
+type ParsedFeatureQuery = {
+  limit: FeatureQuery["limit"];
+  offset: FeatureQuery["offset"];
+  cursor?: FeatureQuery["cursor"];
+  bbox?: Bbox;
+  geometry: FeatureQuery["geometry"];
+  format: FeatureQuery["format"];
+  pageOffset: number;
+};
 
 function n(value: unknown) {
   return Number(value ?? 0) || 0;
@@ -307,6 +321,83 @@ function numberOrNull(value: unknown) {
   return Number.isFinite(next) ? next : null;
 }
 
+function encodeFeatureCursor(offset: number) {
+  return Buffer.from(JSON.stringify({ v: FEATURE_CURSOR_VERSION, offset })).toString("base64url");
+}
+
+function decodeFeatureCursor(cursor: string) {
+  try {
+    const decoded = JSON.parse(Buffer.from(cursor, "base64url").toString("utf8")) as unknown;
+    const candidate = decoded as { v?: unknown; offset?: unknown };
+    const offset = candidate.offset;
+    if (
+      typeof decoded === "object"
+      && decoded !== null
+      && candidate.v === FEATURE_CURSOR_VERSION
+      && typeof offset === "number"
+      && Number.isInteger(offset)
+      && offset >= 0
+    ) {
+      return offset;
+    }
+  } catch {
+    // Fall through to the caller-facing 400 below.
+  }
+  throw new InternalApiHttpError(400, "invalid_query", "Invalid features cursor.");
+}
+
+function parseBbox(value: string): Bbox {
+  const parts = value.split(",").map((part) => Number(part.trim()));
+  if (parts.length !== 4 || parts.some((part) => !Number.isFinite(part))) {
+    throw new InternalApiHttpError(400, "invalid_query", "Invalid bbox. Use minLon,minLat,maxLon,maxLat.");
+  }
+  const [minLon, minLat, maxLon, maxLat] = parts;
+  if (minLon >= maxLon || minLat >= maxLat || minLon < -180 || maxLon > 180 || minLat < -90 || maxLat > 90) {
+    throw new InternalApiHttpError(400, "invalid_query", "Invalid bbox bounds.");
+  }
+  return [minLon, minLat, maxLon, maxLat];
+}
+
+function extendBounds(bounds: [number, number, number, number] | null, lon: number, lat: number): [number, number, number, number] | null {
+  if (!Number.isFinite(lon) || !Number.isFinite(lat)) return bounds;
+  if (!bounds) return [lon, lat, lon, lat] as [number, number, number, number];
+  bounds[0] = Math.min(bounds[0], lon);
+  bounds[1] = Math.min(bounds[1], lat);
+  bounds[2] = Math.max(bounds[2], lon);
+  bounds[3] = Math.max(bounds[3], lat);
+  return bounds;
+}
+
+function collectCoordinateBounds(value: unknown, bounds: [number, number, number, number] | null = null): [number, number, number, number] | null {
+  if (!Array.isArray(value)) return bounds;
+  if (typeof value[0] === "number" && typeof value[1] === "number") {
+    return extendBounds(bounds, value[0], value[1]);
+  }
+  return value.reduce<[number, number, number, number] | null>((nextBounds, child) => collectCoordinateBounds(child, nextBounds), bounds);
+}
+
+function geometryBounds(geometry: DamageFeature["geometry"]): [number, number, number, number] | null {
+  if (!geometry || typeof geometry !== "object" || !("coordinates" in geometry)) return null;
+  return collectCoordinateBounds(geometry.coordinates);
+}
+
+function boundsIntersect(left: Bbox | [number, number, number, number], right: Bbox | [number, number, number, number]) {
+  return left[0] <= right[2] && left[2] >= right[0] && left[1] <= right[3] && left[3] >= right[1];
+}
+
+function featureIntersectsBbox(feature: DamageFeature, bbox: Bbox) {
+  const bounds = geometryBounds(feature.geometry);
+  return bounds ? boundsIntersect(bounds, bbox) : false;
+}
+
+function projectFeatureGeometry(feature: DamageFeature, geometry: ParsedFeatureQuery["geometry"]): DamageFeature {
+  if (geometry === "full") return feature;
+  return {
+    ...feature,
+    geometry: null,
+  };
+}
+
 function officialSeverityScore(cls: string) {
   const normalized = cls.toLowerCase();
   if (normalized.includes("destroy")) return 12_000;
@@ -447,21 +538,52 @@ export async function aoiPayload(id: string) {
   };
 }
 
-export async function featuresPayload(id: string) {
+export async function featuresPayload(id: string, query: ParsedFeatureQuery) {
   const aoi = await readAoi(id);
   const collection = await readFeatureCollection(aoi);
-  const features = collection.features.map((feature) => normalizeFeatureForAoi(feature, aoi));
-
-  return {
-    aoi: toAoiListItem(aoi),
-    featureCount: features.length,
-    sourcePath: aoi.layers.damage,
-    features,
-    featureCollection: {
-      ...collection,
-      features,
-    },
+  const sourceFeatures = collection.features.map((feature) => normalizeFeatureForAoi(feature, aoi));
+  const filteredFeatures = query.bbox
+    ? sourceFeatures.filter((feature) => featureIntersectsBbox(feature, query.bbox!))
+    : sourceFeatures;
+  const pageFeatures = filteredFeatures
+    .slice(query.pageOffset, query.pageOffset + query.limit)
+    .map((feature) => projectFeatureGeometry(feature, query.geometry));
+  const nextOffset = query.pageOffset + pageFeatures.length;
+  const hasMore = nextOffset < filteredFeatures.length;
+  const nextCursor = hasMore ? encodeFeatureCursor(nextOffset) : null;
+  const page = {
+    limit: query.limit,
+    offset: query.pageOffset,
+    returned: pageFeatures.length,
+    totalFiltered: filteredFeatures.length,
+    totalSource: sourceFeatures.length,
+    hasMore,
+    nextCursor,
+    geometry: query.geometry,
+    format: query.format,
+    bbox: query.bbox ?? null,
   };
+
+  const payload = {
+    aoi: toAoiListItem(aoi),
+    featureCount: filteredFeatures.length,
+    sourceFeatureCount: sourceFeatures.length,
+    sourcePath: aoi.layers.damage,
+    page,
+    features: pageFeatures,
+  };
+
+  if (query.format === "geojson") {
+    return {
+      ...payload,
+      featureCollection: {
+        ...collection,
+        features: pageFeatures,
+      },
+    };
+  }
+
+  return payload;
 }
 
 export async function priorityPayload(id: string, query: PriorityQuery) {
@@ -715,6 +837,33 @@ export function parsePriorityParams(searchParams: URLSearchParams) {
     });
   }
   return parsed.data;
+}
+
+export function parseFeatureParams(searchParams: URLSearchParams): ParsedFeatureQuery {
+  const parsed = FeatureQuerySchema.safeParse({
+    limit: searchParams.get("limit") ?? undefined,
+    offset: searchParams.get("offset") ?? undefined,
+    cursor: searchParams.get("cursor") ?? undefined,
+    bbox: searchParams.get("bbox") ?? undefined,
+    geometry: searchParams.get("geometry") ?? undefined,
+    format: searchParams.get("format") ?? undefined,
+  });
+  if (!parsed.success) {
+    throw new InternalApiHttpError(400, "invalid_query", "Invalid features query.", {
+      issues: zodDetails(parsed.error.issues),
+    });
+  }
+
+  const data = parsed.data as FeatureQuery;
+  return {
+    limit: data.limit,
+    offset: data.offset,
+    cursor: data.cursor,
+    bbox: data.bbox ? parseBbox(data.bbox) : undefined,
+    geometry: data.geometry,
+    format: data.format,
+    pageOffset: data.cursor ? decodeFeatureCursor(data.cursor) : data.offset,
+  };
 }
 
 export function parseAoiIdParam(searchParams: URLSearchParams) {
