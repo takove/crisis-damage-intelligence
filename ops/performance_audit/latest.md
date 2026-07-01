@@ -1,9 +1,9 @@
 # Performance Audit Baseline
 
-- Generated UTC: `2026-06-29T07:51:50.865230+00:00`
+- Generated UTC: `2026-06-29T23:18:47.513774+00:00`
 - Catalog: `62.2 KB` across `15` AOIs
 - JS bundle in `.next/static`: `1.7 MB` across `24` files
-- CSS bundle in `.next/static`: `60.0 KB` across `2` files
+- CSS bundle in `.next/static`: `64.3 KB` across `2` files
 - `public/data`: `268.9 MB` across `74613` files
 - `public/data/tiles`: `186.0 MB` across `73837` files
 - `public/data/chips`: `67.3 MB` across `681` files
@@ -42,7 +42,7 @@
 | `emsr884-aoi06-moron` | `official-vector` | 564.9 KB | 10.9 MB | 9.8 MB | 129 | 129 |
 | `emsr884-aoi06-moron-monitor01` | `official-monitor-points` | 243.7 KB | 0 B | 0 B | 96 | - |
 | `emsr884-aoi08-san-felipe` | `official-vector` | 410.0 KB | 29.8 MB | 1.2 MB | 43 | 43 |
-| `emsr884-aoi08-san-felipe-monitor01` | `official-monitor-points` | 288.2 KB | 0 B | 0 B | 183 | - |
+| `emsr884-aoi08-san-felipe-monitor01` | `official-monitor-points` | 288.3 KB | 0 B | 0 B | 183 | - |
 | `emsr884-aoi10-guacara` | `imagery-only` | 340 B | 0 B | 0 B | 0 | - |
 | `emsr884-aoi12-caraballeda` | `official-vector` | 2.0 MB | 73.0 MB | 50.2 MB | 120 | 107 |
 | `emsr884-aoi12-caraballeda-monitor01` | `official-monitor-points` | 1.5 MB | 0 B | 0 B | 1004 | - |

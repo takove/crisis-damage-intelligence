@@ -4,6 +4,10 @@ Static-first, bilingual earthquake response and damage triage platform for publi
 
 Canonical public URL: `https://respuestavenezuela.org`
 
+> **For rescue teams / Para equipos de rescate:** field guide in
+> [Español](docs/RESCUE_FIELD_GUIDE_ES.md) · [English](docs/RESCUE_FIELD_GUIDE_EN.md).
+> Includes the volunteer translator (ES ⇄ EN): [traduceme](https://suvadityamuk-traduceme.hf.space/) · Telegram [@TraducemeVzlaBot](https://t.me/TraducemeVzlaBot).
+
 The Vercel project URL `https://crisis-damage-intelligence.vercel.app` remains attached to the project and is configured to redirect users to the canonical domain.
 
 ## What This Is
@@ -48,6 +52,7 @@ Keep large rasters, chips, COGs, and PMTiles out of the Vercel repo. Store them 
 
 Analytics setup and the privacy-safe event taxonomy live in `docs/ANALYTICS.md`.
 HF Spaces VLM provider setup lives in `docs/HF_SPACES_VLM.md`.
+Contributor credits live in `docs/CONTRIBUTORS.md`, including attribution for `@endersonO`'s mobile PWA and offline workflow contribution.
 
 ## Data Model
 

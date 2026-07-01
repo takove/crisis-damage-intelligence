@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-06-29T07:51:50.865230+00:00",
+  "generated_utc": "2026-06-29T23:18:47.513774+00:00",
   "catalog": {
     "path": "public/data/catalog.json",
     "bytes": 63734,
@@ -11,17 +11,17 @@
   "bundle": {
     "build_present": true,
     "js_files": 24,
-    "js_bytes": 1792097,
+    "js_bytes": 1806867,
     "js_human": "1.7 MB",
     "css_files": 2,
-    "css_bytes": 61430,
-    "css_human": "60.0 KB",
+    "css_bytes": 65848,
+    "css_human": "64.3 KB",
     "next_dir": {
       "path": ".next",
       "exists": true,
-      "files": 1361,
-      "bytes": 266921905,
-      "human": "254.6 MB"
+      "files": 295,
+      "bytes": 9965744,
+      "human": "9.5 MB"
     }
   },
   "public_data": {
@@ -29,14 +29,14 @@
       "path": "public/data",
       "exists": true,
       "files": 74613,
-      "bytes": 281923943,
+      "bytes": 281923982,
       "human": "268.9 MB"
     },
     "aoi": {
       "path": "public/data/aoi",
       "exists": true,
       "files": 93,
-      "bytes": 16150979,
+      "bytes": 16151018,
       "human": "15.4 MB"
     },
     "tiles": {
@@ -67,7 +67,7 @@
     ],
     "remote_excluded_bytes": 265676933,
     "remote_excluded_human": "253.4 MB",
-    "non_remote_public_data_bytes": 16247010,
+    "non_remote_public_data_bytes": 16247049,
     "non_remote_public_data_human": "15.5 MB",
     "large_local_aoi_file_count": 0,
     "large_local_aoi_bytes": 0,
@@ -617,7 +617,7 @@
         "path": "public/data/aoi/emsr884-aoi05-santa-cruz",
         "exists": true,
         "files": 4,
-        "bytes": 5466,
+        "bytes": 5474,
         "human": "5.3 KB"
       },
       "chips": {
@@ -647,8 +647,8 @@
         },
         ".json": {
           "files": 1,
-          "bytes": 267,
-          "human": "267 B"
+          "bytes": 275,
+          "human": "275 B"
         },
         ".kml": {
           "files": 1,
@@ -674,8 +674,8 @@
         },
         {
           "path": "public/data/aoi/emsr884-aoi05-santa-cruz/source_metadata.json",
-          "bytes": 267,
-          "human": "267 B"
+          "bytes": 275,
+          "human": "275 B"
         }
       ],
       "damage_geojson_features": 3,
@@ -706,8 +706,8 @@
           "catalog_path": "downloads.metadata",
           "path": "/data/aoi/emsr884-aoi05-santa-cruz/source_metadata.json",
           "exists": true,
-          "bytes": 267,
-          "human": "267 B"
+          "bytes": 275,
+          "human": "275 B"
         },
         {
           "catalog_path": "layers.damage",
@@ -1331,8 +1331,8 @@
         "path": "public/data/aoi/emsr884-aoi08-san-felipe-monitor01",
         "exists": true,
         "files": 4,
-        "bytes": 295166,
-        "human": "288.2 KB"
+        "bytes": 295182,
+        "human": "288.3 KB"
       },
       "chips": {
         "path": "public/data/chips/emsr884-aoi08-san-felipe-monitor01",
@@ -1361,8 +1361,8 @@
         },
         ".json": {
           "files": 1,
-          "bytes": 272,
-          "human": "272 B"
+          "bytes": 288,
+          "human": "288 B"
         },
         ".kml": {
           "files": 1,
@@ -1388,8 +1388,8 @@
         },
         {
           "path": "public/data/aoi/emsr884-aoi08-san-felipe-monitor01/source_metadata.json",
-          "bytes": 272,
-          "human": "272 B"
+          "bytes": 288,
+          "human": "288 B"
         }
       ],
       "damage_geojson_features": 183,
@@ -1420,8 +1420,8 @@
           "catalog_path": "downloads.metadata",
           "path": "/data/aoi/emsr884-aoi08-san-felipe-monitor01/source_metadata.json",
           "exists": true,
-          "bytes": 272,
-          "human": "272 B"
+          "bytes": 288,
+          "human": "288 B"
         },
         {
           "catalog_path": "layers.damage",
@@ -1884,7 +1884,7 @@
         "path": "public/data/aoi/emsr884-aoi12-caraballeda-monitor01",
         "exists": true,
         "files": 4,
-        "bytes": 1583324,
+        "bytes": 1583339,
         "human": "1.5 MB"
       },
       "chips": {
@@ -1914,8 +1914,8 @@
         },
         ".json": {
           "files": 1,
-          "bytes": 277,
-          "human": "277 B"
+          "bytes": 292,
+          "human": "292 B"
         },
         ".kml": {
           "files": 1,
@@ -1941,8 +1941,8 @@
         },
         {
           "path": "public/data/aoi/emsr884-aoi12-caraballeda-monitor01/source_metadata.json",
-          "bytes": 277,
-          "human": "277 B"
+          "bytes": 292,
+          "human": "292 B"
         }
       ],
       "damage_geojson_features": 1004,
@@ -1973,8 +1973,8 @@
           "catalog_path": "downloads.metadata",
           "path": "/data/aoi/emsr884-aoi12-caraballeda-monitor01/source_metadata.json",
           "exists": true,
-          "bytes": 277,
-          "human": "277 B"
+          "bytes": 292,
+          "human": "292 B"
         },
         {
           "catalog_path": "layers.damage",

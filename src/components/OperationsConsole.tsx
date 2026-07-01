@@ -1,6 +1,7 @@
 "use client";
 
 import { type RefObject, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import Fuse from "fuse.js";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -9,11 +10,53 @@ import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle } f
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { trackAnalytics } from "@/lib/analytics";
+import { persistLang, readStoredLang } from "@/lib/lang";
+import { getOfflineBudgetBytes, precacheAoi } from "@/lib/offline-cache";
 import { cn } from "@/lib/utils";
 import MapPanel from "./map/MapPanel";
+import TranslatorBanner from "./TranslatorBanner";
 import type { AoiCatalog, AoiRecord, DamageFeature, Language, VlmRecord } from "./types";
 
 const DIRECT_RASTER_MOBILE_MAX_BYTES = 250_000_000;
+
+type PrioritySort = "default" | "damage" | "vlm" | "official" | "source" | "near";
+
+type SearchResultItem =
+  | {
+      type: "aoi";
+      id: string;
+      title: string;
+      subtitle: string;
+      tokens: string;
+      aoiId: string;
+      cityId?: string;
+    }
+  | {
+      type: "feature";
+      id: string;
+      title: string;
+      subtitle: string;
+      tokens: string;
+      featureId: string;
+    }
+  | {
+      type: "download";
+      id: string;
+      title: string;
+      subtitle: string;
+      tokens: string;
+      href: string;
+      kind: string;
+    };
+
+function scheduleIdle(cb: () => void) {
+  const ric =
+    typeof window !== "undefined"
+      ? (window as unknown as { requestIdleCallback?: (cb: () => void) => number }).requestIdleCallback
+      : undefined;
+  if (typeof ric === "function") ric(cb);
+  else setTimeout(cb, 1200);
+}
 
 const copy = {
   en: {
@@ -23,6 +66,15 @@ const copy = {
     language: "Language",
     aoi: "Go to affected area",
     quickStart: "Start with La Guaira · open Priority · tap red structures",
+    translatorTitle: "Volunteer translator",
+    translatorBody: "Bridge Spanish ↔ English with local rescue teams. Can run on your device.",
+    translatorOpen: "Open translator",
+    translatorTelegram: "Telegram bot",
+    fieldGuideTitle: "How to use this map",
+    fieldGuideCritical: "🔴 Red — critical structural damage (collapse likely, people possibly trapped)",
+    fieldGuidePartial: "🟡 Yellow — partial damage (structure still standing)",
+    fieldGuideVerify: "Verify before sending resources. AI is not perfect — red may mark structures that are still standing. Use before/after imagery and your judgment.",
+    fieldGuideContact: "Contact: somos@respuestavenezuela.org",
     rankingNote: "Ranked by response value: official EMS destroyed/damaged first, then possible/MONIT01, VLM triage, and capped external predictions.",
     source: "Source",
     status: "Status",
@@ -57,6 +109,24 @@ const copy = {
     opacity: "Damage opacity",
     filters: "Filters",
     controls: "Controls",
+    search: "Search",
+    searchPlaceholder: "Search zone, priority id, damage, download...",
+    searchHint: "Search active zone data and published AOIs.",
+    searchResults: "Search results",
+    noSearchResults: "No matching results in the active data.",
+    searchAoi: "Zone",
+    searchPriority: "Priority",
+    searchDownload: "Download",
+    context: "Context",
+    copyCoords: "Copy coordinates",
+    copied: "Coordinates copied",
+    copyFailed: "Could not copy coordinates",
+    sortDefault: "Default",
+    sortDamage: "Highest damage",
+    sortVlm: "With VLM",
+    sortOfficial: "Official EMS",
+    sortSource: "Source ID",
+    sortNear: "Near center",
     all: "All",
     severe: "Destroyed/Damaged",
     vlmOnly: "VLM reviewed",
@@ -126,6 +196,15 @@ const copy = {
     language: "Idioma",
     aoi: "Ir a zona afectada",
     quickStart: "Empieza por La Guaira · abre Prioridad · toca estructuras rojas",
+    translatorTitle: "Traductor para voluntarios",
+    translatorBody: "Comunícate en español ↔ inglés con los equipos locales. Puede ejecutarse en tu dispositivo.",
+    translatorOpen: "Abrir traductor",
+    translatorTelegram: "Bot de Telegram",
+    fieldGuideTitle: "Cómo usar este mapa",
+    fieldGuideCritical: "🔴 Rojo — daño estructural crítico (derrumbe probable, personas posiblemente atrapadas)",
+    fieldGuidePartial: "🟡 Amarillo — daño parcial (estructura sigue en pie)",
+    fieldGuideVerify: "Verifica antes de enviar recursos. La IA no es perfecta — el rojo puede marcar estructuras que siguen en pie. Usa las imágenes antes/después y tu criterio en terreno.",
+    fieldGuideContact: "Contacto: somos@respuestavenezuela.org",
     rankingNote: "Ordenado por valor de respuesta: primero destruido/dañado oficial EMS, luego posible/MONIT01, triage VLM y predicciones externas limitadas.",
     source: "Fuente",
     status: "Estado",
@@ -160,6 +239,24 @@ const copy = {
     opacity: "Opacidad de daño",
     filters: "Filtros",
     controls: "Controles",
+    search: "Buscar",
+    searchPlaceholder: "Busca zona, id, daño, descarga...",
+    searchHint: "Busca en la zona activa y AOIs publicados.",
+    searchResults: "Resultados de búsqueda",
+    noSearchResults: "Sin resultados en los datos activos.",
+    searchAoi: "Zona",
+    searchPriority: "Prioridad",
+    searchDownload: "Descarga",
+    context: "Contexto",
+    copyCoords: "Copiar coordenadas",
+    copied: "Coordenadas copiadas",
+    copyFailed: "No se pudieron copiar coordenadas",
+    sortDefault: "Default",
+    sortDamage: "Mayor daño",
+    sortVlm: "Con VLM",
+    sortOfficial: "Oficial EMS",
+    sortSource: "ID fuente",
+    sortNear: "Cerca del centro",
     all: "Todos",
     severe: "Destruido/Dañado",
     vlmOnly: "Revisado VLM",
@@ -415,6 +512,31 @@ function priorityFeatureLabel(feature: DamageFeature, vlm: VlmRecord | undefined
   return String(vlmClass ?? official);
 }
 
+function featureLatLon(feature: DamageFeature) {
+  const lat = Number(feature.properties.centroid_lat);
+  const lon = Number(feature.properties.centroid_lon);
+  if (Number.isFinite(lat) && Number.isFinite(lon)) return { lat, lon };
+  return null;
+}
+
+function googleMapsUrlForFeature(feature: DamageFeature) {
+  const point = featureLatLon(feature);
+  if (!point) return undefined;
+  return `https://www.google.com/maps/search/?api=1&query=${point.lat},${point.lon}`;
+}
+
+function distanceFromAoiCenter(feature: DamageFeature, aoi?: AoiRecord) {
+  const point = featureLatLon(feature);
+  if (!point || !aoi) return Number.POSITIVE_INFINITY;
+  const [centerLat, centerLon] = aoi.center;
+  return (point.lat - centerLat) ** 2 + (point.lon - centerLon) ** 2;
+}
+
+function officialRank(feature: DamageFeature, status?: string) {
+  if (status === "external-prediction") return 0;
+  return feature.properties.not_official_ems ? 0 : 1;
+}
+
 type DownloadGroupId = "field" | "gis" | "evidence" | "imagery" | "other";
 type DownloadItem = {
   kind: string;
@@ -511,16 +633,23 @@ export default function OperationsConsole() {
   const [catalogStatus, setCatalogStatus] = useState<LoadStatus>("loading");
   const [aoiLayerState, setAoiLayerState] = useState<Record<string, AoiLayerState>>({});
   const [activeId, setActiveId] = useState("emsr884-aoi12-caraballeda");
-  const [language, setLanguage] = useState<Language>("es");
+  const [language, setLanguage] = useState<Language>(readStoredLang);
   const [filter, setFilter] = useState<Filter>("all");
   const [mode, setMode] = useState<Mode>("after");
   const [basemap, setBasemap] = useState<Basemap>("aerial");
   const [opacity, setOpacity] = useState(52);
   const [selected, setSelected] = useState<DamageFeature | null>(null);
+  const [prioritySort, setPrioritySort] = useState<PrioritySort>("default");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchAnnouncement, setSearchAnnouncement] = useState("");
   const [mapControlsOpen, setMapControlsOpen] = useState(false);
   const [isMobileLayout, setIsMobileLayout] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const [inspectorOpen, setInspectorOpen] = useState(false);
+  const [mobileSheet, setMobileSheet] = useState<"none" | "about" | "zona" | "capas">("none");
+  const [offlineStatus, setOfflineStatus] = useState<{ done: number; total: number; ready: boolean }>({ done: 0, total: 0, ready: false });
+  const precachedAoisRef = useRef<Set<string>>(new Set());
   const [focusToken, setFocusToken] = useState(0);
   const [aoiFocusToken, setAoiFocusToken] = useState(0);
   const [vlm, setVlm] = useState<Record<string, VlmRecord>>({});
@@ -531,6 +660,7 @@ export default function OperationsConsole() {
   const appLoadTrackedRef = useRef(false);
   const sessionStartedAtRef = useRef<number>(0);
   const firstInteractionTrackedRef = useRef(false);
+  const returnFocusRef = useRef(false);
   const loadedDamageAoisRef = useRef<Set<string>>(new Set());
   const loadedVlmAoisRef = useRef<Set<string>>(new Set());
   const mapReadyTrackedRef = useRef<Set<string>>(new Set());
@@ -566,6 +696,55 @@ export default function OperationsConsole() {
   }, []);
 
   useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
+
+  useEffect(() => {
+    if (!isMobileLayout) return;
+    if (inspectorOpen) {
+      const raf = requestAnimationFrame(() => {
+        (document.querySelector('[data-testid="mobile-inspector-close"]') as HTMLElement | null)?.focus();
+      });
+      const onKey = (event: KeyboardEvent) => {
+        if (event.key === "Escape") setInspectorOpen(false);
+      };
+      window.addEventListener("keydown", onKey);
+      return () => {
+        cancelAnimationFrame(raf);
+        window.removeEventListener("keydown", onKey);
+      };
+    }
+    if (returnFocusRef.current) {
+      returnFocusRef.current = false;
+      const raf = requestAnimationFrame(() => {
+        (document.querySelector('[data-testid="mobile-inspector-toggle"]') as HTMLElement | null)?.focus();
+      });
+      return () => cancelAnimationFrame(raf);
+    }
+  }, [inspectorOpen, isMobileLayout]);
+
+  useEffect(() => {
+    if (mobileSheet === "none") return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMobileSheet("none");
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [mobileSheet]);
+
+  useEffect(() => {
+    if (!searchOpen) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setSearchOpen(false);
+        setSearchQuery("");
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [searchOpen]);
+
+  useEffect(() => {
     fetch("/data/catalog.json")
       .then((r) => {
         if (!r.ok) throw new Error("Unable to load AOI catalog");
@@ -585,6 +764,58 @@ export default function OperationsConsole() {
   }, []);
 
   const active = useMemo<AoiRecord | undefined>(() => catalog?.aois.find((a) => a.id === activeId), [catalog, activeId]);
+  const activeFeatures = useMemo(
+    () => features.filter((feature) => feature.properties.aoi_id === activeId),
+    [activeId, features],
+  );
+
+  useEffect(() => {
+    navigator.storage?.persist?.().catch(() => {});
+  }, []);
+
+  useEffect(() => {
+    const ready = Boolean(active && precachedAoisRef.current.has(active.id));
+    setOfflineStatus({ done: 0, total: 0, ready });
+  }, [active]);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !("caches" in window)) return;
+    if (!active || activeFeatures.length === 0) return;
+    if (precachedAoisRef.current.has(active.id)) {
+      setOfflineStatus((status) => ({ ...status, ready: true }));
+      return;
+    }
+    const controller = new AbortController();
+    let cancelled = false;
+    const run = async () => {
+      const budgetBytes = await getOfflineBudgetBytes();
+      const completed = await precacheAoi(active, activeFeatures, vlm, {
+        signal: controller.signal,
+        budgetBytes,
+        onProgress: (progress) => {
+          if (!cancelled) {
+            setOfflineStatus((status) => ({
+              ...status,
+              done: progress.done,
+              total: progress.total,
+              ready: false,
+            }));
+          }
+        },
+      });
+      if (!cancelled && !controller.signal.aborted) {
+        if (completed) precachedAoisRef.current.add(active.id);
+        setOfflineStatus((status) => ({ ...status, ready: completed }));
+      }
+    };
+    scheduleIdle(() => {
+      if (!cancelled) void run();
+    });
+    return () => {
+      cancelled = true;
+      controller.abort();
+    };
+  }, [active, activeFeatures, vlm]);
 
   useEffect(() => {
     if (!catalog) return;
@@ -670,7 +901,7 @@ export default function OperationsConsole() {
   const hasImagery = hasBeforeImagery || hasAfterImagery;
   const isDemo = active?.status === "test-fixture";
   const isExternalPrediction = active?.status === "external-prediction";
-  const statusLabel = (status: string) => t.statuses[status as keyof typeof t.statuses] ?? status;
+  const statusLabel = useCallback((status: string) => t.statuses[status as keyof typeof t.statuses] ?? status, [t]);
   const currentLayerState = aoiLayerState[activeId] ?? {};
   const statusMessages = [
     catalogStatus === "loading" ? t.loadingCatalog : undefined,
@@ -729,6 +960,7 @@ export default function OperationsConsole() {
       });
     }
     setLanguage(nextLanguage);
+    persistLang(nextLanguage);
   };
   const selectAoi = (id: string, cityId?: string) => {
     trackFirstInteraction("aoi");
@@ -752,6 +984,7 @@ export default function OperationsConsole() {
     setSelected(null);
     setMapControlsOpen(false);
     setInspectorOpen(false);
+    setMobileSheet("none");
     setFocusToken((value) => value + 1);
     setAoiFocusToken((value) => value + 1);
   };
@@ -814,20 +1047,327 @@ export default function OperationsConsole() {
   };
   const adjustOpacity = (delta: number) => setOpacity((value) => Math.max(5, Math.min(90, value + delta)));
   const priorityFeatures = useMemo(() => {
-    return features
-      .filter((feature) => feature.properties.aoi_id === activeId)
-      .sort((a, b) => (
-        priorityFeatureScore(b, vlm[b.properties.id], active?.status) -
-        priorityFeatureScore(a, vlm[a.properties.id], active?.status)
-      ) || String(a.properties.source_feature_id ?? a.properties.id).localeCompare(String(b.properties.source_feature_id ?? b.properties.id)))
+    const defaultCompare = (a: DamageFeature, b: DamageFeature) => (
+      priorityFeatureScore(b, vlm[b.properties.id], active?.status) -
+      priorityFeatureScore(a, vlm[a.properties.id], active?.status)
+    ) || String(a.properties.source_feature_id ?? a.properties.id).localeCompare(String(b.properties.source_feature_id ?? b.properties.id));
+    return [...activeFeatures]
+      .sort((a, b) => {
+        if (prioritySort === "damage") {
+          const aDamage = officialSeverityScore(String(a.properties.damage_class ?? a.properties.damage_gra ?? "")) + n(a.properties.damage_score ?? a.properties.damage_percent);
+          const bDamage = officialSeverityScore(String(b.properties.damage_class ?? b.properties.damage_gra ?? "")) + n(b.properties.damage_score ?? b.properties.damage_percent);
+          return (bDamage - aDamage) || defaultCompare(a, b);
+        }
+        if (prioritySort === "vlm") {
+          return (Number(Boolean(vlm[b.properties.id])) - Number(Boolean(vlm[a.properties.id]))) || defaultCompare(a, b);
+        }
+        if (prioritySort === "official") {
+          return (officialRank(b, active?.status) - officialRank(a, active?.status)) || defaultCompare(a, b);
+        }
+        if (prioritySort === "source") {
+          return String(a.properties.source_feature_id ?? a.properties.id).localeCompare(String(b.properties.source_feature_id ?? b.properties.id)) || defaultCompare(a, b);
+        }
+        if (prioritySort === "near") {
+          return (distanceFromAoiCenter(a, active) - distanceFromAoiCenter(b, active)) || defaultCompare(a, b);
+        }
+        return defaultCompare(a, b);
+      })
       .slice(0, 12);
-  }, [active?.status, activeId, features, vlm]);
+  }, [active, activeFeatures, prioritySort, vlm]);
   const controlSummary = `${basemap === "aerial" ? t.aerialBase : t.mapBase} · ${mode === "after" ? t.after : t.before} · ${opacity}%`;
   const prioritySummary = priorityFeatures.length ? `${priorityFeatures.length} ${t.priorityReady}` : t.noPriorityReady;
   const selectedSummary = selected
     ? String(selected.properties.source_feature_id ?? selected.properties.id)
     : prioritySummary;
   const priorityTitle = language === "es" ? "Prioridad" : "Priority";
+  const activeCity = cityNavItems.find((item) => item.sourceIds.includes(activeId));
+  const searchItems = useMemo<SearchResultItem[]>(() => {
+    const items: SearchResultItem[] = [];
+    for (const item of cityNavItems) {
+      items.push({
+        type: "aoi",
+        id: `aoi:${item.id}`,
+        title: item.name[language],
+        subtitle: cityImpactLabel(item, language),
+        tokens: `${item.id} ${item.primaryAoiId} ${item.sourceIds.join(" ")}`,
+        aoiId: item.primaryAoiId,
+        cityId: item.id,
+      });
+    }
+    for (const aoi of catalog?.aois ?? []) {
+      const city = cityNavItems.find((item) => item.sourceIds.includes(aoi.id));
+      items.push({
+        type: "aoi",
+        id: `aoi:${aoi.id}`,
+        title: aoi.name[language],
+        subtitle: `${aoi.id} · ${statusLabel(aoi.status)}`,
+        tokens: [
+          aoi.id,
+          aoi.name.en,
+          aoi.name.es,
+          aoi.status,
+          statusLabel(aoi.status),
+          aoi.source,
+          city?.id,
+          city?.name.en,
+          city?.name.es,
+        ].filter(Boolean).join(" "),
+        aoiId: aoi.id,
+        cityId: city?.id,
+      });
+    }
+    for (const feature of activeFeatures) {
+      const p = feature.properties;
+      const record = vlm[p.id];
+      const sourceId = String(p.source_feature_id ?? p.id);
+      const title = `${sourceId}`;
+      const subtitle = priorityFeatureLabel(feature, record, language, active?.status);
+      items.push({
+        type: "feature",
+        id: `feature:${p.id}`,
+        title,
+        subtitle,
+        tokens: [
+          p.id,
+          p.source_feature_id,
+          p.damage_class,
+          p.damage_gra,
+          p.confirmed_damage_class,
+          p.damage_score,
+          p.damage_percent,
+          record?.vlm?.damage_class,
+          record?.vlm?.action_priority,
+          record?.vlm?.review_type,
+          record?.review_type,
+          active?.name.en,
+          active?.name.es,
+        ].filter(Boolean).join(" "),
+        featureId: p.id,
+      });
+    }
+    for (const group of buildDownloadGroups(active?.downloads, language)) {
+      for (const download of group.items) {
+        items.push({
+          type: "download",
+          id: `download:${download.kind}`,
+          title: download.label,
+          subtitle: group.title,
+          tokens: `${download.kind} ${download.label} ${group.title} ${active?.id ?? ""}`,
+          href: download.href,
+          kind: download.kind,
+        });
+      }
+    }
+    return items;
+  }, [active, activeFeatures, catalog, cityNavItems, language, statusLabel, vlm]);
+  const searchIndex = useMemo(() => new Fuse(searchItems, {
+    keys: ["title", "subtitle", "tokens"],
+    includeScore: true,
+    ignoreLocation: true,
+    threshold: 0.36,
+  }), [searchItems]);
+  const searchResults = useMemo(() => {
+    const q = searchQuery.trim();
+    if (!q) return [] as SearchResultItem[];
+    return searchIndex.search(q, { limit: 14 }).map((result) => result.item);
+  }, [searchIndex, searchQuery]);
+  const searchResultAnnouncement = searchQuery.trim()
+    ? (language === "es"
+      ? `${searchResults.length} resultados para ${searchQuery.trim()}`
+      : `${searchResults.length} results for ${searchQuery.trim()}`)
+    : "";
+  const prioritySortOptions: Array<{ id: PrioritySort; label: string }> = [
+    { id: "default", label: t.sortDefault },
+    { id: "damage", label: t.sortDamage },
+    { id: "vlm", label: t.sortVlm },
+    { id: "official", label: t.sortOfficial },
+    { id: "source", label: t.sortSource },
+    { id: "near", label: t.sortNear },
+  ];
+  const copyFeatureCoords = async (feature: DamageFeature) => {
+    const point = featureLatLon(feature);
+    if (!point) return;
+    const text = `${point.lat},${point.lon}`;
+    try {
+      if (!navigator.clipboard) throw new Error("Clipboard unavailable");
+      await navigator.clipboard.writeText(text);
+      setSearchAnnouncement(t.copied);
+    } catch {
+      setSearchAnnouncement(t.copyFailed);
+    }
+  };
+  const searchResultTestId = (item: SearchResultItem) => {
+    if (item.type === "aoi") return `search-result-${item.aoiId}`;
+    if (item.type === "feature") return `search-result-${String(item.featureId).split("__").pop() ?? item.featureId}`;
+    return `search-result-download-${item.kind}`;
+  };
+  const renderSearchPanel = (surface: "desktop" | "mobile") => (
+    <section className={`search-panel ${surface === "mobile" ? "mobile-search-panel" : ""}`} data-testid={`${surface}-search-panel`} aria-label={t.search}>
+      <label className="search-label" htmlFor={`${surface}-search-input`}>{t.search}</label>
+      <div className="search-input-row">
+        <input
+          id={`${surface}-search-input`}
+          data-testid="global-search-input"
+          type="search"
+          value={searchQuery}
+          placeholder={t.searchPlaceholder}
+          aria-describedby={`${surface}-search-hint ${surface}-search-status`}
+          onFocus={() => setSearchOpen(true)}
+          onChange={(event) => {
+            setSearchQuery(event.currentTarget.value);
+            setSearchOpen(true);
+          }}
+        />
+        {searchQuery && (
+          <Button type="button" variant="outline" size="sm" aria-label={language === "es" ? "Limpiar búsqueda" : "Clear search"} onClick={() => { setSearchQuery(""); setSearchOpen(false); }}>
+            ×
+          </Button>
+        )}
+      </div>
+      <p className="search-hint" id={`${surface}-search-hint`}>{t.searchHint}</p>
+      <p className="sr-only" id={`${surface}-search-status`} role="status" aria-live="polite">{[searchResultAnnouncement, searchAnnouncement].filter(Boolean).join(" · ")}</p>
+      {searchOpen && searchQuery.trim() && (
+        <div className="search-results" data-testid="global-search-results" role="listbox" aria-label={t.searchResults}>
+          <div className="search-results-heading">
+            <span>{t.searchResults}</span>
+            <b>{searchResults.length}</b>
+          </div>
+          {searchResults.length === 0 ? (
+            <p className="muted">{t.noSearchResults}</p>
+          ) : (
+            <div className="search-result-list">
+              {searchResults.map((item) => {
+                const typeLabel = item.type === "aoi" ? t.searchAoi : item.type === "feature" ? t.searchPriority : t.searchDownload;
+                if (item.type === "download") {
+                  return (
+                    <a
+                      key={item.id}
+                      className="search-result-row"
+                      href={item.href}
+                      data-testid={searchResultTestId(item)}
+                      role="option"
+                      aria-selected="false"
+                      data-analytics-event="data_download_clicked"
+                      data-analytics-aoi={active?.id}
+                      data-analytics-format={item.kind.toLowerCase()}
+                      data-analytics-surface={`search_${surface}`}
+                    >
+                      <span>{typeLabel}</span>
+                      <b>{item.title}</b>
+                      <small>{item.subtitle}</small>
+                    </a>
+                  );
+                }
+                return (
+                  <button
+                    key={item.id}
+                    type="button"
+                    className="search-result-row"
+                    data-testid={searchResultTestId(item)}
+                    role="option"
+                    aria-selected="false"
+                    onClick={() => {
+                      if (item.type === "aoi") {
+                        const id = item.aoiId;
+                        setActiveId(id);
+                        setAoiLayerState((current) => ({
+                          ...current,
+                          [id]: {
+                            damage: "idle",
+                            vlm: "idle",
+                          },
+                        }));
+                        setSelected(null);
+                        setMapControlsOpen(false);
+                        setInspectorOpen(false);
+                        setMobileSheet("none");
+                        setFocusToken((value) => value + 1);
+                        setAoiFocusToken((value) => value + 1);
+                        trackAnalytics("aoi_selected", {
+                          aoi_id: id,
+                          city_id: item.cityId,
+                          surface: "search",
+                          language,
+                        });
+                        setSearchOpen(false);
+                        setSearchQuery("");
+                        return;
+                      }
+                      const feature = activeFeatures.find((candidate) => candidate.properties.id === item.featureId);
+                      if (!feature) return;
+                      setSelected(feature);
+                      setFilter("all");
+                      setMapControlsOpen(false);
+                      setInspectorOpen(false);
+                      setFocusToken((value) => value + 1);
+                      setSearchOpen(false);
+                      setSearchQuery("");
+                    }}
+                  >
+                    <span>{typeLabel}</span>
+                    <b>{item.title}</b>
+                    <small>{item.subtitle}</small>
+                  </button>
+                );
+              })}
+            </div>
+          )}
+        </div>
+      )}
+    </section>
+  );
+  const aoiListNode = (
+    <div className="aoi-list">
+      {cityNavItems.map((item) => (
+        <Button key={item.id} variant="outline" data-testid={`city-${item.id}`} aria-pressed={item.sourceIds.includes(activeId)} className={item.sourceIds.includes(activeId) ? "aoi-card active" : "aoi-card"} onClick={() => selectAoi(item.primaryAoiId, item.id)}>
+          <span>{item.name[language]}</span>
+          <small>{cityImpactLabel(item, language)}</small>
+        </Button>
+      ))}
+    </div>
+  );
+  const controlsBodyNode = (
+    <>
+      <div className="control-group">
+        <span>{t.basemap}</span>
+        <div className="button-row">
+          <Button variant={basemap === "map" ? "default" : "outline"} data-testid="basemap-map" aria-pressed={basemap === "map"} className={basemap === "map" ? "active" : ""} onClick={() => changeBasemap("map")}>{t.mapBase}</Button>
+          <Button variant={basemap === "aerial" ? "default" : "outline"} data-testid="basemap-aerial" aria-pressed={basemap === "aerial"} className={basemap === "aerial" ? "active" : ""} onClick={() => changeBasemap("aerial")}>{t.aerialBase}</Button>
+        </div>
+      </div>
+      <div className="control-group">
+        <span>{t.mode}</span>
+        <div className="button-row">
+          <Button variant={mode === "before" ? "default" : "outline"} data-testid="mode-before" disabled={!hasBeforeImagery} aria-pressed={mode === "before"} className={mode === "before" ? "active" : ""} onClick={() => changeMode("before")}>{t.before}</Button>
+          <Button variant={mode === "after" ? "default" : "outline"} data-testid="mode-after" disabled={!hasAfterImagery} aria-pressed={mode === "after"} className={mode === "after" ? "active" : ""} onClick={() => changeMode("after")}>{t.after}</Button>
+        </div>
+      </div>
+      <label className="range-control">
+        <span>{t.opacity} <b>{opacity}%</b></span>
+        <div className="range-row">
+          <Button type="button" variant="outline" aria-label={language === "es" ? "bajar opacidad de daño" : "reduce damage opacity"} onClick={() => adjustOpacity(-10)}>-</Button>
+          <input type="range" min="5" max="90" value={opacity} aria-label={t.opacity} onInput={(event) => setOpacity(Number(event.currentTarget.value))} onChange={(event) => setOpacity(Number(event.currentTarget.value))} />
+          <Button type="button" variant="outline" aria-label={language === "es" ? "subir opacidad de daño" : "increase damage opacity"} onClick={() => adjustOpacity(10)}>+</Button>
+        </div>
+      </label>
+      <div className="control-group">
+        <span>{t.filters}</span>
+        <div className="button-row">
+          <Button variant={filter === "all" ? "default" : "outline"} data-testid="filter-all" aria-pressed={filter === "all"} className={filter === "all" ? "active" : ""} onClick={() => changeFilter("all")}>{t.all}</Button>
+          <Button variant={filter === "severe" ? "default" : "outline"} data-testid="filter-severe" aria-pressed={filter === "severe"} className={filter === "severe" ? "active" : ""} onClick={() => changeFilter("severe")}>{t.severe}</Button>
+          <Button variant={filter === "vlm" ? "default" : "outline"} data-testid="filter-vlm" aria-pressed={filter === "vlm"} className={filter === "vlm" ? "active" : ""} onClick={() => changeFilter("vlm")}>{t.vlmOnly}</Button>
+        </div>
+      </div>
+      <details className="map-toolbar-notes">
+        <summary>{language === "es" ? "Notas" : "Notes"}</summary>
+        <p>{t.aerialBaseNote}</p>
+        {!hasImagery && <p>{t.noImagery}</p>}
+        {hasApproximateBefore && !hasNativeBeforeImagery && <p>{t.approximateBefore}</p>}
+        {hasAfterImagery && !hasBeforeImagery && <p>{active?.imagery?.before ? t.beforeEvidenceOnly : t.noBefore}</p>}
+        <p>{t.filterNote}</p>
+      </details>
+    </>
+  );
   const renderInspectorBody = (bodyId: string, prioritySectionRef: RefObject<HTMLElement | null>) => (
     <div className="inspector-body" id={bodyId}>
       {active && !selected && (
@@ -844,7 +1384,7 @@ export default function OperationsConsole() {
         </CardHeader>
         <CardContent>
           {selected ? (
-            <Evidence feature={selected} vlm={vlm[selected.properties.id]} language={language} onBackToPriority={scrollToPriority} />
+            <Evidence feature={selected} vlm={vlm[selected.properties.id]} language={language} onBackToPriority={scrollToPriority} onCopyCoords={copyFeatureCoords} />
           ) : (
             <p className="muted">{t.noSelection}</p>
           )}
@@ -858,6 +1398,22 @@ export default function OperationsConsole() {
           </CardAction>
         </CardHeader>
         <CardContent className="priority-list">
+          <div className="priority-sort" role="group" aria-label={language === "es" ? "Ordenar prioridad" : "Sort priority"} data-testid="priority-sort">
+            {prioritySortOptions.map((option) => (
+              <Button
+                key={option.id}
+                type="button"
+                variant={prioritySort === option.id ? "default" : "outline"}
+                size="sm"
+                className={prioritySort === option.id ? "active" : ""}
+                aria-pressed={prioritySort === option.id}
+                data-testid={option.id === "default" ? "priority-sort-response-value" : option.id === "source" ? "priority-sort-source" : `priority-sort-${option.id}`}
+                onClick={() => setPrioritySort(option.id)}
+              >
+                {option.label}
+              </Button>
+            ))}
+          </div>
           {priorityFeatures.length === 0 && (
             <p className="muted">
               {currentLayerState.damage === "error"
@@ -870,11 +1426,32 @@ export default function OperationsConsole() {
           {priorityFeatures.map((feature, index) => {
             const p = feature.properties;
             const label = priorityFeatureLabel(feature, vlm[p.id], language, active?.status);
+            const mapsUrl = googleMapsUrlForFeature(feature);
             return (
-              <Button key={p.id} variant="outline" data-testid={`priority-${p.source_feature_id ?? p.id}`} aria-pressed={selected?.properties.id === p.id} className={selected?.properties.id === p.id ? "priority-row active" : "priority-row"} onClick={() => selectPriorityFeature(feature, index + 1)}>
-                <b>{p.source_feature_id ?? p.id}</b>
-                <span>{label} · {String(p.damage_score ?? p.damage_percent ?? "-")}</span>
-              </Button>
+              <div key={p.id} className={selected?.properties.id === p.id ? "priority-row-shell active" : "priority-row-shell"}>
+                <Button variant="outline" data-testid={`priority-${p.source_feature_id ?? p.id}`} aria-pressed={selected?.properties.id === p.id} className="priority-row" onClick={() => selectPriorityFeature(feature, index + 1)}>
+                  <b>{p.source_feature_id ?? p.id}</b>
+                  <span>{label} · {String(p.damage_score ?? p.damage_percent ?? "-")}</span>
+                </Button>
+                <div className="priority-actions">
+                  <Button type="button" variant="outline" size="sm" onClick={() => void copyFeatureCoords(feature)}>
+                    {t.copyCoords}
+                  </Button>
+                  {mapsUrl && (
+                    <a
+                      className={cn(buttonVariants({ variant: "outline", size: "sm" }), "priority-map-link")}
+                      href={mapsUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      data-analytics-event="google_maps_link_clicked"
+                      data-analytics-aoi={String(p.aoi_id ?? activeId)}
+                      data-analytics-surface="priority_row"
+                    >
+                      {t.maps}
+                    </a>
+                  )}
+                </div>
+              </div>
             );
           })}
         </CardContent>
@@ -921,6 +1498,24 @@ export default function OperationsConsole() {
     </div>
   );
 
+  const offlinePct = offlineStatus.total > 0 ? Math.round((offlineStatus.done / offlineStatus.total) * 100) : 0;
+  const offlineLabel = offlineStatus.ready
+    ? (language === "es"
+      ? "Zona guardada sin conexión. Refresca con buena señal para actualizar."
+      : "Zone saved offline. Refresh with a good connection to update.")
+    : offlineStatus.total > 0
+      ? (language === "es" ? `Guardando esta zona… ${offlinePct}%` : `Saving this zone… ${offlinePct}%`)
+      : "";
+  const offlineState = offlineStatus.ready ? "ready" : "saving";
+  const contextNode = active && (
+    <div className="context-strip" aria-label={t.context}>
+      <span>{activeCity?.name[language] ?? active.name[language]}</span>
+      <span>{filter === "all" ? t.all : filter === "severe" ? t.severe : t.vlmOnly}</span>
+      <span>{mode === "after" ? t.after : t.before}</span>
+      <span>{statusLabel(active.status)}</span>
+    </div>
+  );
+
   return (
     <main className="ops-shell">
       <aside className="left-rail">
@@ -929,24 +1524,51 @@ export default function OperationsConsole() {
           <h1>{t.title}</h1>
           <p>{t.subtitle}</p>
           <p className="quick-start">{t.quickStart}</p>
+          {isMobileLayout && (
+            <Button
+              type="button"
+              variant="outline"
+              className="brand-info"
+              data-testid="mobile-about-toggle"
+              aria-label={language === "es" ? "Información" : "Info"}
+              onClick={() => { setInspectorOpen(false); setMobileSheet("about"); }}
+            >
+              ⓘ
+            </Button>
+          )}
         </div>
+        {!isMobileLayout && (
+          <section className="field-guide">
+            <b>{t.fieldGuideTitle}</b>
+            <p>{t.fieldGuideCritical}</p>
+            <p>{t.fieldGuidePartial}</p>
+            <p className="field-guide-verify">{t.fieldGuideVerify}</p>
+            <TranslatorBanner language={language} copy={t} />
+          </section>
+        )}
+        {!isMobileLayout && offlineLabel && (
+          <p className={`offline-line ${offlineState}`}>{offlineLabel}</p>
+        )}
 
         <label className="field-label">{t.language}</label>
         <div className="segmented" aria-label={t.language}>
           <Button variant={language === "es" ? "default" : "outline"} className={language === "es" ? "active" : ""} aria-pressed={language === "es"} onClick={() => changeLanguage("es")}>ES</Button>
           <Button variant={language === "en" ? "default" : "outline"} className={language === "en" ? "active" : ""} aria-pressed={language === "en"} onClick={() => changeLanguage("en")}>EN</Button>
         </div>
+        {!isMobileLayout && (
+          <>
+            {renderSearchPanel("desktop")}
+            {contextNode}
+          </>
+        )}
 
-        <label className="field-label">{t.aoi}</label>
-        <div className="aoi-list">
-          {cityNavItems.map((item) => (
-            <Button key={item.id} variant="outline" data-testid={`city-${item.id}`} aria-pressed={item.sourceIds.includes(activeId)} className={item.sourceIds.includes(activeId) ? "aoi-card active" : "aoi-card"} onClick={() => selectAoi(item.primaryAoiId, item.id)}>
-              <span>{item.name[language]}</span>
-              <small>{cityImpactLabel(item, language)}</small>
-            </Button>
-          ))}
-        </div>
-        <p className="muted">{t.rankingNote}</p>
+        {!isMobileLayout && (
+          <>
+            <label className="field-label">{t.aoi}</label>
+            {aoiListNode}
+            <p className="muted">{t.rankingNote}</p>
+          </>
+        )}
 
         {active && (
           <Card className="ops-card source-card" size="sm">
@@ -966,7 +1588,7 @@ export default function OperationsConsole() {
           </Card>
         )}
 
-        {statusMessages.length > 0 && (
+        {!isMobileLayout && statusMessages.length > 0 && (
           <Alert className={hasLayerError ? "data-status error" : "data-status"} variant={hasLayerError ? "destructive" : "default"} role="status" aria-live="polite">
             <AlertDescription>
               {statusMessages.map((message) => <p key={message}>{message}</p>)}
@@ -984,13 +1606,29 @@ export default function OperationsConsole() {
           </div>
         </section>
 
-        <section className="downloads-section">
-          <h2>{t.downloads}</h2>
-          <DownloadGroups downloads={active?.downloads} language={language} aoiId={active?.id} surface="downloads_panel" />
-        </section>
+        {!isMobileLayout && (
+          <section className="downloads-section">
+            <h2>{t.downloads}</h2>
+            <DownloadGroups downloads={active?.downloads} language={language} aoiId={active?.id} surface="downloads_panel" />
+          </section>
+        )}
       </aside>
 
       <section className="map-stage">
+        {isMobileLayout && renderSearchPanel("mobile")}
+        {isMobileLayout && statusMessages.length > 0 && (
+          <Alert className={hasLayerError ? "data-status mobile-data-status error" : "data-status mobile-data-status"} variant={hasLayerError ? "destructive" : "default"} role="status" aria-live="polite">
+            <AlertDescription>
+              {statusMessages.map((message) => <p key={message}>{message}</p>)}
+            </AlertDescription>
+          </Alert>
+        )}
+        {isMobileLayout && offlineLabel && (
+          <div className={`offline-chip ${offlineState}`} role="note" aria-live="polite">
+            <span className="offline-chip-dot" aria-hidden="true" />
+            {offlineLabel}
+          </div>
+        )}
         {active && (
           <MapPanel
             aoi={active}
@@ -1023,61 +1661,26 @@ export default function OperationsConsole() {
             }}
           />
         )}
-        <div className={mapControlsOpen ? "map-toolbar open" : "map-toolbar"} data-testid="map-toolbar">
-          <Button
-            type="button"
-            variant="outline"
-            className="map-toolbar-toggle"
-            data-testid="map-controls-toggle"
-            aria-expanded={mapControlsOpen}
-            aria-controls="map-toolbar-body"
-            onClick={() => setMapControlsOpen((open) => !open)}
-          >
-            <span>{t.controls}</span>
-            <em>{mapControlsOpen ? (language === "es" ? "Cerrar" : "Close") : (language === "es" ? "Abrir" : "Open")}</em>
-            <b>{controlSummary}</b>
-          </Button>
-          <div className="map-toolbar-body" id="map-toolbar-body">
-            <div className="control-group">
-              <span>{t.basemap}</span>
-              <div className="button-row">
-                <Button variant={basemap === "map" ? "default" : "outline"} data-testid="basemap-map" aria-pressed={basemap === "map"} className={basemap === "map" ? "active" : ""} onClick={() => changeBasemap("map")}>{t.mapBase}</Button>
-                <Button variant={basemap === "aerial" ? "default" : "outline"} data-testid="basemap-aerial" aria-pressed={basemap === "aerial"} className={basemap === "aerial" ? "active" : ""} onClick={() => changeBasemap("aerial")}>{t.aerialBase}</Button>
-              </div>
+        {!isMobileLayout && (
+          <div className={`map-toolbar${mapControlsOpen ? " open" : ""}${inspectorOpen ? " inspecting" : ""}`} data-testid="map-toolbar">
+            <Button
+              type="button"
+              variant="outline"
+              className="map-toolbar-toggle"
+              data-testid="map-controls-toggle"
+              aria-expanded={mapControlsOpen}
+              aria-controls="map-toolbar-body"
+              onClick={() => setMapControlsOpen((open) => !open)}
+            >
+              <span>{t.controls}</span>
+              <em>{mapControlsOpen ? (language === "es" ? "Cerrar" : "Close") : (language === "es" ? "Abrir" : "Open")}</em>
+              <b>{controlSummary}</b>
+            </Button>
+            <div className="map-toolbar-body" id="map-toolbar-body">
+              {controlsBodyNode}
             </div>
-            <div className="control-group">
-              <span>{t.mode}</span>
-              <div className="button-row">
-                <Button variant={mode === "before" ? "default" : "outline"} data-testid="mode-before" disabled={!hasBeforeImagery} aria-pressed={mode === "before"} className={mode === "before" ? "active" : ""} onClick={() => changeMode("before")}>{t.before}</Button>
-                <Button variant={mode === "after" ? "default" : "outline"} data-testid="mode-after" disabled={!hasAfterImagery} aria-pressed={mode === "after"} className={mode === "after" ? "active" : ""} onClick={() => changeMode("after")}>{t.after}</Button>
-              </div>
-            </div>
-            <label className="range-control">
-              <span>{t.opacity} <b>{opacity}%</b></span>
-              <div className="range-row">
-                <Button type="button" variant="outline" aria-label={language === "es" ? "bajar opacidad de daño" : "reduce damage opacity"} onClick={() => adjustOpacity(-10)}>-</Button>
-                <input type="range" min="5" max="90" value={opacity} aria-label={t.opacity} onInput={(e) => setOpacity(Number(e.currentTarget.value))} onChange={(e) => setOpacity(Number(e.currentTarget.value))} />
-                <Button type="button" variant="outline" aria-label={language === "es" ? "subir opacidad de daño" : "increase damage opacity"} onClick={() => adjustOpacity(10)}>+</Button>
-              </div>
-            </label>
-            <div className="control-group">
-              <span>{t.filters}</span>
-              <div className="button-row">
-                <Button variant={filter === "all" ? "default" : "outline"} data-testid="filter-all" aria-pressed={filter === "all"} className={filter === "all" ? "active" : ""} onClick={() => changeFilter("all")}>{t.all}</Button>
-                <Button variant={filter === "severe" ? "default" : "outline"} data-testid="filter-severe" aria-pressed={filter === "severe"} className={filter === "severe" ? "active" : ""} onClick={() => changeFilter("severe")}>{t.severe}</Button>
-                <Button variant={filter === "vlm" ? "default" : "outline"} data-testid="filter-vlm" aria-pressed={filter === "vlm"} className={filter === "vlm" ? "active" : ""} onClick={() => changeFilter("vlm")}>{t.vlmOnly}</Button>
-              </div>
-            </div>
-            <details className="map-toolbar-notes">
-              <summary>{language === "es" ? "Notas" : "Notes"}</summary>
-              <p>{t.aerialBaseNote}</p>
-              {!hasImagery && <p>{t.noImagery}</p>}
-              {hasApproximateBefore && !hasNativeBeforeImagery && <p>{t.approximateBefore}</p>}
-              {hasAfterImagery && !hasBeforeImagery && <p>{active?.imagery?.before ? t.beforeEvidenceOnly : t.noBefore}</p>}
-              <p>{t.filterNote}</p>
-            </details>
           </div>
-        </div>
+        )}
       </section>
 
       {!isMobileLayout && (
@@ -1087,22 +1690,136 @@ export default function OperationsConsole() {
       )}
 
       {isMobileLayout && (
-        <div className={inspectorOpen ? "mobile-sheet-shell open" : "mobile-sheet-shell"} data-testid="right-rail">
-          {!inspectorOpen && (
+        <>
+          <div className="mobile-dock" data-testid="right-rail">
             <Button
               type="button"
               variant="outline"
-              className="mobile-sheet-trigger"
+              className="mobile-dock-btn"
+              data-testid="mobile-zona-toggle"
+              onClick={() => { setInspectorOpen(false); setMobileSheet("zona"); }}
+            >
+              <span>{language === "es" ? "Zona" : "Zone"}</span>
+              <b>{activeCity?.name[language] ?? "—"}</b>
+            </Button>
+            <Button
+              type="button"
+              variant="outline"
+              className="mobile-dock-btn"
+              data-testid="mobile-capas-toggle"
+              onClick={() => { setInspectorOpen(false); setMobileSheet("capas"); }}
+            >
+              <span>{language === "es" ? "Capas" : "Layers"}</span>
+              <b>{controlSummary}</b>
+            </Button>
+            <Button
+              type="button"
+              variant="outline"
+              className="mobile-dock-btn mobile-dock-btn-wide"
               data-testid="mobile-inspector-toggle"
               aria-expanded={inspectorOpen}
               aria-controls="mobile-inspector-body"
-              onClick={() => setInspectorOpen(true)}
+              onClick={() => { setMobileSheet("none"); returnFocusRef.current = true; setInspectorOpen(true); }}
             >
               <span>{t.evidence} / {priorityTitle}</span>
-              <em>{language === "es" ? "Abrir" : "Open"}</em>
               <b>{selectedSummary}</b>
             </Button>
-          )}
+          </div>
+
+          <Drawer open={mobileSheet === "about"} onOpenChange={(open) => setMobileSheet(open ? "about" : "none")} direction="bottom" modal={false}>
+            <DrawerContent className="mobile-sheet-container shadcn-mobile-drawer" data-testid="mobile-about-sheet" aria-label={language === "es" ? "Acerca" : "About"}>
+              <DrawerHeader className="mobile-sheet-header">
+                <div className="mobile-sheet-handle" aria-hidden="true" />
+                <div className="mobile-sheet-titlebar">
+                  <div>
+                    <DrawerTitle>{language === "es" ? "Acerca" : "About"}</DrawerTitle>
+                    <DrawerDescription>{t.title}</DrawerDescription>
+                  </div>
+                  <Button type="button" variant="outline" size="sm" onClick={() => setMobileSheet("none")}>{language === "es" ? "Cerrar" : "Close"}</Button>
+                </div>
+              </DrawerHeader>
+              <ScrollArea className="mobile-sheet-content mobile-sheet-scroller">
+                <div className="mobile-sheet-body">
+                  <p>{t.subtitle}</p>
+                  <p className="quick-start">{t.quickStart}</p>
+                  <section className="field-guide">
+                    <b>{t.fieldGuideTitle}</b>
+                    <p>{t.fieldGuideCritical}</p>
+                    <p>{t.fieldGuidePartial}</p>
+                    <p className="field-guide-verify">{t.fieldGuideVerify}</p>
+                  </section>
+                  <TranslatorBanner language={language} copy={t} />
+                  {offlineLabel && (
+                    <p className={`offline-line ${offlineState}`}>{offlineLabel}</p>
+                  )}
+                  {active && (
+                    <Card className="ops-card source-card" size="sm">
+                      <CardHeader>
+                        <CardTitle>{t.source}</CardTitle>
+                        <CardAction>
+                          <Badge variant={(isDemo || isExternalPrediction) ? "secondary" : "default"}>
+                            {isDemo ? t.demoOnly : isExternalPrediction ? t.externalPrediction : t.officialData}
+                          </Badge>
+                        </CardAction>
+                      </CardHeader>
+                      <CardContent>
+                        <p>{active.source}</p>
+                        <Separator className="my-2" />
+                        <div className="meta-row"><span>{t.status}</span><b>{statusLabel(active.status)}</b></div>
+                      </CardContent>
+                    </Card>
+                  )}
+                  <p className="muted">{t.rankingNote}</p>
+                  <section className="downloads-section">
+                    <h2>{t.downloads}</h2>
+                    <DownloadGroups downloads={active?.downloads} language={language} aoiId={active?.id} surface="downloads_panel" />
+                  </section>
+                </div>
+              </ScrollArea>
+            </DrawerContent>
+          </Drawer>
+
+          <Drawer open={mobileSheet === "zona"} onOpenChange={(open) => setMobileSheet(open ? "zona" : "none")} direction="bottom" modal={false}>
+            <DrawerContent className="mobile-sheet-container shadcn-mobile-drawer" data-testid="mobile-zona-sheet" aria-label={language === "es" ? "Ir a zona afectada" : "Go to affected area"}>
+              <DrawerHeader className="mobile-sheet-header">
+                <div className="mobile-sheet-handle" aria-hidden="true" />
+                <div className="mobile-sheet-titlebar">
+                  <div>
+                    <DrawerTitle>{language === "es" ? "Ir a zona afectada" : "Go to affected area"}</DrawerTitle>
+                    <DrawerDescription>{activeCity?.name[language] ?? ""}</DrawerDescription>
+                  </div>
+                  <Button type="button" variant="outline" size="sm" onClick={() => setMobileSheet("none")}>{language === "es" ? "Cerrar" : "Close"}</Button>
+                </div>
+              </DrawerHeader>
+              <ScrollArea className="mobile-sheet-content mobile-sheet-scroller">
+                <div className="mobile-sheet-body mobile-zona-list">
+                  {aoiListNode}
+                  <p className="muted">{t.rankingNote}</p>
+                </div>
+              </ScrollArea>
+            </DrawerContent>
+          </Drawer>
+
+          <Drawer open={mobileSheet === "capas"} onOpenChange={(open) => setMobileSheet(open ? "capas" : "none")} direction="bottom" modal={false}>
+            <DrawerContent className="mobile-sheet-container shadcn-mobile-drawer" data-testid="mobile-capas-sheet" aria-label={t.controls}>
+              <DrawerHeader className="mobile-sheet-header">
+                <div className="mobile-sheet-handle" aria-hidden="true" />
+                <div className="mobile-sheet-titlebar">
+                  <div>
+                    <DrawerTitle>{t.controls}</DrawerTitle>
+                    <DrawerDescription>{controlSummary}</DrawerDescription>
+                  </div>
+                  <Button type="button" variant="outline" size="sm" onClick={() => setMobileSheet("none")}>{language === "es" ? "Cerrar" : "Close"}</Button>
+                </div>
+              </DrawerHeader>
+              <ScrollArea className="mobile-sheet-content mobile-sheet-scroller">
+                <div className="mobile-sheet-body map-toolbar-body-sheet">
+                  {controlsBodyNode}
+                </div>
+              </ScrollArea>
+            </DrawerContent>
+          </Drawer>
+
           <Drawer open={inspectorOpen} onOpenChange={setInspectorOpen} direction="bottom" modal={false}>
             <DrawerContent className="mobile-sheet-container shadcn-mobile-drawer" data-testid="mobile-inspector-sheet" aria-label={`${t.evidence} / ${priorityTitle}`}>
               <DrawerHeader className="mobile-sheet-header">
@@ -1112,7 +1829,7 @@ export default function OperationsConsole() {
                     <DrawerTitle>{t.evidence} / {priorityTitle}</DrawerTitle>
                     <DrawerDescription>{selectedSummary}</DrawerDescription>
                   </div>
-                  <Button type="button" variant="outline" size="sm" onClick={() => setInspectorOpen(false)}>{language === "es" ? "Cerrar" : "Close"}</Button>
+                  <Button type="button" variant="outline" size="sm" data-testid="mobile-inspector-close" onClick={() => setInspectorOpen(false)}>{language === "es" ? "Cerrar" : "Close"}</Button>
                 </div>
               </DrawerHeader>
               <ScrollArea className="mobile-sheet-content mobile-sheet-scroller">
@@ -1122,7 +1839,7 @@ export default function OperationsConsole() {
               </ScrollArea>
             </DrawerContent>
           </Drawer>
-        </div>
+        </>
       )}
     </main>
   );
@@ -1337,7 +2054,19 @@ function VlmQualityPanel({ aoi, language }: { aoi: AoiRecord; language: Language
   );
 }
 
-function Evidence({ feature, vlm, language, onBackToPriority }: { feature: DamageFeature; vlm?: VlmRecord; language: Language; onBackToPriority: () => void }) {
+function Evidence({
+  feature,
+  vlm,
+  language,
+  onBackToPriority,
+  onCopyCoords,
+}: {
+  feature: DamageFeature;
+  vlm?: VlmRecord;
+  language: Language;
+  onBackToPriority: () => void;
+  onCopyCoords: (feature: DamageFeature) => void | Promise<void>;
+}) {
   const t = copy[language];
   const p = feature.properties;
   const chip = evidenceChip(vlm);
@@ -1377,6 +2106,9 @@ function Evidence({ feature, vlm, language, onBackToPriority }: { feature: Damag
         />
       </a>}
       <div className="download-row">
+        <button type="button" className="text-action" data-testid="copy-coordinates" onClick={() => void onCopyCoords(feature)}>
+          {t.copyCoords}
+        </button>
         {mapsUrl && <a
           href={mapsUrl}
           target="_blank"

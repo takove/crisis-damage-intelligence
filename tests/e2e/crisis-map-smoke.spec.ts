@@ -1,38 +1,14 @@
-import { Buffer } from "node:buffer";
-import { expect, type Page, test } from "@playwright/test";
+import { expect, test } from "@playwright/test";
+import {
+  closeSheet,
+  expectActiveDownloadReachable,
+  keepMapRastersLight,
+  openMobileSheet,
+} from "./helpers/crisis-map";
 
-const transparentPng = Buffer.from(
-  "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAFgwJ/lI2NnQAAAABJRU5ErkJggg==",
-  "base64",
-);
-
-async function keepMapRastersLight(page: Page) {
-  await page.route("**/data/tiles/**", (route) => {
-    route.fulfill({ status: 200, contentType: "image/png", body: transparentPng });
-  });
-  await page.route("https://server.arcgisonline.com/**", (route) => {
-    route.fulfill({ status: 200, contentType: "image/png", body: transparentPng });
-  });
-  await page.route("https://tile.openstreetmap.org/**", (route) => {
-    route.fulfill({ status: 200, contentType: "image/png", body: transparentPng });
-  });
-  await page.route("https://*.tile.openstreetmap.org/**", (route) => {
-    route.fulfill({ status: 200, contentType: "image/png", body: transparentPng });
-  });
-  await page.route("https://rapidmapping-viewer.s3.eu-west-1.amazonaws.com/**", (route) => route.abort("blockedbyclient"));
-  await page.route("https://sentinel-cogs.s3.us-west-2.amazonaws.com/**", (route) => route.abort("blockedbyclient"));
-  await page.route("https://vantor-opendata.s3.amazonaws.com/**", (route) => route.abort("blockedbyclient"));
-}
-
-async function expectActiveDownloadReachable(page: Page) {
-  const download = page.getByRole("link", { name: "CSV" }).first();
-  await download.scrollIntoViewIfNeeded();
-  await expect(download).toBeVisible();
-  await expect(download).toBeInViewport({ ratio: 0.5 });
-  await expect(download).toHaveAttribute("href", /\/data\/aoi\/emsr884-aoi12-caraballeda\//);
-  const box = await download.boundingBox();
-  expect(box?.height).toBeGreaterThanOrEqual(38);
-}
+// These smoke tests intercept data and tile requests. Block service workers so
+// Playwright routes see the same network requests every run.
+test.use({ serviceWorkers: "block" });
 
 test("mobile critical AOI workflow stays usable", async ({ page }) => {
   await keepMapRastersLight(page);
@@ -47,15 +23,21 @@ test("mobile critical AOI workflow stays usable", async ({ page }) => {
   await page.goto("/");
 
   await expect(page.getByRole("heading", { name: "Respuesta Venezuela" })).toBeVisible();
-  await expect(page.getByTestId("city-la-guaira")).toBeVisible();
-  await expect(page.getByRole("link", { name: "CSV" }).first()).toBeVisible();
+  await expect(page.getByTestId("mobile-zona-toggle")).toContainText("La Guaira");
+
+  const zoneSheet = await openMobileSheet(page, "mobile-zona-toggle", "mobile-zona-sheet");
+  await expect(zoneSheet.getByTestId("city-la-guaira")).toBeVisible();
+  await expect(zoneSheet.getByTestId("city-la-guaira")).toHaveAttribute("aria-pressed", "true");
+  await closeSheet(zoneSheet);
+
+  const aboutSheet = await openMobileSheet(page, "mobile-about-toggle", "mobile-about-sheet");
+  await expectActiveDownloadReachable(aboutSheet);
+  await closeSheet(aboutSheet);
 
   await expect.poll(() => loadedDataUrls.some((url) => url.includes("emsr884-aoi12-caraballeda"))).toBe(true);
   expect(loadedDataUrls.some((url) => url.includes("emsr884-aoi06-moron"))).toBe(false);
   expect(loadedDataUrls.some((url) => url.includes("external-msft-catia-la-mar-predicted-damage"))).toBe(false);
 
-  const toolbarBox = await page.getByTestId("map-toolbar").boundingBox();
-  expect(toolbarBox?.height).toBeLessThanOrEqual(60);
   const mobileSheet = page.getByTestId("mobile-inspector-sheet");
   await expect(page.getByTestId("mobile-inspector-toggle")).toBeVisible();
   await expect(page.getByTestId("mobile-inspector-toggle")).toContainText("12 filas de prioridad listas");
@@ -71,32 +53,32 @@ test("mobile critical AOI workflow stays usable", async ({ page }) => {
   await mobileSheet.getByRole("button", { name: "Cerrar" }).click();
   await expect(mobileSheet).toBeHidden();
 
-  await page.getByTestId("map-controls-toggle").click();
-  await expect(page.getByTestId("filter-severe")).toBeVisible();
+  const layersSheet = await openMobileSheet(page, "mobile-capas-toggle", "mobile-capas-sheet");
+  await expect(layersSheet.getByTestId("filter-severe")).toBeVisible();
 
-  await page.getByTestId("filter-severe").click();
-  await expect(page.getByTestId("filter-severe")).toHaveAttribute("aria-pressed", "true");
+  await layersSheet.getByTestId("filter-severe").click();
+  await expect(layersSheet.getByTestId("filter-severe")).toHaveAttribute("aria-pressed", "true");
 
-  const beforeButton = page.getByTestId("mode-before");
+  const beforeButton = layersSheet.getByTestId("mode-before");
   if (await beforeButton.isEnabled()) {
     await beforeButton.click();
     await expect(beforeButton).toHaveAttribute("aria-pressed", "true");
   }
-  await page.getByTestId("mode-after").click();
-  await expect(page.getByTestId("mode-after")).toHaveAttribute("aria-pressed", "true");
-  await page.getByTestId("map-controls-toggle").click();
+  await layersSheet.getByTestId("mode-after").click();
+  await expect(layersSheet.getByTestId("mode-after")).toHaveAttribute("aria-pressed", "true");
+  await closeSheet(layersSheet);
 
   await page.getByTestId("mobile-inspector-toggle").click();
   await expect(mobileSheet).toBeVisible();
   await mobileSheet.getByRole("button", { name: "Ver prioridad" }).click();
-  const firstPriority = mobileSheet.locator('[data-testid^="priority-"]').first();
+  const firstPriority = mobileSheet.locator(".priority-row").first();
   await expect(firstPriority).toBeVisible();
   await firstPriority.click();
   await expect(page.locator(".map-node")).toHaveAttribute("data-map-zoom", "18");
   await expect(page.locator(".ol-popup")).toBeVisible();
   await expect(page.getByTestId("mobile-inspector-sheet")).toBeHidden();
   await expect(page.getByTestId("mobile-inspector-toggle")).toBeVisible();
-  await expect(page.getByTestId("mobile-inspector-toggle")).toContainText("Abrir");
+  await expect(page.getByTestId("mobile-inspector-toggle")).toContainText(/ems_\d+/);
 });
 
 for (const viewport of [
@@ -111,18 +93,21 @@ for (const viewport of [
     await page.goto("/");
 
     await expect(page.getByRole("heading", { name: "Respuesta Venezuela" })).toBeVisible();
-    await expect(page.getByTestId("city-la-guaira")).toBeVisible();
-    await expect(page.getByTestId("city-la-guaira")).toHaveAttribute("aria-pressed", "true");
     await expect(page.getByRole("region", { name: /Mapa operacional de/i })).toBeVisible();
-    await expect(page.getByTestId("map-toolbar")).toBeVisible();
-    await expectActiveDownloadReachable(page);
-
-    const activeAoiBox = await page.getByTestId("city-la-guaira").boundingBox();
-    expect(activeAoiBox?.height).toBeGreaterThanOrEqual(44);
 
     if (viewport.mobileSheet) {
-      const toolbarBox = await page.getByTestId("map-toolbar").boundingBox();
-      expect(toolbarBox?.height).toBeLessThanOrEqual(60);
+      await expect(page.getByTestId("mobile-zona-toggle")).toContainText("La Guaira");
+      const zoneSheet = await openMobileSheet(page, "mobile-zona-toggle", "mobile-zona-sheet");
+      await expect(zoneSheet.getByTestId("city-la-guaira")).toBeVisible();
+      await expect(zoneSheet.getByTestId("city-la-guaira")).toHaveAttribute("aria-pressed", "true");
+      const activeAoiBox = await zoneSheet.getByTestId("city-la-guaira").boundingBox();
+      expect(activeAoiBox?.height).toBeGreaterThanOrEqual(44);
+      await closeSheet(zoneSheet);
+
+      const aboutSheet = await openMobileSheet(page, "mobile-about-toggle", "mobile-about-sheet");
+      await expectActiveDownloadReachable(aboutSheet);
+      await closeSheet(aboutSheet);
+
       await expect(page.getByTestId("mobile-inspector-toggle")).toBeVisible();
       await page.getByTestId("mobile-inspector-toggle").click();
       await expect(page.getByTestId("mobile-inspector-sheet")).toBeVisible();
@@ -130,9 +115,17 @@ for (const viewport of [
       await expect(page.getByTestId("mobile-inspector-sheet")).toContainText("Con enlace débil");
       await page.getByTestId("mobile-inspector-sheet").getByRole("button", { name: "Cerrar" }).click();
       await expect(page.getByTestId("mobile-inspector-sheet")).toBeHidden();
-      await page.getByTestId("map-controls-toggle").click();
-      await expect(page.getByTestId("filter-severe")).toBeVisible();
+
+      const layersSheet = await openMobileSheet(page, "mobile-capas-toggle", "mobile-capas-sheet");
+      await expect(layersSheet.getByTestId("filter-severe")).toBeVisible();
+      await closeSheet(layersSheet);
     } else {
+      await expect(page.getByTestId("city-la-guaira")).toBeVisible();
+      await expect(page.getByTestId("city-la-guaira")).toHaveAttribute("aria-pressed", "true");
+      const activeAoiBox = await page.getByTestId("city-la-guaira").boundingBox();
+      expect(activeAoiBox?.height).toBeGreaterThanOrEqual(44);
+      await expect(page.getByTestId("map-toolbar")).toBeVisible();
+      await expectActiveDownloadReachable(page);
       await expect(page.getByTestId("mobile-inspector-sheet")).toHaveCount(0);
       await expect(page.getByRole("heading", { name: "Brief operativo" })).toBeVisible();
       await expect(page.getByTestId("filter-severe")).toBeVisible();
@@ -143,29 +136,42 @@ for (const viewport of [
 test("mobile shell keeps downloads and AOI metadata visible when active damage and VLM fail", async ({ page }) => {
   await keepMapRastersLight(page);
   await page.setViewportSize({ width: 360, height: 740 });
-  await page.route("**/data/aoi/emsr884-aoi12-caraballeda/damage.geojson", (route) => {
-    route.fulfill({
-      status: 404,
-      contentType: "text/plain",
-      body: "simulated missing active damage layer",
-    });
-  });
-  await page.route("**/data/aoi/emsr884-aoi12-caraballeda/vlm_before_after_review.jsonl", (route) => {
-    route.fulfill({
-      status: 503,
-      contentType: "text/plain",
-      body: "simulated unavailable active VLM layer",
-    });
+  await page.route("**/data/aoi/**", async (route) => {
+    const pathname = new URL(route.request().url()).pathname;
+    if (pathname === "/data/aoi/emsr884-aoi12-caraballeda/damage.geojson") {
+      await route.fulfill({
+        status: 404,
+        contentType: "text/plain",
+        body: "simulated missing active damage layer",
+      });
+      return;
+    }
+    if (pathname === "/data/aoi/emsr884-aoi12-caraballeda/vlm_before_after_review.jsonl") {
+      await route.fulfill({
+        status: 503,
+        contentType: "text/plain",
+        body: "simulated unavailable active VLM layer",
+      });
+      return;
+    }
+    await route.continue();
   });
 
   await page.goto("/");
 
-  await expect(page.getByRole("heading", { name: "Respuesta Venezuela" })).toBeVisible();
-  await expect(page.getByRole("status")).toContainText("No se pudo cargar la geometría de daños.");
-  await expect(page.getByRole("status")).toContainText("No se pudo cargar evidencia VLM.");
-  await expect(page.getByTestId("city-la-guaira")).toHaveAttribute("aria-pressed", "true");
-  await expect(page.getByTestId("city-moron")).toBeVisible();
-  await expectActiveDownloadReachable(page);
+  await expect(page.getByTestId("mobile-zona-toggle")).toBeVisible();
+  const dataStatus = page.locator(".data-status");
+  await expect(dataStatus).toContainText("No se pudo cargar la geometría de daños.");
+  await expect(dataStatus).toContainText("No se pudo cargar evidencia VLM.");
+
+  const zoneSheet = await openMobileSheet(page, "mobile-zona-toggle", "mobile-zona-sheet");
+  await expect(zoneSheet.getByTestId("city-la-guaira")).toHaveAttribute("aria-pressed", "true");
+  await expect(zoneSheet.getByTestId("city-moron")).toBeVisible();
+  await closeSheet(zoneSheet);
+
+  const aboutSheet = await openMobileSheet(page, "mobile-about-toggle", "mobile-about-sheet");
+  await expectActiveDownloadReachable(aboutSheet);
+  await closeSheet(aboutSheet);
 
   const mobileSheet = page.getByTestId("mobile-inspector-sheet");
   await expect(page.getByTestId("mobile-inspector-toggle")).toBeVisible();
