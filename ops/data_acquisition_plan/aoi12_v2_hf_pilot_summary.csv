@@ -1,0 +1,33 @@
+id,official_ems_damage_gra,vlm_damage_class,confidence,action_priority,compare_chip,manual_chip_qa_notes
+aoi12_v2_00004,Possibly damaged,possible_major_damage,0.75,urgent_review,/data/chips/emsr884-aoi12-caraballeda/aoi12_v2_00004_before_after_compare.png,good comparable urban/road context
+aoi12_v2_00005,Damaged,possible_major_damage,0.7,urgent_review,/data/chips/emsr884-aoi12-caraballeda/aoi12_v2_00005_before_after_compare.png,clear industrial polygon and comparable before/after
+aoi12_v2_00011,Damaged,possible_major_damage,0.75,review,/data/chips/emsr884-aoi12-caraballeda/aoi12_v2_00011_before_after_compare.png,dense urban target comparable
+aoi12_v2_00012,Damaged,likely_destroyed,0.85,urgent_review,/data/chips/emsr884-aoi12-caraballeda/aoi12_v2_00012_before_after_compare.png,large roof/building footprint comparable
+aoi12_v2_00013,Damaged,likely_destroyed,0.85,urgent_review,/data/chips/emsr884-aoi12-caraballeda/aoi12_v2_00013_before_after_compare.png,large structure comparable despite shadows
+aoi12_v2_00015,Damaged,possible_major_damage,0.75,urgent_review,/data/chips/emsr884-aoi12-caraballeda/aoi12_v2_00015_before_after_compare.png,clear building cluster comparable
+aoi12_v2_00023,Damaged,possible_major_damage,0.75,urgent_review,/data/chips/emsr884-aoi12-caraballeda/aoi12_v2_00023_before_after_compare.png,clear building footprint comparable
+aoi12_v2_00024,Damaged,possible_major_damage,0.75,urgent_review,/data/chips/emsr884-aoi12-caraballeda/aoi12_v2_00024_before_after_compare.png,clear roof/road context comparable
+aoi12_v2_00029,Damaged,possible_major_damage,0.75,urgent_review,/data/chips/emsr884-aoi12-caraballeda/aoi12_v2_00029_before_after_compare.png,urban block comparable
+aoi12_v2_00030,Damaged,possible_major_damage,0.75,urgent_review,/data/chips/emsr884-aoi12-caraballeda/aoi12_v2_00030_before_after_compare.png,urban roofs comparable
+aoi12_v2_00031,Damaged,likely_destroyed,0.95,urgent_review,/data/chips/emsr884-aoi12-caraballeda/aoi12_v2_00031_before_after_compare.png,urban roofs comparable
+aoi12_v2_00036,Possibly damaged,minor_visible_damage,0.85,review,/data/chips/emsr884-aoi12-caraballeda/aoi12_v2_00036_before_after_compare.png,outlined block comparable
+aoi12_v2_00046,Damaged,likely_destroyed,0.85,urgent_review,/data/chips/emsr884-aoi12-caraballeda/aoi12_v2_00046_before_after_compare.png,urban block comparable
+aoi12_v2_00054,Damaged,possible_major_damage,0.75,urgent_review,/data/chips/emsr884-aoi12-caraballeda/aoi12_v2_00054_before_after_compare.png,target area comparable
+aoi12_v2_00058,Damaged,likely_destroyed,0.85,urgent_review,/data/chips/emsr884-aoi12-caraballeda/aoi12_v2_00058_before_after_compare.png,pool/roof context comparable
+aoi12_v2_00059,Damaged,possible_major_damage,0.75,urgent_review,/data/chips/emsr884-aoi12-caraballeda/aoi12_v2_00059_before_after_compare.png,pool/roof context comparable
+aoi12_v2_00067,Possibly damaged,possible_major_damage,0.75,urgent_review,/data/chips/emsr884-aoi12-caraballeda/aoi12_v2_00067_before_after_compare.png,large high-rise footprint comparable
+aoi12_v2_00068,Damaged,likely_destroyed,0.85,urgent_review,/data/chips/emsr884-aoi12-caraballeda/aoi12_v2_00068_before_after_compare.png,building cluster comparable
+aoi12_v2_00078,Possibly damaged,minor_visible_damage,0.85,review,/data/chips/emsr884-aoi12-caraballeda/aoi12_v2_00078_before_after_compare.png,outlined compound comparable
+aoi12_v2_00079,Damaged,possible_major_damage,0.75,urgent_review,/data/chips/emsr884-aoi12-caraballeda/aoi12_v2_00079_before_after_compare.png,large building context comparable
+aoi12_v2_00082,Damaged,possible_major_damage,0.75,urgent_review,/data/chips/emsr884-aoi12-caraballeda/aoi12_v2_00082_before_after_compare.png,pool/building context comparable
+aoi12_v2_00088,Possibly damaged,possible_major_damage,0.75,urgent_review,/data/chips/emsr884-aoi12-caraballeda/aoi12_v2_00088_before_after_compare.png,small outlined structure comparable
+aoi12_v2_00107,Damaged,no_change_visible,0.95,deprioritize,/data/chips/emsr884-aoi12-caraballeda/aoi12_v2_00107_before_after_compare.png,clear building context comparable
+aoi12_v2_00114,Damaged,likely_destroyed,0.85,urgent_review,/data/chips/emsr884-aoi12-caraballeda/aoi12_v2_00114_before_after_compare.png,clear high-rise/compound comparable
+aoi12_v2_00128,Damaged,likely_destroyed,0.95,urgent_review,/data/chips/emsr884-aoi12-caraballeda/aoi12_v2_00128_before_after_compare.png,outlined block comparable
+aoi12_v2_00135,Possibly damaged,uncertain_comparison_problem,0.95,urgent_review,/data/chips/emsr884-aoi12-caraballeda/aoi12_v2_00135_before_after_compare.png,road/building context comparable enough for pilot
+aoi12_v2_00142,Damaged,possible_major_damage,0.75,urgent_review,/data/chips/emsr884-aoi12-caraballeda/aoi12_v2_00142_before_after_compare.png,urban roofs comparable
+aoi12_v2_00154,Possibly damaged,likely_destroyed,0.95,urgent_review,/data/chips/emsr884-aoi12-caraballeda/aoi12_v2_00154_before_after_compare.png,urban building context comparable
+aoi12_v2_00157,Damaged,likely_destroyed,0.85,urgent_review,/data/chips/emsr884-aoi12-caraballeda/aoi12_v2_00157_before_after_compare.png,urban roofs comparable
+aoi12_v2_00158,Damaged,likely_destroyed,0.85,urgent_review,/data/chips/emsr884-aoi12-caraballeda/aoi12_v2_00158_before_after_compare.png,outlined block comparable
+aoi12_v2_00159,Damaged,possible_major_damage,0.75,urgent_review,/data/chips/emsr884-aoi12-caraballeda/aoi12_v2_00159_before_after_compare.png,urban block comparable
+aoi12_v2_00162,Damaged,likely_destroyed,0.85,urgent_review,/data/chips/emsr884-aoi12-caraballeda/aoi12_v2_00162_before_after_compare.png,urban block comparable

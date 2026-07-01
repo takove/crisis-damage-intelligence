@@ -1,0 +1,11 @@
+{
+  "batch_count": 12,
+  "ready_no_spend": 3,
+  "ready_for_human_review_no_more_hf": 1,
+  "blocked_on_chip_qa": 4,
+  "blocked_on_manual_alignment_review": 0,
+  "blocked_on_pre_event_imagery": 4,
+  "max_recommended_next_vlm_calls_before_more_dedupe": 0,
+  "external_sample_call_ceiling_after_dedupe": 554,
+  "batches_csv": "ops/data_acquisition_plan/vlm_spend_control_batches.csv"
+}

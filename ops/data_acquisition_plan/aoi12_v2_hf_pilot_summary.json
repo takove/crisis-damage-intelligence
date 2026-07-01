@@ -1,0 +1,20 @@
+{
+  "aoi_id": "emsr884-aoi12-caraballeda",
+  "review_type": "dated_pre_event_comparison",
+  "records": 32,
+  "damage_classes": {
+    "possible_major_damage": 16,
+    "likely_destroyed": 12,
+    "minor_visible_damage": 2,
+    "no_change_visible": 1,
+    "uncertain_comparison_problem": 1
+  },
+  "action_priorities": {
+    "urgent_review": 28,
+    "review": 3,
+    "deprioritize": 1
+  },
+  "jsonl": "ops/data_acquisition_plan/aoi12_v2_hf_pilot_review.jsonl",
+  "csv": "ops/data_acquisition_plan/aoi12_v2_hf_pilot_summary.csv",
+  "warning": "Ops-only pilot. Do not publish into official metrics without human review and AOI12 v2 catalog binding."
+}

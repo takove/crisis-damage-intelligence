@@ -1,27 +1,27 @@
 # Remote Asset Validation
 
-- Generated UTC: `2026-06-29T23:19:38.132125+00:00`
+- Generated UTC: `2026-07-01T16:34:19.575464+00:00`
 - Remote base: `https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev`
 - Result: `pass`
 
 ## Package Pressure
 
-- `public/data`: 74613 files, 268.9 MB
-- `public/data/chips`: 681 files, 67.3 MB
+- `public/data`: 74768 files, 286.9 MB
+- `public/data/chips`: 834 files, 88.5 MB
 - `public/data/tiles`: 73837 files, 186.0 MB
 
 ### Largest Bundled Files
 
-- `public/data/aoi/external-msft-catia-la-mar-predicted-damage/damage.geojson`: 4.3 MB
+- `public/data/aoi/external-msft-catia-la-mar-predicted-damage/damage.geojson`: 2.5 MB
 - `public/data/aoi/external-msft-catia-la-mar-predicted-damage/damage.csv`: 2.4 MB
-- `public/data/aoi/external-msft-catia-la-mar-east-predicted-damage/damage.geojson`: 1.1 MB
 - `public/data/aoi/external-msft-catia-la-mar-east-predicted-damage/damage.kml`: 768.7 KB
 - `public/data/aoi/emsr884-aoi12-caraballeda-monitor01/damage.kml`: 647.6 KB
 - `public/data/aoi/emsr884-aoi12-caraballeda-monitor01/damage.geojson`: 637.2 KB
 - `public/data/aoi/emsr884-aoi12-caraballeda/damage.geojson`: 605.1 KB
 - `public/data/aoi/emsr884-aoi12-caraballeda/data/ems_builtup_damage.geojson`: 605.1 KB
-- `public/data/aoi/external-msft-caraballeda-east-predicted-damage/damage.geojson`: 569.7 KB
 - `public/data/aoi/external-msft-caraballeda-east-predicted-damage/damage.kml`: 395.4 KB
+- `public/data/aoi/external-msft-catia-la-mar-east-predicted-damage/damage.geojson`: 344.3 KB
+- `public/data/aoi/external-msft-catia-la-mar-east-predicted-damage/damage.csv`: 312.9 KB
 
 ## Supabase-Free Static Data
 

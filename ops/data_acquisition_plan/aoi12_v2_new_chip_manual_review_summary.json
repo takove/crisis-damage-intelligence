@@ -1,0 +1,12 @@
+{
+  "reviewed_features": 61,
+  "manual_verdict_counts": {
+    "hold_visual_alignment_or_target": 19,
+    "pilot_ready": 32,
+    "skip_missing_before": 10
+  },
+  "pilot_ready_features": 32,
+  "hf_pilot_ceiling_after_manual_review": 32,
+  "manual_review_csv": "ops/data_acquisition_plan/aoi12_v2_new_chip_manual_review.csv",
+  "basis": "Codex visual review of generated contact sheets; conservative first pilot gate, not official damage adjudication."
+}

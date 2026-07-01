@@ -115,10 +115,28 @@ def cog_exists(cog: str | Path) -> bool:
     return isinstance(cog, str) and cog.startswith("/vsicurl/") or Path(cog).exists()
 
 
+def feature_lonlat(feature: dict) -> tuple[float, float] | None:
+    props = feature.get("properties") or {}
+    lon = props.get("centroid_lon")
+    lat = props.get("centroid_lat")
+    if lon is not None and lat is not None:
+        return float(lon), float(lat)
+
+    rings = geometry_rings(feature.get("geometry", {}))
+    points = [(lon, lat) for ring in rings for lon, lat in ring]
+    if not points:
+        return None
+    return (
+        (min(lon for lon, _ in points) + max(lon for lon, _ in points)) / 2,
+        (min(lat for _, lat in points) + max(lat for _, lat in points)) / 2,
+    )
+
+
 def make_chip(cog: str | Path, feature: dict, out: Path, size_m: int = 96) -> bool:
-    props = feature["properties"]
-    lat = float(props["centroid_lat"])
-    lon = float(props["centroid_lon"])
+    center = feature_lonlat(feature)
+    if center is None:
+        return False
+    lon, lat = center
     window = degree_window(lon, lat, size_m)
     min_lon, max_lat, max_lon, min_lat = window
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -147,7 +165,12 @@ def make_chip(cog: str | Path, feature: dict, out: Path, size_m: int = 96) -> bo
         return False
     from PIL import Image, ImageDraw, ImageStat
 
-    image = Image.open(tmp).convert("RGB")
+    try:
+        image = Image.open(tmp).convert("RGB")
+    except Exception:
+        tmp.unlink(missing_ok=True)
+        tmp.with_suffix(tmp.suffix + ".aux.xml").unlink(missing_ok=True)
+        return False
     stat = ImageStat.Stat(image)
     # Very dark chips are usually outside a partial pre-event mosaic.
     if sum(stat.mean) / 3 < 4:
@@ -285,7 +308,11 @@ def write_summary(aoi_id: str, records: list[dict]) -> None:
     }
     summary_path.write_text(json.dumps(summary, indent=2) + "\n")
     with csv_path.open("w", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=["id", "official_ems_damage_gra", "vlm_damage_class", "confidence", "action_priority", "compare_chip", "google_maps_url"])
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=["id", "official_ems_damage_gra", "vlm_damage_class", "confidence", "action_priority", "compare_chip", "google_maps_url"],
+            lineterminator="\n",
+        )
         writer.writeheader()
         for record in records:
             v = record.get("vlm", {})
@@ -324,7 +351,7 @@ def regenerate_chips(aoi_id: str, features: list[dict]) -> int:
     return made
 
 
-def run_aoi(aoi_id: str, limit: int, workers: int, force: bool, chips_only: bool) -> int:
+def run_aoi(aoi_id: str, limit: int, offset: int, workers: int, force: bool, chips_only: bool) -> int:
     before_cog = LOCAL_BEFORE_COGS[aoi_id]
     after_cog = LOCAL_AFTER_COGS[aoi_id]
     if not cog_exists(before_cog):
@@ -335,6 +362,8 @@ def run_aoi(aoi_id: str, limit: int, workers: int, force: bool, chips_only: bool
     out_path = ROOT / "public" / "data" / "aoi" / aoi_id / "vlm_before_after_review.jsonl"
     data = json.loads(geojson_path.read_text())
     features = sorted(data.get("features", []), key=priority)
+    if offset:
+        features = features[offset:]
     if limit:
         features = features[:limit]
     if chips_only:
@@ -394,9 +423,10 @@ def main() -> None:
     load_env(ROOT / ".env")
     load_env(ROOT.parents[1] / ".env")
     if len(sys.argv) < 2:
-        raise SystemExit("Usage: scripts/run_minimax_ems_before_after_review.py AOI_ID [AOI_ID...] [--limit N] [--workers N] [--force] [--chips-only]")
+        raise SystemExit("Usage: scripts/run_minimax_ems_before_after_review.py AOI_ID [AOI_ID...] [--limit N] [--offset N] [--workers N] [--force] [--chips-only]")
     args = sys.argv[1:]
     limit = 0
+    offset = 0
     force = False
     chips_only = False
     workers = int(os.environ.get("VLM_WORKERS", "3"))
@@ -414,11 +444,15 @@ def main() -> None:
         index = args.index("--limit")
         limit = int(args[index + 1])
         args = args[:index] + args[index + 2 :]
+    if "--offset" in args:
+        index = args.index("--offset")
+        offset = int(args[index + 1])
+        args = args[:index] + args[index + 2 :]
     total = 0
     for aoi_id in args:
         if aoi_id not in LOCAL_BEFORE_COGS:
             raise SystemExit(f"No before/after VLM configuration for {aoi_id}")
-        total += run_aoi(aoi_id, limit, workers, force, chips_only)
+        total += run_aoi(aoi_id, limit, offset, workers, force, chips_only)
     print(f"Reviewed {total} new before/after comparisons")
 
 

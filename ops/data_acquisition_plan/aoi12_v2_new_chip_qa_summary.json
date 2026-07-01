@@ -1,0 +1,13 @@
+{
+  "checked_at": "2026-06-30T23:22:52Z",
+  "aoi_id": "emsr884-aoi12-caraballeda",
+  "candidate_features": 61,
+  "chip_triplets_regenerated": 51,
+  "verdict_counts": {
+    "pass_automated_chip_qa_needs_manual_alignment_review": 51,
+    "skip_missing_before_chip": 10
+  },
+  "automated_pass_needing_manual_alignment_review": 51,
+  "qa_csv": "ops/data_acquisition_plan/aoi12_v2_new_chip_qa.csv",
+  "warning": "Automated chip QA only checks existence and black/sparse pixels. Manual alignment/target review is still required before HF spend."
+}

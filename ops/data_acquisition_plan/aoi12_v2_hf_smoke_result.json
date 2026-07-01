@@ -1,0 +1,18 @@
+{
+  "id": "aoi12_v2_00005",
+  "vlm": {
+    "damage_class": "possible_major_damage",
+    "damage_percent": 70,
+    "confidence": 0.7,
+    "change_evidence": "Structural deformation and collapse visible in after image compared to before. Roof and wall sections appear displaced or missing. Building footprint remains intact but internal structure is compromised.",
+    "before_observation": "Building appears intact with defined roof and walls. No visible damage or structural displacement.",
+    "after_observation": "Significant structural damage observed: roof appears partially collapsed or displaced, walls show deformation, and debris is visible. Building footprint remains but internal structure is compromised.",
+    "image_alignment": "Aligned, same centroid and footprint outline visible in both images.",
+    "image_quality": "Moderate quality, both images are slightly pixelated and have low contrast, but key structural changes are discernible.",
+    "action_priority": "urgent_review",
+    "uncertainty_reason": "Low resolution and pixelation may obscure finer details of damage, but major structural changes are clearly visible.",
+    "vlm_model": "Qwen/Qwen3-VL-8B-Instruct",
+    "vlm_provider": "hf_space",
+    "review_type": "dated_pre_event_comparison"
+  }
+}

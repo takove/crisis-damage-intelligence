@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-06-30T23:19:51Z",
+  "manifest_url": "https://pub-35cd6458677c4b4c844a23fb91b0370e.r2.dev/vantor/venezuela-earthquake-jun-2026/manifests/vantor-all-manifest.json",
+  "manifest_uploaded_at": "2026-06-30T19:23:25.858072",
+  "manifest_license": "CC-BY-NC-4.0",
+  "manifest_items": 48,
+  "stac_items_loaded": 48,
+  "manifest_phase_counts": {
+    "pre": 10,
+    "post": 38
+  },
+  "coverage_rows": 115,
+  "pair_rows": 224,
+  "aoi_count": 15,
+  "aoi_count_with_pre_coverage": 9,
+  "aoi_count_with_post_coverage": 15,
+  "aoi_count_with_before_after_pairs": 9,
+  "official_aoi_count_ready_for_chip_qa": 4,
+  "external_aoi_count_ready_for_dedupe_sample_chip_qa": 4,
+  "best_spend_gate_counts": {
+    "external_dedupe_sample_chip_qa_then_vlm": 4,
+    "hold_no_current_damage_features": 1,
+    "hold_no_vantor_pre_event_coverage": 6,
+    "official_chip_qa_then_vlm": 4
+  },
+  "scene_coverage_csv": "ops/data_acquisition_plan/vantor_r2_scene_coverage.csv",
+  "before_after_pairs_csv": "ops/data_acquisition_plan/vantor_r2_before_after_pairs.csv",
+  "aoi_summary_csv": "ops/data_acquisition_plan/vantor_r2_before_after_aoi_summary.csv",
+  "warning": "Planning artifact only. Do not treat Vantor/VLM evidence as official EMS damage confirmation."
+}
